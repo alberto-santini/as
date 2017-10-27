@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespaceas_1_1tmp" kind="namespace" language="C++">
+    <compoundname>as::tmp</compoundname>
+    <innerclass refid="structas_1_1tmp_1_1types" prot="public">as::tmp::types</innerclass>
+    <innernamespace refid="namespaceas_1_1tmp_1_1details">as::tmp::details</innernamespace>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespaceas_1_1tmp_1a44a275bd3c66d727fb1b6f0179d49e19" prot="public" static="no">
+        <type><ref refid="structas_1_1tmp_1_1details_1_1can__apply" kindref="compound">details::can_apply</ref>&lt; Z, <ref refid="structas_1_1tmp_1_1types" kindref="compound">types</ref>&lt; Ts... &gt; &gt;</type>
+        <definition>as::tmp::can_apply</definition>
+        <argsstring></argsstring>
+        <name>can_apply</name>
+        <briefdescription>
+<para>Checks if the application of arguments to a templated class is valid. </para>        </briefdescription>
+        <detaileddescription>
+<para><ref refid="namespaceas_1_1tmp_1a44a275bd3c66d727fb1b6f0179d49e19" kindref="member">can_apply&lt;my_template, my_arguments...&gt;</ref> will inherit from true_type iff my_template&lt;my_arguments...&gt; is a valid expression.</para><para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Z</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The templated class. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Ts</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The template classes of <computeroutput>Z</computeroutput>. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/can_apply.h" line="45" column="1" bodyfile="src/can_apply.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceas_1_1tmp_1a893659f8b2cd22837c8f494a6f4a61d9" prot="public" static="no">
+        <type><ref refid="structas_1_1tmp_1_1details_1_1is__associative" kindref="compound">details::is_associative</ref>&lt; Container &gt;</type>
+        <definition>as::tmp::is_associative</definition>
+        <argsstring></argsstring>
+        <name>is_associative</name>
+        <briefdescription>
+<para>This type will be true_type if the container is associative (i.e. it has a member type &quot;key_type&quot;) or false_type otherwise. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Container</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The container to check. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/is_associative.h" line="30" column="1" bodyfile="src/is_associative.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/can_apply.h" line="19" column="1"/>
+  </compounddef>
+</doxygen>

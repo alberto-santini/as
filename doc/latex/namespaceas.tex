@@ -1,0 +1,194 @@
+\hypertarget{namespaceas}{}\section{as Namespace Reference}
+\label{namespaceas}\index{as@{as}}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespaceas_1_1console}{console}
+\item 
+ \hyperlink{namespaceas_1_1details}{details}
+\item 
+ \hyperlink{namespaceas_1_1graph}{graph}
+\item 
+ \hyperlink{namespaceas_1_1tmp}{tmp}
+\end{DoxyCompactItemize}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structas_1_1and__die}{and\+\_\+die}
+\begin{DoxyCompactList}\small\item\em A struct used to signal that the programme should be terminated immediately (die). \end{DoxyCompactList}\item 
+class \hyperlink{classas_1_1iterator__pair}{iterator\+\_\+pair}
+\begin{DoxyCompactList}\small\item\em This class wraps a pair of begin and end iterators, and exposes them via \hyperlink{classas_1_1iterator__pair_a88c00afafd5ee4477b7ab2a1a89bb746}{begin()} and \hyperlink{classas_1_1iterator__pair_ae7cef6e91faecd20e6aebd2f21b29b41}{end()} function, which can be used in range-\/based for loops. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Container , class T $>$ }\\using \hyperlink{namespaceas_a9bd788709567003423247a9db4ba1074}{count\+\_\+method\+\_\+type} = decltype(std\+::declval$<$ Container $>$().count(std\+::declval$<$ T $>$()))
+\begin{DoxyCompactList}\small\item\em This is the type of a generic .count() method for a container. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Container , class T $>$ }\\using \hyperlink{namespaceas_a9e0fcaa3ddb46647d8979282465685da}{has\+\_\+count\+\_\+method} = \hyperlink{namespaceas_1_1tmp_a44a275bd3c66d727fb1b6f0179d49e19}{tmp\+::can\+\_\+apply}$<$ \hyperlink{namespaceas_a9bd788709567003423247a9db4ba1074}{count\+\_\+method\+\_\+type}, Container, T $>$
+\begin{DoxyCompactList}\small\item\em This will inherit from true\+\_\+type iff class Container has an appopriate .count() method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{namespaceas_a4d891ae352512e1c506d6cd01ff1422c}{operator$<$$<$} (std\+::ostream \&out, const \hyperlink{structas_1_1and__die}{and\+\_\+die} \&)
+\begin{DoxyCompactList}\small\item\em Concatenates a \hyperlink{structas_1_1and__die}{and\+\_\+die} structure to an output stream, to immediately terminate a programme. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Container , class T $>$ }\\bool \hyperlink{namespaceas_a49cf7ae4239ab51e54f099d30a84811a}{contains} (const Container \&container, const T \&element)
+\begin{DoxyCompactList}\small\item\em Tells whether a container contains a certain element. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Container $>$ }\\void \hyperlink{namespaceas_aab6569c28591bebed9bd29b40c772bfc}{join\+\_\+and\+\_\+print} (const Container \&container, std\+::ostream \&out=std\+::cout, std\+::string separator=\char`\"{}, \char`\"{})
+\begin{DoxyCompactList}\small\item\em Joins the elements of a container using the separator, and prints the result to an output stream. \end{DoxyCompactList}\item 
+void \hyperlink{namespaceas_a359f2d209e5ec052ec0d2752a589802d}{skip\+\_\+lines} (std\+::ifstream \&stream, std\+::size\+\_\+t how\+\_\+many=1u)
+\begin{DoxyCompactList}\small\item\em Skips a certain number of lines from an input file stream. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Iterator $>$ }\\\hyperlink{classas_1_1iterator__pair}{iterator\+\_\+pair}$<$ Iterator $>$ \hyperlink{namespaceas_a4d4e0fb99b7cc564adaa85b693392070}{make\+\_\+iter} (std\+::pair$<$ Iterator, Iterator $>$ iters)
+\begin{DoxyCompactList}\small\item\em Gives an \hyperlink{classas_1_1iterator__pair}{iterator\+\_\+pair} object constructed from the beginning and end iterators, given as a pair. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{namespaceas_a9bd788709567003423247a9db4ba1074}\label{namespaceas_a9bd788709567003423247a9db4ba1074}} 
+\index{as@{as}!count\+\_\+method\+\_\+type@{count\+\_\+method\+\_\+type}}
+\index{count\+\_\+method\+\_\+type@{count\+\_\+method\+\_\+type}!as@{as}}
+\subsubsection{\texorpdfstring{count\+\_\+method\+\_\+type}{count\_method\_type}}
+{\footnotesize\ttfamily template$<$class Container , class T $>$ \\
+using \hyperlink{namespaceas_a9bd788709567003423247a9db4ba1074}{as\+::count\+\_\+method\+\_\+type} = typedef decltype(std\+::declval$<$Container$>$().count(std\+::declval$<$T$>$()))}
+
+
+
+This is the type of a generic .count() method for a container. 
+
+count\+\_\+method\+\_\+type This method is implemented in some stl containers and takes an element as its only parameter. \mbox{\Hypertarget{namespaceas_a9e0fcaa3ddb46647d8979282465685da}\label{namespaceas_a9e0fcaa3ddb46647d8979282465685da}} 
+\index{as@{as}!has\+\_\+count\+\_\+method@{has\+\_\+count\+\_\+method}}
+\index{has\+\_\+count\+\_\+method@{has\+\_\+count\+\_\+method}!as@{as}}
+\subsubsection{\texorpdfstring{has\+\_\+count\+\_\+method}{has\_count\_method}}
+{\footnotesize\ttfamily template$<$class Container , class T $>$ \\
+\hyperlink{namespaceas_a9e0fcaa3ddb46647d8979282465685da}{as\+::has\+\_\+count\+\_\+method}}
+
+
+
+This will inherit from true\+\_\+type iff class Container has an appopriate .count() method. 
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespaceas_a49cf7ae4239ab51e54f099d30a84811a}\label{namespaceas_a49cf7ae4239ab51e54f099d30a84811a}} 
+\index{as@{as}!contains@{contains}}
+\index{contains@{contains}!as@{as}}
+\subsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily template$<$class Container , class T $>$ \\
+bool as\+::contains (\begin{DoxyParamCaption}\item[{const Container \&}]{container,  }\item[{const T \&}]{element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Tells whether a container contains a certain element. 
+
+The standard library\textquotesingle{}s functions to find elements (e.\+g. std\+::find) always return an iterator. Sometimes, though, we just want to know whether an element is in a container or not. This helper function lets us do this in a concise way. This function also has specialisation for when the container implements a .count() method, i.\+e. a more efficient way of searching elements than simple linear search.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Container} & Container type. \\
+\hline
+{\em T} & Containee type. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em container} & The container. \\
+\hline
+{\em element} & The element we are searching in {\ttfamily container}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True iff {\ttfamily element} was found in {\ttfamily container}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespaceas_aab6569c28591bebed9bd29b40c772bfc}\label{namespaceas_aab6569c28591bebed9bd29b40c772bfc}} 
+\index{as@{as}!join\+\_\+and\+\_\+print@{join\+\_\+and\+\_\+print}}
+\index{join\+\_\+and\+\_\+print@{join\+\_\+and\+\_\+print}!as@{as}}
+\subsubsection{\texorpdfstring{join\+\_\+and\+\_\+print()}{join\_and\_print()}}
+{\footnotesize\ttfamily template$<$class Container $>$ \\
+void as\+::join\+\_\+and\+\_\+print (\begin{DoxyParamCaption}\item[{const Container \&}]{container,  }\item[{std\+::ostream \&}]{out = {\ttfamily std\+:\+:cout},  }\item[{std\+::string}]{separator = {\ttfamily \char`\"{},~\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Joins the elements of a container using the separator, and prints the result to an output stream. 
+
+It works both with key-\/value and value-\/only containers. In the first case, it prints both key and value.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Container} & Container type. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em container} & The container to print. \\
+\hline
+{\em out} & Output stream. \\
+\hline
+{\em separator} & A string interposed between two adjacent elements. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespaceas_a4d4e0fb99b7cc564adaa85b693392070}\label{namespaceas_a4d4e0fb99b7cc564adaa85b693392070}} 
+\index{as@{as}!make\+\_\+iter@{make\+\_\+iter}}
+\index{make\+\_\+iter@{make\+\_\+iter}!as@{as}}
+\subsubsection{\texorpdfstring{make\+\_\+iter()}{make\_iter()}}
+{\footnotesize\ttfamily template$<$class Iterator $>$ \\
+\hyperlink{classas_1_1iterator__pair}{iterator\+\_\+pair}$<$Iterator$>$ as\+::make\+\_\+iter (\begin{DoxyParamCaption}\item[{std\+::pair$<$ Iterator, Iterator $>$}]{iters }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gives an \hyperlink{classas_1_1iterator__pair}{iterator\+\_\+pair} object constructed from the beginning and end iterators, given as a pair. 
+
+Many boost functions return iterators in pairs, for example boost\+::vertices or boost\+::edges. This function can be used with the pairs returned by these methods, to create an object that can be used with range-\/based for loops. Example\+:
+
+for(const auto\& vertex \+: make\+\_\+iter(boost\+::vertices(graph)) \{ ... \}
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Iterator} & Iterator type. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em iters} & A pair containing the beginning and end iterator. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An Iterator\+Pair storing the beginning and end iterators. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespaceas_a4d891ae352512e1c506d6cd01ff1422c}\label{namespaceas_a4d891ae352512e1c506d6cd01ff1422c}} 
+\index{as@{as}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!as@{as}}
+\subsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily std\+::ostream\& as\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{const \hyperlink{structas_1_1and__die}{and\+\_\+die} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Concatenates a \hyperlink{structas_1_1and__die}{and\+\_\+die} structure to an output stream, to immediately terminate a programme. 
+
+When concatenating an object of type \hyperlink{structas_1_1and__die}{and\+\_\+die} to an ostream, the programme is going to terminate with exit code E\+X\+IT F\+A\+I\+L\+U\+RE. This can be used in the following way\+:
+
+using namespace as; std\+::cerr $<$$<$ console\+::error $<$$<$ \char`\"{}\+A terrible error has occurred!\char`\"{} $<$$<$ and\+\_\+die();
+
+It adds a new line before terminating the programme.
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & The output stream currently used. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+In theory the same output stream, but in practice the programme dies and nothing is returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespaceas_a359f2d209e5ec052ec0d2752a589802d}\label{namespaceas_a359f2d209e5ec052ec0d2752a589802d}} 
+\index{as@{as}!skip\+\_\+lines@{skip\+\_\+lines}}
+\index{skip\+\_\+lines@{skip\+\_\+lines}!as@{as}}
+\subsubsection{\texorpdfstring{skip\+\_\+lines()}{skip\_lines()}}
+{\footnotesize\ttfamily void as\+::skip\+\_\+lines (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{stream,  }\item[{std\+::size\+\_\+t}]{how\+\_\+many = {\ttfamily 1u} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Skips a certain number of lines from an input file stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & The file stream. \\
+\hline
+{\em how\+\_\+many} & Number of lines to skip. \\
+\hline
+\end{DoxyParams}

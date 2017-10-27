@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.13">
+  <compound refid="structas_1_1and__die" kind="struct"><name>as::and_die</name>
+  </compound>
+  <compound refid="structas_1_1tmp_1_1details_1_1can__apply" kind="struct"><name>as::tmp::details::can_apply</name>
+  </compound>
+  <compound refid="structas_1_1tmp_1_1details_1_1can__apply_3_01Z_00_01types_3_01Ts_8_8_8_01_4_00_01std_1_1void__t_d0380c4f39b26cf3dcf2ed45500ba357" kind="struct"><name>as::tmp::details::can_apply&lt; Z, types&lt; Ts... &gt;, std::void_t&lt; Z&lt; Ts... &gt; &gt; &gt;</name>
+  </compound>
+  <compound refid="structas_1_1tmp_1_1details_1_1is__associative" kind="struct"><name>as::tmp::details::is_associative</name>
+  </compound>
+  <compound refid="structas_1_1tmp_1_1details_1_1is__associative_3_01Container_00_01std_1_1void__t_3_01typename_01Container_1_1key__type_01_4_01_4" kind="struct"><name>as::tmp::details::is_associative&lt; Container, std::void_t&lt; typename Container::key_type &gt; &gt;</name>
+  </compound>
+  <compound refid="classas_1_1iterator__pair" kind="class"><name>as::iterator_pair</name>
+    <member refid="classas_1_1iterator__pair_1ae1e4544b2d98f79ae103474f7835c10e" kind="variable"><name>_begin</name></member>
+    <member refid="classas_1_1iterator__pair_1add8ac96e33a0316a146e2e9407c83066" kind="variable"><name>_end</name></member>
+    <member refid="classas_1_1iterator__pair_1a70030e7948493718b4baf500344a86e0" kind="function"><name>iterator_pair</name></member>
+    <member refid="classas_1_1iterator__pair_1a88c00afafd5ee4477b7ab2a1a89bb746" kind="function"><name>begin</name></member>
+    <member refid="classas_1_1iterator__pair_1ae7cef6e91faecd20e6aebd2f21b29b41" kind="function"><name>end</name></member>
+  </compound>
+  <compound refid="structas_1_1tmp_1_1types" kind="struct"><name>as::tmp::types</name>
+    <member refid="structas_1_1tmp_1_1types_1a8fee0852270845709fbb995347ac8fa3" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="namespaceas" kind="namespace"><name>as</name>
+    <member refid="namespaceas_1a9bd788709567003423247a9db4ba1074" kind="typedef"><name>count_method_type</name></member>
+    <member refid="namespaceas_1a9e0fcaa3ddb46647d8979282465685da" kind="typedef"><name>has_count_method</name></member>
+    <member refid="namespaceas_1a4d891ae352512e1c506d6cd01ff1422c" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="namespaceas_1a49cf7ae4239ab51e54f099d30a84811a" kind="function"><name>contains</name></member>
+    <member refid="namespaceas_1aab6569c28591bebed9bd29b40c772bfc" kind="function"><name>join_and_print</name></member>
+    <member refid="namespaceas_1a359f2d209e5ec052ec0d2752a589802d" kind="function"><name>skip_lines</name></member>
+    <member refid="namespaceas_1a4d4e0fb99b7cc564adaa85b693392070" kind="function"><name>make_iter</name></member>
+  </compound>
+  <compound refid="namespaceas_1_1console" kind="namespace"><name>as::console</name>
+    <member refid="namespaceas_1_1console_1ab2f5a531e43f4ee9e0f348f8aa5ce16c" kind="enum"><name>Colour</name></member>
+    <member refid="namespaceas_1_1console_1ab2f5a531e43f4ee9e0f348f8aa5ce16caee38e4d5dd68c4e440825018d549cb47" kind="enumvalue"><name>Red</name></member>
+    <member refid="namespaceas_1_1console_1ab2f5a531e43f4ee9e0f348f8aa5ce16cad382816a3cbeed082c9e216e7392eed1" kind="enumvalue"><name>Green</name></member>
+    <member refid="namespaceas_1_1console_1ab2f5a531e43f4ee9e0f348f8aa5ce16ca51e6cd92b6c45f9affdc158ecca2b8b8" kind="enumvalue"><name>Yellow</name></member>
+    <member refid="namespaceas_1_1console_1ab2f5a531e43f4ee9e0f348f8aa5ce16ca9594eec95be70e7b1710f730fdda33d9" kind="enumvalue"><name>Blue</name></member>
+    <member refid="namespaceas_1_1console_1ab2f5a531e43f4ee9e0f348f8aa5ce16cab91cc2c1416fcca942b61c7ac5b1a9ac" kind="enumvalue"><name>Magenta</name></member>
+    <member refid="namespaceas_1_1console_1ab2f5a531e43f4ee9e0f348f8aa5ce16ca7a1920d61156abc05a60135aefe8bc67" kind="enumvalue"><name>Default</name></member>
+    <member refid="namespaceas_1_1console_1ac43754a26ec71b3fa2a9e2c60808947c" kind="variable"><name>notice</name></member>
+    <member refid="namespaceas_1_1console_1abd7d8f203fa6be7b8827462e79d3d2dc" kind="variable"><name>warning</name></member>
+    <member refid="namespaceas_1_1console_1a1f55b2b8b6fd0f2d1eb2a25a9cf14087" kind="variable"><name>error</name></member>
+    <member refid="namespaceas_1_1console_1ae7e08b7053b857ff4d798c9860680ac7" kind="function"><name>colour_code</name></member>
+    <member refid="namespaceas_1_1console_1a960fbc86f1ff964059acb44b12342199" kind="function"><name>escape</name></member>
+    <member refid="namespaceas_1_1console_1a05dafe6fcc36510443d4769ad4667652" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="namespaceas_1_1console_1a64c8640b4ced55636cb8926b1640d6e9" kind="function"><name>colourise</name></member>
+  </compound>
+  <compound refid="namespaceas_1_1details" kind="namespace"><name>as::details</name>
+    <member refid="namespaceas_1_1details_1aaa1e2c1c370bddd0020956d333bbef26" kind="function"><name>contains</name></member>
+    <member refid="namespaceas_1_1details_1aa25b4a9ab19e3b807bbd58dc208d2607" kind="function"><name>contains</name></member>
+    <member refid="namespaceas_1_1details_1a2e51ab78c6720ab244aa4cd08c5e7b55" kind="function"><name>iterated_value</name></member>
+    <member refid="namespaceas_1_1details_1abb914e2826b38ed8ae4d2f8004843689" kind="function"><name>iterated_value</name></member>
+  </compound>
+  <compound refid="namespaceas_1_1graph" kind="namespace"><name>as::graph</name>
+    <member refid="namespaceas_1_1graph_1ab93ee208eb116d3a3349c8de8cc91445" kind="function"><name>vertices</name></member>
+    <member refid="namespaceas_1_1graph_1ae44b728c4acaf47bc2bb010831df9452" kind="function"><name>edges</name></member>
+    <member refid="namespaceas_1_1graph_1a00143e178e97f0e9787802953d74a9f7" kind="function"><name>out_edges</name></member>
+    <member refid="namespaceas_1_1graph_1ab75a465b1d5869f0ea8b698f02b067aa" kind="function"><name>in_edges</name></member>
+    <member refid="namespaceas_1_1graph_1ac0b52ec1e242ac547157a42aac39e21a" kind="function"><name>incident_to_the_same_vertex</name></member>
+  </compound>
+  <compound refid="namespaceas_1_1tmp" kind="namespace"><name>as::tmp</name>
+    <member refid="namespaceas_1_1tmp_1a44a275bd3c66d727fb1b6f0179d49e19" kind="typedef"><name>can_apply</name></member>
+    <member refid="namespaceas_1_1tmp_1a893659f8b2cd22837c8f494a6f4a61d9" kind="typedef"><name>is_associative</name></member>
+  </compound>
+  <compound refid="namespaceas_1_1tmp_1_1details" kind="namespace"><name>as::tmp::details</name>
+  </compound>
+  <compound refid="namespaceconsole" kind="namespace"><name>console</name>
+  </compound>
+  <compound refid="namespacegraph" kind="namespace"><name>graph</name>
+  </compound>
+  <compound refid="namespacetmp" kind="namespace"><name>tmp</name>
+  </compound>
+  <compound refid="and__die_8h" kind="file"><name>and_die.h</name>
+  </compound>
+  <compound refid="as__version_8h" kind="file"><name>as_version.h</name>
+    <member refid="as__version_8h_1a4655bc98bf611ce7a8a37250ad8cc943" kind="define"><name>AS_VERSION_MAJOR</name></member>
+    <member refid="as__version_8h_1ac016426c7e016d0c3673cbbcc3db3083" kind="define"><name>AS_VERSION_MINOR</name></member>
+    <member refid="as__version_8h_1a6a52de62e56ab76f01f20e546c97240f" kind="define"><name>AS_VERSION_BUILD</name></member>
+  </compound>
+  <compound refid="can__apply_8h" kind="file"><name>can_apply.h</name>
+  </compound>
+  <compound refid="console_8h" kind="file"><name>console.h</name>
+  </compound>
+  <compound refid="containers_8h" kind="file"><name>containers.h</name>
+  </compound>
+  <compound refid="file__stream_8h" kind="file"><name>file_stream.h</name>
+  </compound>
+  <compound refid="graph_8h" kind="file"><name>graph.h</name>
+  </compound>
+  <compound refid="is__associative_8h" kind="file"><name>is_associative.h</name>
+  </compound>
+  <compound refid="iterator__pair_8h" kind="file"><name>iterator_pair.h</name>
+  </compound>
+  <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>src</name>
+  </compound>
+</doxygenindex>

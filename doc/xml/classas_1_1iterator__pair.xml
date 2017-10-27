@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classas_1_1iterator__pair" kind="class" language="C++" prot="public">
+    <compoundname>as::iterator_pair</compoundname>
+    <includes refid="iterator__pair_8h" local="no">iterator_pair.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class Iterator</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classas_1_1iterator__pair_1ae1e4544b2d98f79ae103474f7835c10e" prot="private" static="no" mutable="no">
+        <type>Iterator</type>
+        <definition>Iterator as::iterator_pair&lt; Iterator &gt;::_begin</definition>
+        <argsstring></argsstring>
+        <name>_begin</name>
+        <briefdescription>
+<para>Begin iterator. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/iterator_pair.h" line="21" column="1" bodyfile="src/iterator_pair.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classas_1_1iterator__pair_1add8ac96e33a0316a146e2e9407c83066" prot="private" static="no" mutable="no">
+        <type>Iterator</type>
+        <definition>Iterator as::iterator_pair&lt; Iterator &gt;::_end</definition>
+        <argsstring></argsstring>
+        <name>_end</name>
+        <briefdescription>
+<para>End iterator. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/iterator_pair.h" line="25" column="1" bodyfile="src/iterator_pair.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classas_1_1iterator__pair_1a70030e7948493718b4baf500344a86e0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>as::iterator_pair&lt; Iterator &gt;::iterator_pair</definition>
+        <argsstring>(Iterator b, Iterator e)</argsstring>
+        <name>iterator_pair</name>
+        <param>
+          <type>Iterator</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>Iterator</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>Constructor receiving the iterators. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Begin iterator. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>End iterator. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/iterator_pair.h" line="32" column="1" bodyfile="src/iterator_pair.h" bodystart="32" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classas_1_1iterator__pair_1a88c00afafd5ee4477b7ab2a1a89bb746" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>Iterator</type>
+        <definition>Iterator as::iterator_pair&lt; Iterator &gt;::begin</definition>
+        <argsstring>() const</argsstring>
+        <name>begin</name>
+        <briefdescription>
+<para>Gives the begin iterator. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The begin iterator. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/iterator_pair.h" line="37" column="1" bodyfile="src/iterator_pair.h" bodystart="37" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="classas_1_1iterator__pair_1ae7cef6e91faecd20e6aebd2f21b29b41" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>Iterator</type>
+        <definition>Iterator as::iterator_pair&lt; Iterator &gt;::end</definition>
+        <argsstring>() const</argsstring>
+        <name>end</name>
+        <briefdescription>
+<para>Gives the end iterator. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The end iterator. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/iterator_pair.h" line="42" column="1" bodyfile="src/iterator_pair.h" bodystart="42" bodyend="42"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This class wraps a pair of begin and end iterators, and exposes them via <ref refid="classas_1_1iterator__pair_1a88c00afafd5ee4477b7ab2a1a89bb746" kindref="member">begin()</ref> and <ref refid="classas_1_1iterator__pair_1ae7cef6e91faecd20e6aebd2f21b29b41" kindref="member">end()</ref> function, which can be used in range-based for loops. </para>    </briefdescription>
+    <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Iterator</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The iterator type. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>    </detaileddescription>
+    <location file="src/iterator_pair.h" line="18" column="1" bodyfile="src/iterator_pair.h" bodystart="18" bodyend="43"/>
+    <listofallmembers>
+      <member refid="classas_1_1iterator__pair_1ae1e4544b2d98f79ae103474f7835c10e" prot="private" virt="non-virtual"><scope>as::iterator_pair</scope><name>_begin</name></member>
+      <member refid="classas_1_1iterator__pair_1add8ac96e33a0316a146e2e9407c83066" prot="private" virt="non-virtual"><scope>as::iterator_pair</scope><name>_end</name></member>
+      <member refid="classas_1_1iterator__pair_1a88c00afafd5ee4477b7ab2a1a89bb746" prot="public" virt="non-virtual"><scope>as::iterator_pair</scope><name>begin</name></member>
+      <member refid="classas_1_1iterator__pair_1ae7cef6e91faecd20e6aebd2f21b29b41" prot="public" virt="non-virtual"><scope>as::iterator_pair</scope><name>end</name></member>
+      <member refid="classas_1_1iterator__pair_1a70030e7948493718b4baf500344a86e0" prot="public" virt="non-virtual"><scope>as::iterator_pair</scope><name>iterator_pair</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

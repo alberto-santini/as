@@ -1,0 +1,46 @@
+\hypertarget{console_8h}{}\section{src/console.h File Reference}
+\label{console_8h}\index{src/console.\+h@{src/console.\+h}}
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$ostream$>$}\newline
+{\ttfamily \#include $<$type\+\_\+traits$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+Include dependency graph for console.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{console_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespaceas}{as}
+\item 
+ \hyperlink{namespaceconsole}{console}
+\begin{DoxyCompactList}\small\item\em This namespace contains miscellaneous console utilities. \end{DoxyCompactList}\item 
+ \hyperlink{namespaceas_1_1console}{as\+::console}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{namespaceas_1_1console_ab2f5a531e43f4ee9e0f348f8aa5ce16c}{as\+::console\+::\+Colour} \{ \newline
+\hyperlink{namespaceas_1_1console_ab2f5a531e43f4ee9e0f348f8aa5ce16caee38e4d5dd68c4e440825018d549cb47}{as\+::console\+::\+Colour\+::\+Red} = 31, 
+\hyperlink{namespaceas_1_1console_ab2f5a531e43f4ee9e0f348f8aa5ce16cad382816a3cbeed082c9e216e7392eed1}{as\+::console\+::\+Colour\+::\+Green} = 32, 
+\hyperlink{namespaceas_1_1console_ab2f5a531e43f4ee9e0f348f8aa5ce16ca51e6cd92b6c45f9affdc158ecca2b8b8}{as\+::console\+::\+Colour\+::\+Yellow} = 33, 
+\hyperlink{namespaceas_1_1console_ab2f5a531e43f4ee9e0f348f8aa5ce16ca9594eec95be70e7b1710f730fdda33d9}{as\+::console\+::\+Colour\+::\+Blue} = 34, 
+\newline
+\hyperlink{namespaceas_1_1console_ab2f5a531e43f4ee9e0f348f8aa5ce16cab91cc2c1416fcca942b61c7ac5b1a9ac}{as\+::console\+::\+Colour\+::\+Magenta} = 35, 
+\hyperlink{namespaceas_1_1console_ab2f5a531e43f4ee9e0f348f8aa5ce16ca7a1920d61156abc05a60135aefe8bc67}{as\+::console\+::\+Colour\+::\+Default} = 39
+ \}\begin{DoxyCompactList}\small\item\em Console colour codes. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+constexpr std\+::underlying\+\_\+type$<$ Colour $>$\+::type \hyperlink{namespaceas_1_1console_ae7e08b7053b857ff4d798c9860680ac7}{as\+::console\+::colour\+\_\+code} (const Colour \&c)
+\begin{DoxyCompactList}\small\item\em Gives the numerical code corresponding to the colour. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{namespaceas_1_1console_a960fbc86f1ff964059acb44b12342199}{as\+::console\+::escape} (Colour c)
+\begin{DoxyCompactList}\small\item\em Gives a string with the escape codes relative to the colour. \end{DoxyCompactList}\item 
+std\+::ostream \& \hyperlink{namespaceas_1_1console_a05dafe6fcc36510443d4769ad4667652}{as\+::console\+::operator$<$$<$} (std\+::ostream \&out, const Colour \&c)
+\begin{DoxyCompactList}\small\item\em Prints a colour code. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\std\+::string \hyperlink{namespaceas_1_1console_a64c8640b4ced55636cb8926b1640d6e9}{as\+::console\+::colourise} (Colour c, const T \&what)
+\begin{DoxyCompactList}\small\item\em Colours some content and then resets the colour to default. \end{DoxyCompactList}\end{DoxyCompactItemize}

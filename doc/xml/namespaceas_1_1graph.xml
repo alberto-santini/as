@@ -1,0 +1,252 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespaceas_1_1graph" kind="namespace" language="C++">
+    <compoundname>as::graph</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceas_1_1graph_1ab93ee208eb116d3a3349c8de8cc91445" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class BoostGraph</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classas_1_1iterator__pair" kindref="compound">iterator_pair</ref>&lt; typename boost::graph_traits&lt; BoostGraph &gt;::vertex_iterator &gt;</type>
+        <definition>iterator_pair&lt;typename boost::graph_traits&lt;BoostGraph&gt;::vertex_iterator&gt; as::graph::vertices</definition>
+        <argsstring>(const BoostGraph &amp;graph)</argsstring>
+        <name>vertices</name>
+        <param>
+          <type>const BoostGraph &amp;</type>
+          <declname>graph</declname>
+        </param>
+        <briefdescription>
+<para>Gives an <ref refid="classas_1_1iterator__pair" kindref="compound">iterator_pair</ref> that can be used in range-based for loops to cycle through the vertices of a graph. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>BoostGraph</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The underlying graph type. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>graph</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The graph. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The <ref refid="classas_1_1iterator__pair" kindref="compound">iterator_pair</ref>. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/graph.h" line="25" column="1" bodyfile="src/graph.h" bodystart="25" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceas_1_1graph_1ae44b728c4acaf47bc2bb010831df9452" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class BoostGraph</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classas_1_1iterator__pair" kindref="compound">iterator_pair</ref>&lt; typename boost::graph_traits&lt; BoostGraph &gt;::edge_iterator &gt;</type>
+        <definition>iterator_pair&lt;typename boost::graph_traits&lt;BoostGraph&gt;::edge_iterator&gt; as::graph::edges</definition>
+        <argsstring>(const BoostGraph &amp;graph)</argsstring>
+        <name>edges</name>
+        <param>
+          <type>const BoostGraph &amp;</type>
+          <declname>graph</declname>
+        </param>
+        <briefdescription>
+<para>Gives an <ref refid="classas_1_1iterator__pair" kindref="compound">iterator_pair</ref> that can be used in range-based for loops to cycle through the edges of a graph. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>BoostGraph</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The underlying graph type. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>graph</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The graph. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The <ref refid="classas_1_1iterator__pair" kindref="compound">iterator_pair</ref>. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/graph.h" line="37" column="1" bodyfile="src/graph.h" bodystart="37" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceas_1_1graph_1a00143e178e97f0e9787802953d74a9f7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class BoostGraph</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classas_1_1iterator__pair" kindref="compound">iterator_pair</ref>&lt; typename boost::graph_traits&lt; BoostGraph &gt;::out_edge_iterator &gt;</type>
+        <definition>iterator_pair&lt;typename boost::graph_traits&lt;BoostGraph&gt;::out_edge_iterator&gt; as::graph::out_edges</definition>
+        <argsstring>(const typename boost::graph_traits&lt; BoostGraph &gt;::vertex_descriptor &amp;vertex, const BoostGraph &amp;graph)</argsstring>
+        <name>out_edges</name>
+        <param>
+          <type>const typename boost::graph_traits&lt; BoostGraph &gt;::vertex_descriptor &amp;</type>
+          <declname>vertex</declname>
+        </param>
+        <param>
+          <type>const BoostGraph &amp;</type>
+          <declname>graph</declname>
+        </param>
+        <briefdescription>
+<para>Gives an <ref refid="classas_1_1iterator__pair" kindref="compound">iterator_pair</ref> that can be used in range-based for loops to cycle through the out-edges of a vertex of a graph. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>BoostGraph</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The underlying graph type. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>graph</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The graph. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>vertex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vertex. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The <ref refid="classas_1_1iterator__pair" kindref="compound">iterator_pair</ref>. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/graph.h" line="50" column="1" bodyfile="src/graph.h" bodystart="50" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceas_1_1graph_1ab75a465b1d5869f0ea8b698f02b067aa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class BoostGraph</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classas_1_1iterator__pair" kindref="compound">iterator_pair</ref>&lt; typename boost::graph_traits&lt; BoostGraph &gt;::in_edge_iterator &gt;</type>
+        <definition>iterator_pair&lt;typename boost::graph_traits&lt;BoostGraph&gt;::in_edge_iterator&gt; as::graph::in_edges</definition>
+        <argsstring>(const typename boost::graph_traits&lt; BoostGraph &gt;::vertex_descriptor &amp;vertex, const BoostGraph &amp;graph)</argsstring>
+        <name>in_edges</name>
+        <param>
+          <type>const typename boost::graph_traits&lt; BoostGraph &gt;::vertex_descriptor &amp;</type>
+          <declname>vertex</declname>
+        </param>
+        <param>
+          <type>const BoostGraph &amp;</type>
+          <declname>graph</declname>
+        </param>
+        <briefdescription>
+<para>Gives an <ref refid="classas_1_1iterator__pair" kindref="compound">iterator_pair</ref> that can be used in range-based for loops to cycle through the in-edges of a vertex of a graph. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>BoostGraph</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The underlying graph type. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>graph</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The graph. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>vertex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vertex. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The <ref refid="classas_1_1iterator__pair" kindref="compound">iterator_pair</ref>. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/graph.h" line="66" column="1" bodyfile="src/graph.h" bodystart="66" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceas_1_1graph_1ac0b52ec1e242ac547157a42aac39e21a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class BoostGraph</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool as::graph::incident_to_the_same_vertex</definition>
+        <argsstring>(const typename boost::graph_traits&lt; BoostGraph &gt;::edge_descriptor &amp;edge1, const typename boost::graph_traits&lt; BoostGraph &gt;::edge_descriptor &amp;edge2, const BoostGraph &amp;graph)</argsstring>
+        <name>incident_to_the_same_vertex</name>
+        <param>
+          <type>const typename boost::graph_traits&lt; BoostGraph &gt;::edge_descriptor &amp;</type>
+          <declname>edge1</declname>
+        </param>
+        <param>
+          <type>const typename boost::graph_traits&lt; BoostGraph &gt;::edge_descriptor &amp;</type>
+          <declname>edge2</declname>
+        </param>
+        <param>
+          <type>const BoostGraph &amp;</type>
+          <declname>graph</declname>
+        </param>
+        <briefdescription>
+<para>Tells whether two edges of an undirected graph are incident to at least one common vertex. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>BoostGraph</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The underlying graph type. Must be undirected. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>edge1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first edge. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>edge2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The second edge. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>graph</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The graph. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True iff the two edges are incident to at least on common vertex. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/graph.h" line="83" column="1" bodyfile="src/graph.h" bodystart="83" bodyend="99"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/graph.h" line="16" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,58 @@
+\hypertarget{namespaceas_1_1tmp}{}\section{as\+:\+:tmp Namespace Reference}
+\label{namespaceas_1_1tmp}\index{as\+::tmp@{as\+::tmp}}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespaceas_1_1tmp_1_1details}{details}
+\end{DoxyCompactItemize}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structas_1_1tmp_1_1types}{types}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$template$<$ class... $>$ class Z, class... Ts$>$ }\\using \hyperlink{namespaceas_1_1tmp_a44a275bd3c66d727fb1b6f0179d49e19}{can\+\_\+apply} = \hyperlink{structas_1_1tmp_1_1details_1_1can__apply}{details\+::can\+\_\+apply}$<$ Z, \hyperlink{structas_1_1tmp_1_1types}{types}$<$ Ts... $>$ $>$
+\begin{DoxyCompactList}\small\item\em Checks if the application of arguments to a templated class is valid. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Container $>$ }\\using \hyperlink{namespaceas_1_1tmp_a893659f8b2cd22837c8f494a6f4a61d9}{is\+\_\+associative} = \hyperlink{structas_1_1tmp_1_1details_1_1is__associative}{details\+::is\+\_\+associative}$<$ Container $>$
+\begin{DoxyCompactList}\small\item\em This type will be true\+\_\+type if the container is associative (i.\+e. it has a member type \char`\"{}key\+\_\+type\char`\"{}) or false\+\_\+type otherwise. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{namespaceas_1_1tmp_a44a275bd3c66d727fb1b6f0179d49e19}\label{namespaceas_1_1tmp_a44a275bd3c66d727fb1b6f0179d49e19}} 
+\index{as\+::tmp@{as\+::tmp}!can\+\_\+apply@{can\+\_\+apply}}
+\index{can\+\_\+apply@{can\+\_\+apply}!as\+::tmp@{as\+::tmp}}
+\subsubsection{\texorpdfstring{can\+\_\+apply}{can\_apply}}
+{\footnotesize\ttfamily template$<$template$<$ class... $>$ class Z, class... Ts$>$ \\
+\hyperlink{namespaceas_1_1tmp_a44a275bd3c66d727fb1b6f0179d49e19}{as\+::tmp\+::can\+\_\+apply}}
+
+
+
+Checks if the application of arguments to a templated class is valid. 
+
+\hyperlink{namespaceas_1_1tmp_a44a275bd3c66d727fb1b6f0179d49e19}{can\+\_\+apply$<$my\+\_\+template, my\+\_\+arguments...$>$} will inherit from true\+\_\+type iff my\+\_\+template$<$my\+\_\+arguments...$>$ is a valid expression.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Z} & The templated class. \\
+\hline
+{\em Ts} & The template classes of {\ttfamily Z}. \\
+\hline
+\end{DoxyTemplParams}
+\mbox{\Hypertarget{namespaceas_1_1tmp_a893659f8b2cd22837c8f494a6f4a61d9}\label{namespaceas_1_1tmp_a893659f8b2cd22837c8f494a6f4a61d9}} 
+\index{as\+::tmp@{as\+::tmp}!is\+\_\+associative@{is\+\_\+associative}}
+\index{is\+\_\+associative@{is\+\_\+associative}!as\+::tmp@{as\+::tmp}}
+\subsubsection{\texorpdfstring{is\+\_\+associative}{is\_associative}}
+{\footnotesize\ttfamily template$<$class Container $>$ \\
+\hyperlink{namespaceas_1_1tmp_a893659f8b2cd22837c8f494a6f4a61d9}{as\+::tmp\+::is\+\_\+associative}}
+
+
+
+This type will be true\+\_\+type if the container is associative (i.\+e. it has a member type \char`\"{}key\+\_\+type\char`\"{}) or false\+\_\+type otherwise. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Container} & The container to check. \\
+\hline
+\end{DoxyTemplParams}

@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structas_1_1tmp_1_1details_1_1can__apply_3_01Z_00_01types_3_01Ts_8_8_8_01_4_00_01std_1_1void__t_d0380c4f39b26cf3dcf2ed45500ba357" kind="struct" language="C++" prot="public">
+    <compoundname>as::tmp::details::can_apply&lt; Z, types&lt; Ts... &gt;, std::void_t&lt; Z&lt; Ts... &gt; &gt; &gt;</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">true_type</basecompoundref>
+    <includes refid="can__apply_8h" local="no">can_apply.h</includes>
+    <templateparamlist>
+      <param>
+        <type>template&lt; class... &gt; class</type>
+        <declname>Z</declname>
+        <defname>Z</defname>
+      </param>
+      <param>
+        <type>class...</type>
+        <declname>Ts</declname>
+        <defname>Ts</defname>
+      </param>
+    </templateparamlist>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="7">
+        <label>true_type</label>
+      </node>
+      <node id="6">
+        <label>as::tmp::details::can_apply&lt; Z, types&lt; Ts... &gt;, std::void_t&lt; Z&lt; Ts... &gt; &gt; &gt;</label>
+        <link refid="structas_1_1tmp_1_1details_1_1can__apply_3_01Z_00_01types_3_01Ts_8_8_8_01_4_00_01std_1_1void__t_d0380c4f39b26cf3dcf2ed45500ba357"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="9">
+        <label>true_type</label>
+      </node>
+      <node id="8">
+        <label>as::tmp::details::can_apply&lt; Z, types&lt; Ts... &gt;, std::void_t&lt; Z&lt; Ts... &gt; &gt; &gt;</label>
+        <link refid="structas_1_1tmp_1_1details_1_1can__apply_3_01Z_00_01types_3_01Ts_8_8_8_01_4_00_01std_1_1void__t_d0380c4f39b26cf3dcf2ed45500ba357"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/can_apply.h" line="31" column="1" bodyfile="src/can_apply.h" bodystart="31" bodyend="32"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

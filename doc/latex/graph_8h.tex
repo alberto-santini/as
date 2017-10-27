@@ -1,0 +1,34 @@
+\hypertarget{graph_8h}{}\section{src/graph.h File Reference}
+\label{graph_8h}\index{src/graph.\+h@{src/graph.\+h}}
+{\ttfamily \#include \char`\"{}iterator\+\_\+pair.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$boost/graph/graph\+\_\+traits.\+hpp$>$}\newline
+{\ttfamily \#include $<$boost/graph/adjacency\+\_\+list.\+hpp$>$}\newline
+Include dependency graph for graph.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{graph_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespaceas}{as}
+\item 
+ \hyperlink{namespacegraph}{graph}
+\begin{DoxyCompactList}\small\item\em This namespace provides functions which work with boost graphs. \end{DoxyCompactList}\item 
+ \hyperlink{namespaceas_1_1graph}{as\+::graph}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Boost\+Graph $>$ }\\iterator\+\_\+pair$<$ typename boost\+::graph\+\_\+traits$<$ Boost\+Graph $>$\+::vertex\+\_\+iterator $>$ \hyperlink{namespaceas_1_1graph_ab93ee208eb116d3a3349c8de8cc91445}{as\+::graph\+::vertices} (const Boost\+Graph \&graph)
+\begin{DoxyCompactList}\small\item\em Gives an \hyperlink{classas_1_1iterator__pair}{iterator\+\_\+pair} that can be used in range-\/based for loops to cycle through the vertices of a graph. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Boost\+Graph $>$ }\\iterator\+\_\+pair$<$ typename boost\+::graph\+\_\+traits$<$ Boost\+Graph $>$\+::edge\+\_\+iterator $>$ \hyperlink{namespaceas_1_1graph_ae44b728c4acaf47bc2bb010831df9452}{as\+::graph\+::edges} (const Boost\+Graph \&graph)
+\begin{DoxyCompactList}\small\item\em Gives an \hyperlink{classas_1_1iterator__pair}{iterator\+\_\+pair} that can be used in range-\/based for loops to cycle through the edges of a graph. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Boost\+Graph $>$ }\\iterator\+\_\+pair$<$ typename boost\+::graph\+\_\+traits$<$ Boost\+Graph $>$\+::out\+\_\+edge\+\_\+iterator $>$ \hyperlink{namespaceas_1_1graph_a00143e178e97f0e9787802953d74a9f7}{as\+::graph\+::out\+\_\+edges} (const typename boost\+::graph\+\_\+traits$<$ Boost\+Graph $>$\+::vertex\+\_\+descriptor \&vertex, const Boost\+Graph \&graph)
+\begin{DoxyCompactList}\small\item\em Gives an \hyperlink{classas_1_1iterator__pair}{iterator\+\_\+pair} that can be used in range-\/based for loops to cycle through the out-\/edges of a vertex of a graph. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Boost\+Graph $>$ }\\iterator\+\_\+pair$<$ typename boost\+::graph\+\_\+traits$<$ Boost\+Graph $>$\+::in\+\_\+edge\+\_\+iterator $>$ \hyperlink{namespaceas_1_1graph_ab75a465b1d5869f0ea8b698f02b067aa}{as\+::graph\+::in\+\_\+edges} (const typename boost\+::graph\+\_\+traits$<$ Boost\+Graph $>$\+::vertex\+\_\+descriptor \&vertex, const Boost\+Graph \&graph)
+\begin{DoxyCompactList}\small\item\em Gives an \hyperlink{classas_1_1iterator__pair}{iterator\+\_\+pair} that can be used in range-\/based for loops to cycle through the in-\/edges of a vertex of a graph. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Boost\+Graph $>$ }\\bool \hyperlink{namespaceas_1_1graph_ac0b52ec1e242ac547157a42aac39e21a}{as\+::graph\+::incident\+\_\+to\+\_\+the\+\_\+same\+\_\+vertex} (const typename boost\+::graph\+\_\+traits$<$ Boost\+Graph $>$\+::edge\+\_\+descriptor \&edge1, const typename boost\+::graph\+\_\+traits$<$ Boost\+Graph $>$\+::edge\+\_\+descriptor \&edge2, const Boost\+Graph \&graph)
+\begin{DoxyCompactList}\small\item\em Tells whether two edges of an undirected graph are incident to at least one common vertex. \end{DoxyCompactList}\end{DoxyCompactItemize}

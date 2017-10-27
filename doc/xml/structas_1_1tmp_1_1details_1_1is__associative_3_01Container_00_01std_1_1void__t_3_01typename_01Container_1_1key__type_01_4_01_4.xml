@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structas_1_1tmp_1_1details_1_1is__associative_3_01Container_00_01std_1_1void__t_3_01typename_01Container_1_1key__type_01_4_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>as::tmp::details::is_associative&lt; Container, std::void_t&lt; typename Container::key_type &gt; &gt;</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">true_type</basecompoundref>
+    <includes refid="is__associative_8h" local="no">is_associative.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class Container</type>
+      </param>
+    </templateparamlist>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="15">
+        <label>std::true_type</label>
+      </node>
+      <node id="14">
+        <label>as::tmp::details::is_associative&lt; Container, std::void_t&lt; typename Container::key_type &gt; &gt;</label>
+        <link refid="structas_1_1tmp_1_1details_1_1is__associative_3_01Container_00_01std_1_1void__t_3_01typename_01Container_1_1key__type_01_4_01_4"/>
+        <childnode refid="15" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="17">
+        <label>std::true_type</label>
+      </node>
+      <node id="16">
+        <label>as::tmp::details::is_associative&lt; Container, std::void_t&lt; typename Container::key_type &gt; &gt;</label>
+        <link refid="structas_1_1tmp_1_1details_1_1is__associative_3_01Container_00_01std_1_1void__t_3_01typename_01Container_1_1key__type_01_4_01_4"/>
+        <childnode refid="17" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/is_associative.h" line="20" column="1" bodyfile="src/is_associative.h" bodystart="20" bodyend="20"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

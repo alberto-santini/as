@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structas_1_1tmp_1_1types" kind="struct" language="C++" prot="public">
+    <compoundname>as::tmp::types</compoundname>
+    <includes refid="can__apply_8h" local="no">can_apply.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class...</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structas_1_1tmp_1_1types_1a8fee0852270845709fbb995347ac8fa3" prot="public" static="no">
+        <type><ref refid="structas_1_1tmp_1_1types" kindref="compound">types</ref></type>
+        <definition>using as::tmp::types&lt;... &gt;::type =  types</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/can_apply.h" line="22" column="1" bodyfile="src/can_apply.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/can_apply.h" line="21" column="1" bodyfile="src/can_apply.h" bodystart="21" bodyend="23"/>
+    <listofallmembers>
+      <member refid="structas_1_1tmp_1_1types_1a8fee0852270845709fbb995347ac8fa3" prot="public" virt="non-virtual"><scope>as::tmp::types</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

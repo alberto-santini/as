@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="as__version_8h" kind="file" language="C++">
+    <compoundname>as_version.h</compoundname>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="as__version_8h_1a4655bc98bf611ce7a8a37250ad8cc943" prot="public" static="no">
+        <name>AS_VERSION_MAJOR</name>
+        <initializer>0</initializer>
+        <briefdescription>
+<para>Major version of the as library. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/as_version.h" line="15" column="9" bodyfile="src/as_version.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="as__version_8h_1ac016426c7e016d0c3673cbbcc3db3083" prot="public" static="no">
+        <name>AS_VERSION_MINOR</name>
+        <initializer>0</initializer>
+        <briefdescription>
+<para>Minor version of the as library. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/as_version.h" line="20" column="9" bodyfile="src/as_version.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="as__version_8h_1a6a52de62e56ab76f01f20e546c97240f" prot="public" static="no">
+        <name>AS_VERSION_BUILD</name>
+        <initializer>1</initializer>
+        <briefdescription>
+<para>Build version of the as library. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/as_version.h" line="25" column="9" bodyfile="src/as_version.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Keeps track of the as library major, minor, and build version numbers. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>alberto<sp/>on<sp/>17/10/17.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="preprocessor">#ifndef<sp/>AS_AS_VERSION_H_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AS_AS_VERSION_H_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="as__version_8h_1a4655bc98bf611ce7a8a37250ad8cc943" refkind="member"><highlight class="preprocessor">#define<sp/>AS_VERSION_MAJOR<sp/><sp/><sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="as__version_8h_1ac016426c7e016d0c3673cbbcc3db3083" refkind="member"><highlight class="preprocessor">#define<sp/>AS_VERSION_MINOR<sp/><sp/><sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="as__version_8h_1a6a52de62e56ab76f01f20e546c97240f" refkind="member"><highlight class="preprocessor">#define<sp/>AS_VERSION_BUILD<sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//AS_AS_VERSION_H_H</highlight></codeline>
+    </programlisting>
+    <location file="src/as_version.h"/>
+  </compounddef>
+</doxygen>

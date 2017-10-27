@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structas_1_1tmp_1_1details_1_1is__associative" kind="struct" language="C++" prot="public">
+    <compoundname>as::tmp::details::is_associative</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">false_type</basecompoundref>
+    <includes refid="is__associative_8h" local="no">is_associative.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class</type>
+      </param>
+      <param>
+        <type>class</type>
+        <defval>std::void_t&lt;&gt;</defval>
+      </param>
+    </templateparamlist>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="11">
+        <label>false_type</label>
+      </node>
+      <node id="10">
+        <label>as::tmp::details::is_associative&lt; class, class &gt;</label>
+        <link refid="structas_1_1tmp_1_1details_1_1is__associative"/>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="13">
+        <label>false_type</label>
+      </node>
+      <node id="12">
+        <label>as::tmp::details::is_associative&lt; class, class &gt;</label>
+        <link refid="structas_1_1tmp_1_1details_1_1is__associative"/>
+        <childnode refid="13" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/is_associative.h" line="17" column="1" bodyfile="src/is_associative.h" bodystart="17" bodyend="17"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

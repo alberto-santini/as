@@ -1,0 +1,44 @@
+\hypertarget{containers_8h}{}\section{src/containers.h File Reference}
+\label{containers_8h}\index{src/containers.\+h@{src/containers.\+h}}
+{\ttfamily \#include \char`\"{}can\+\_\+apply.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}is\+\_\+associative.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$set$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+Include dependency graph for containers.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{containers_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespaceas}{as}
+\item 
+ \hyperlink{namespaceas_1_1details}{as\+::details}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Container , class T $>$ }\\using \hyperlink{namespaceas_a9bd788709567003423247a9db4ba1074}{as\+::count\+\_\+method\+\_\+type} = decltype(std\+::declval$<$ Container $>$().count(std\+::declval$<$ T $>$()))
+\begin{DoxyCompactList}\small\item\em This is the type of a generic .count() method for a container. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Container , class T $>$ }\\using \hyperlink{namespaceas_a9e0fcaa3ddb46647d8979282465685da}{as\+::has\+\_\+count\+\_\+method} = tmp\+::can\+\_\+apply$<$ count\+\_\+method\+\_\+type, Container, T $>$
+\begin{DoxyCompactList}\small\item\em This will inherit from true\+\_\+type iff class Container has an appopriate .count() method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Container , class T $>$ }\\bool \hyperlink{namespaceas_1_1details_aaa1e2c1c370bddd0020956d333bbef26}{as\+::details\+::contains} (std\+::false\+\_\+type, const Container \&container, const T \&element)
+\item 
+{\footnotesize template$<$class Container , class T $>$ }\\bool \hyperlink{namespaceas_1_1details_aa25b4a9ab19e3b807bbd58dc208d2607}{as\+::details\+::contains} (std\+::true\+\_\+type, const Container \&container, const T \&element)
+\item 
+{\footnotesize template$<$class Container , class T $>$ }\\bool \hyperlink{namespaceas_a49cf7ae4239ab51e54f099d30a84811a}{as\+::contains} (const Container \&container, const T \&element)
+\begin{DoxyCompactList}\small\item\em Tells whether a container contains a certain element. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Value $>$ }\\std\+::ostream \& \hyperlink{namespaceas_1_1details_a2e51ab78c6720ab244aa4cd08c5e7b55}{as\+::details\+::iterated\+\_\+value} (const Value \&value, std\+::ostream \&out)
+\item 
+{\footnotesize template$<$class Key , class Value $>$ }\\std\+::ostream \& \hyperlink{namespaceas_1_1details_abb914e2826b38ed8ae4d2f8004843689}{as\+::details\+::iterated\+\_\+value} (const std\+::pair$<$ Key, Value $>$ \&key\+\_\+val, std\+::ostream \&out)
+\item 
+{\footnotesize template$<$class Container $>$ }\\void \hyperlink{namespaceas_aab6569c28591bebed9bd29b40c772bfc}{as\+::join\+\_\+and\+\_\+print} (const Container \&container, std\+::ostream \&out=std\+::cout, std\+::string separator=\char`\"{}, \char`\"{})
+\begin{DoxyCompactList}\small\item\em Joins the elements of a container using the separator, and prints the result to an output stream. \end{DoxyCompactList}\end{DoxyCompactItemize}

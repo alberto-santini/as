@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structas_1_1and__die" kind="struct" language="C++" prot="public">
+    <compoundname>as::and_die</compoundname>
+    <includes refid="and__die_8h" local="no">and_die.h</includes>
+    <briefdescription>
+<para>A struct used to signal that the programme should be terminated immediately (die). </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/and_die.h" line="15" column="1" bodyfile="src/and_die.h" bodystart="15" bodyend="15"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -10,44 +10,41 @@
 #include <boost/graph/adjacency_list.hpp>
 
 namespace as {
-    /**
-     * This namespace provides functions which work with boost graphs.
+    /** @namespace  graph
+     *  @brief      This namespace provides functions which work with boost graphs.
      */
     namespace graph {
-        /**
-         * Gives an iterator_pair that can be used in range-based for loops to cycle
-         * through the vertices of a graph.
+        /** @brief  Gives an \ref iterator_pair that can be used in range-based for loops to cycle
+         *          through the vertices of a graph.
          *
-         * @tparam BoostGraph   The underlying graph type.
-         * @param graph         The graph.
-         * @return              The iterator_pair.
+         *  @tparam BoostGraph   The underlying graph type.
+         *  @param  graph        The graph.
+         *  @return              The iterator_pair.
          */
         template<class BoostGraph>
         inline iterator_pair<typename boost::graph_traits<BoostGraph>::vertex_iterator> vertices(const BoostGraph& graph) {
             return make_iter(boost::vertices(graph));
         }
 
-        /**
-         * Gives an iterator_pair that can be used in range-based for loops to cycle
-         * through the edges of a graph.
+        /** @brief  Gives an \ref iterator_pair that can be used in range-based for loops to cycle
+         *          through the edges of a graph.
          *
-         * @tparam BoostGraph   The underlying graph type.
-         * @param graph         The graph.
-         * @return              The iterator_pair.
+         *  @tparam BoostGraph   The underlying graph type.
+         *  @param graph         The graph.
+         *  @return              The iterator_pair.
          */
         template<class BoostGraph>
         inline iterator_pair<typename boost::graph_traits<BoostGraph>::edge_iterator> edges(const BoostGraph& graph) {
             return make_iter(boost::edges(graph));
         }
 
-        /**
-         * Gives an iterator_pair that can be used in range-based for loops to cycle
-         * through the out-edges of a vertex of a graph.
+        /** @brief  Gives an \ref iterator_pair that can be used in range-based for loops to cycle
+         *          through the out-edges of a vertex of a graph.
          *
-         * @tparam BoostGraph   The underlying graph type.
-         * @param graph         The graph.
-         * @param vertex        The vertex.
-         * @return              The iterator_pair.
+         *  @tparam BoostGraph   The underlying graph type.
+         *  @param  graph        The graph.
+         *  @param  vertex       The vertex.
+         *  @return              The iterator_pair.
          */
         template<class BoostGraph>
         inline iterator_pair<typename boost::graph_traits<BoostGraph>::out_edge_iterator> out_edges(
@@ -57,14 +54,13 @@ namespace as {
             return make_iter(boost::out_edges(vertex, graph));
         }
 
-        /**
-         * Gives an iterator_pair that can be used in range-based for loops to cycle
-         * through the in-edges of a vertex of a graph.
+        /** @brief  Gives an \ref iterator_pair that can be used in range-based for loops to cycle
+         *          through the in-edges of a vertex of a graph.
          *
-         * @tparam BoostGraph   The underlying graph type.
-         * @param graph         The graph.
-         * @param vertex        The vertex.
-         * @return              The iterator_pair.
+         *  @tparam BoostGraph   The underlying graph type.
+         *  @param  graph        The graph.
+         *  @param  vertex       The vertex.
+         *  @return              The iterator_pair.
          */
         template<class BoostGraph>
         inline iterator_pair<typename boost::graph_traits<BoostGraph>::in_edge_iterator> in_edges(
@@ -74,15 +70,14 @@ namespace as {
             return make_iter(boost::in_edges(vertex, graph));
         }
 
-        /**
-         * Tells whether two edges of an undirected graph are incident to
-         * at least one common vertex.
+        /** @brief  Tells whether two edges of an undirected graph are incident to
+         *          at least one common vertex.
          *
-         * @tparam BoostGraph   The underlying graph type. Must be undirected.
-         * @param edge1         The first edge.
-         * @param edge2         The second edge.
-         * @param graph         The graph.
-         * @return              True iff the two edges are incident to at least on common vertex.
+         *  @tparam BoostGraph   The underlying graph type. Must be undirected.
+         *  @param  edge1        The first edge.
+         *  @param  edge2        The second edge.
+         *  @param  graph        The graph.
+         *  @return              True iff the two edges are incident to at least on common vertex.
          */
         template<class BoostGraph>
         inline bool incident_to_the_same_vertex(
