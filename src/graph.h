@@ -58,8 +58,8 @@ namespace as {
          *          through the in-edges of a vertex of a graph.
          *
          *  @tparam BoostGraph   The underlying graph type.
-         *  @param  graph        The graph.
          *  @param  vertex       The vertex.
+         *  @param  graph        The graph.
          *  @return              The iterator_pair.
          */
         template<class BoostGraph>
@@ -68,6 +68,29 @@ namespace as {
             const BoostGraph& graph
         ) {
             return make_iter(boost::in_edges(vertex, graph));
+        }
+
+        /** @brief  Gives an \ref iterator_pair that can be used in range-based for loops to cycle
+         *          through the vertices adjacent to a given vertex, in an undirected graph.
+         *
+         *          Unlike boost::adjacent_vertices, this function statically checks that the
+         *          graph is undirected.
+         *
+         *  @tparam BoostGraph      The underlying graph type.
+         *  @param vertex           The vertex.
+         *  @param graph            The graph.
+         *  @return                 The iterator_pair.
+         */
+        template<class BoostGraph>
+        inline iterator_pair<typename boost::graph_traits<BoostGraph>::adjacency_iterator> neighbours(
+            const typename boost::graph_traits<BoostGraph>::vertex_descriptor& vertex,
+            const BoostGraph& graph
+        ) {
+            static_assert(
+                std::is_same<typename boost::graph_traits<BoostGraph>::directed_category, boost::undirected_tag>::value,
+                "neighbours is intended to be used with undirected graphs."
+            );
+            return make_iter(boost::adjacent_vertices(vertex, graph));
         }
 
         /** @brief  Tells whether two edges of an undirected graph are incident to
