@@ -11,6 +11,7 @@
     <innerfile refid="graph_8h">graph.h</innerfile>
     <innerfile refid="is__associative_8h">is_associative.h</innerfile>
     <innerfile refid="iterator__pair_8h">iterator_pair.h</innerfile>
+    <innerfile refid="random_8h">random.h</innerfile>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

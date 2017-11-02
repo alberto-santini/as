@@ -162,17 +162,17 @@
 </parameterlist>
 <parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername>graph</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The graph. </para></parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
 <parametername>vertex</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>The vertex. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>graph</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The graph. </para></parameterdescription>
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>The <ref refid="classas_1_1iterator__pair" kindref="compound">iterator_pair</ref>. </para></simplesect>
@@ -180,6 +180,56 @@
         <inbodydescription>
         </inbodydescription>
         <location file="src/graph.h" line="66" column="1" bodyfile="src/graph.h" bodystart="66" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceas_1_1graph_1a7a86ebb168cf6ac390a5bd86d3380350" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class BoostGraph</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classas_1_1iterator__pair" kindref="compound">iterator_pair</ref>&lt; typename boost::graph_traits&lt; BoostGraph &gt;::adjacency_iterator &gt;</type>
+        <definition>iterator_pair&lt;typename boost::graph_traits&lt;BoostGraph&gt;::adjacency_iterator&gt; as::graph::neighbours</definition>
+        <argsstring>(const typename boost::graph_traits&lt; BoostGraph &gt;::vertex_descriptor &amp;vertex, const BoostGraph &amp;graph)</argsstring>
+        <name>neighbours</name>
+        <param>
+          <type>const typename boost::graph_traits&lt; BoostGraph &gt;::vertex_descriptor &amp;</type>
+          <declname>vertex</declname>
+        </param>
+        <param>
+          <type>const BoostGraph &amp;</type>
+          <declname>graph</declname>
+        </param>
+        <briefdescription>
+<para>Gives an <ref refid="classas_1_1iterator__pair" kindref="compound">iterator_pair</ref> that can be used in range-based for loops to cycle through the vertices adjacent to a given vertex, in an undirected graph. </para>        </briefdescription>
+        <detaileddescription>
+<para>Unlike boost::adjacent_vertices, this function statically checks that the graph is undirected.</para><para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>BoostGraph</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The underlying graph type. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>vertex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vertex. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>graph</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The graph. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The <ref refid="classas_1_1iterator__pair" kindref="compound">iterator_pair</ref>. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/graph.h" line="85" column="1" bodyfile="src/graph.h" bodystart="85" bodyend="94"/>
       </memberdef>
       <memberdef kind="function" id="namespaceas_1_1graph_1ac0b52ec1e242ac547157a42aac39e21a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <templateparamlist>
@@ -240,7 +290,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/graph.h" line="83" column="1" bodyfile="src/graph.h" bodystart="83" bodyend="99"/>
+        <location file="src/graph.h" line="106" column="1" bodyfile="src/graph.h" bodystart="106" bodyend="122"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

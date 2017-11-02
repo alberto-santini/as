@@ -5,6 +5,12 @@
     <includes local="no">ostream</includes>
     <includes local="no">cstdlib</includes>
     <incdepgraph>
+      <node id="1">
+        <label>ostream</label>
+      </node>
+      <node id="2">
+        <label>cstdlib</label>
+      </node>
       <node id="0">
         <label>src/and_die.h</label>
         <link refid="and__die_8h"/>
@@ -12,12 +18,6 @@
         </childnode>
         <childnode refid="2" relation="include">
         </childnode>
-      </node>
-      <node id="1">
-        <label>ostream</label>
-      </node>
-      <node id="2">
-        <label>cstdlib</label>
       </node>
     </incdepgraph>
     <innerclass refid="structas_1_1and__die" prot="public">as::and_die</innerclass>

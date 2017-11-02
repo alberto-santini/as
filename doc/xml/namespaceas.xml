@@ -264,6 +264,142 @@
         </inbodydescription>
         <location file="src/iterator_pair.h" line="60" column="1" bodyfile="src/iterator_pair.h" bodystart="60" bodyend="62"/>
       </memberdef>
+      <memberdef kind="function" id="namespaceas_1a4c9b0919bddf60796e9cc81ecd7d5bb2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::mt19937</type>
+        <definition>std::mt19937 as::get_seeded_mt</definition>
+        <argsstring>()</argsstring>
+        <name>get_seeded_mt</name>
+        <briefdescription>
+<para>Gets a properly seeded Mersenne Twister prng. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A seeded instance of std::mt19937. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/random.h" line="18" column="1" bodyfile="src/random.h" bodystart="18" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceas_1a001b8303767234a8c93de5cb530a8f3d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Container</type>
+          </param>
+          <param>
+            <type>class Prng</type>
+            <defval>std::mt19937</defval>
+          </param>
+        </templateparamlist>
+        <type>Container</type>
+        <definition>Container as::sample</definition>
+        <argsstring>(const Container container, typename Container::size_type how_many, Prng &amp;&amp;prng)</argsstring>
+        <name>sample</name>
+        <param>
+          <type>const Container</type>
+          <declname>container</declname>
+        </param>
+        <param>
+          <type>typename Container::size_type</type>
+          <declname>how_many</declname>
+        </param>
+        <param>
+          <type>Prng &amp;&amp;</type>
+          <declname>prng</declname>
+        </param>
+        <briefdescription>
+<para>Gets samples from a container. The samples are guaranteed to be unique. If we are requesting more samples than elements in the container, the request is ignored, and instead a random permutation of the container is returned. </para>        </briefdescription>
+        <detaileddescription>
+<para>A copy of the input container is made, so this method might be unsuitable for particularly large containers.</para><para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Container</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The container type. Must be copiable, implement begin() and end(), and constructible from a pair of iterators. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Prng</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The pseudo-random number generator type to use. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>container</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The container to sample. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>how_many</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of samples to extract. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>prng</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The pseudo-random number generator. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A container with how_many elements from container. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/random.h" line="47" column="1" bodyfile="src/random.h" bodystart="47" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceas_1ab2b3e64b4dee388f0ec34e41ae0b3e98" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Container</type>
+          </param>
+        </templateparamlist>
+        <type>Container</type>
+        <definition>Container as::sample</definition>
+        <argsstring>(const Container container, typename Container::size_type how_many)</argsstring>
+        <name>sample</name>
+        <param>
+          <type>const Container</type>
+          <declname>container</declname>
+        </param>
+        <param>
+          <type>typename Container::size_type</type>
+          <declname>how_many</declname>
+        </param>
+        <briefdescription>
+<para>Gets samples from a container. The samples are guaranteed to be unique. If we are requesting more samples than elements in the container, the request is ignored, and instead a random permutation of the container is returned. </para>        </briefdescription>
+        <detaileddescription>
+<para>A copy of the input container is made, so this method might be unsuitable for particularly large containers. A Mersenne Twister pseudo-random number generator is built, seeded and used to extract the samples.</para><para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Container</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The container type. Must be copiable, implement begin() and end(), and constructible from a pair of iterators. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>container</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The container to sample. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>how_many</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of samples to extract. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A container with how_many elements from container. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/random.h" line="94" column="1" bodyfile="src/random.h" bodystart="94" bodyend="96"/>
+      </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>

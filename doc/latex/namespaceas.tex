@@ -37,7 +37,13 @@ std\+::ostream \& \hyperlink{namespaceas_a4d891ae352512e1c506d6cd01ff1422c}{oper
 void \hyperlink{namespaceas_a359f2d209e5ec052ec0d2752a589802d}{skip\+\_\+lines} (std\+::ifstream \&stream, std\+::size\+\_\+t how\+\_\+many=1u)
 \begin{DoxyCompactList}\small\item\em Skips a certain number of lines from an input file stream. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Iterator $>$ }\\\hyperlink{classas_1_1iterator__pair}{iterator\+\_\+pair}$<$ Iterator $>$ \hyperlink{namespaceas_a4d4e0fb99b7cc564adaa85b693392070}{make\+\_\+iter} (std\+::pair$<$ Iterator, Iterator $>$ iters)
-\begin{DoxyCompactList}\small\item\em Gives an \hyperlink{classas_1_1iterator__pair}{iterator\+\_\+pair} object constructed from the beginning and end iterators, given as a pair. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Gives an \hyperlink{classas_1_1iterator__pair}{iterator\+\_\+pair} object constructed from the beginning and end iterators, given as a pair. \end{DoxyCompactList}\item 
+std\+::mt19937 \hyperlink{namespaceas_a4c9b0919bddf60796e9cc81ecd7d5bb2}{get\+\_\+seeded\+\_\+mt} ()
+\begin{DoxyCompactList}\small\item\em Gets a properly seeded Mersenne Twister prng. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Container , class Prng  = std\+::mt19937$>$ }\\Container \hyperlink{namespaceas_a001b8303767234a8c93de5cb530a8f3d}{sample} (const Container container, typename Container\+::size\+\_\+type how\+\_\+many, Prng \&\&prng)
+\begin{DoxyCompactList}\small\item\em Gets samples from a container. The samples are guaranteed to be unique. If we are requesting more samples than elements in the container, the request is ignored, and instead a random permutation of the container is returned. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Container $>$ }\\Container \hyperlink{namespaceas_ab2b3e64b4dee388f0ec34e41ae0b3e98}{sample} (const Container container, typename Container\+::size\+\_\+type how\+\_\+many)
+\begin{DoxyCompactList}\small\item\em Gets samples from a container. The samples are guaranteed to be unique. If we are requesting more samples than elements in the container, the request is ignored, and instead a random permutation of the container is returned. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Typedef Documentation}
@@ -95,6 +101,19 @@ The standard library\textquotesingle{}s functions to find elements (e.\+g. std\+
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 True iff {\ttfamily element} was found in {\ttfamily container}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespaceas_a4c9b0919bddf60796e9cc81ecd7d5bb2}\label{namespaceas_a4c9b0919bddf60796e9cc81ecd7d5bb2}} 
+\index{as@{as}!get\+\_\+seeded\+\_\+mt@{get\+\_\+seeded\+\_\+mt}}
+\index{get\+\_\+seeded\+\_\+mt@{get\+\_\+seeded\+\_\+mt}!as@{as}}
+\subsubsection{\texorpdfstring{get\+\_\+seeded\+\_\+mt()}{get\_seeded\_mt()}}
+{\footnotesize\ttfamily std\+::mt19937 as\+::get\+\_\+seeded\+\_\+mt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets a properly seeded Mersenne Twister prng. 
+
+\begin{DoxyReturn}{Returns}
+A seeded instance of std\+::mt19937. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{namespaceas_aab6569c28591bebed9bd29b40c772bfc}\label{namespaceas_aab6569c28591bebed9bd29b40c772bfc}} 
 \index{as@{as}!join\+\_\+and\+\_\+print@{join\+\_\+and\+\_\+print}}
@@ -174,6 +193,66 @@ It adds a new line before terminating the programme.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 In theory the same output stream, but in practice the programme dies and nothing is returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespaceas_a001b8303767234a8c93de5cb530a8f3d}\label{namespaceas_a001b8303767234a8c93de5cb530a8f3d}} 
+\index{as@{as}!sample@{sample}}
+\index{sample@{sample}!as@{as}}
+\subsubsection{\texorpdfstring{sample()}{sample()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class Container , class Prng  = std\+::mt19937$>$ \\
+Container as\+::sample (\begin{DoxyParamCaption}\item[{const Container}]{container,  }\item[{typename Container\+::size\+\_\+type}]{how\+\_\+many,  }\item[{Prng \&\&}]{prng }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets samples from a container. The samples are guaranteed to be unique. If we are requesting more samples than elements in the container, the request is ignored, and instead a random permutation of the container is returned. 
+
+A copy of the input container is made, so this method might be unsuitable for particularly large containers.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Container} & The container type. Must be copiable, implement begin() and end(), and constructible from a pair of iterators. \\
+\hline
+{\em Prng} & The pseudo-\/random number generator type to use. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em container} & The container to sample. \\
+\hline
+{\em how\+\_\+many} & The number of samples to extract. \\
+\hline
+{\em prng} & The pseudo-\/random number generator. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A container with how\+\_\+many elements from container. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespaceas_ab2b3e64b4dee388f0ec34e41ae0b3e98}\label{namespaceas_ab2b3e64b4dee388f0ec34e41ae0b3e98}} 
+\index{as@{as}!sample@{sample}}
+\index{sample@{sample}!as@{as}}
+\subsubsection{\texorpdfstring{sample()}{sample()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class Container $>$ \\
+Container as\+::sample (\begin{DoxyParamCaption}\item[{const Container}]{container,  }\item[{typename Container\+::size\+\_\+type}]{how\+\_\+many }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets samples from a container. The samples are guaranteed to be unique. If we are requesting more samples than elements in the container, the request is ignored, and instead a random permutation of the container is returned. 
+
+A copy of the input container is made, so this method might be unsuitable for particularly large containers. A Mersenne Twister pseudo-\/random number generator is built, seeded and used to extract the samples.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Container} & The container type. Must be copiable, implement begin() and end(), and constructible from a pair of iterators. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em container} & The container to sample. \\
+\hline
+{\em how\+\_\+many} & The number of samples to extract. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A container with how\+\_\+many elements from container. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{namespaceas_a359f2d209e5ec052ec0d2752a589802d}\label{namespaceas_a359f2d209e5ec052ec0d2752a589802d}} 
 \index{as@{as}!skip\+\_\+lines@{skip\+\_\+lines}}

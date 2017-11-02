@@ -11,6 +11,8 @@
 \begin{DoxyCompactList}\small\item\em Gives an \hyperlink{classas_1_1iterator__pair}{iterator\+\_\+pair} that can be used in range-\/based for loops to cycle through the out-\/edges of a vertex of a graph. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Boost\+Graph $>$ }\\\hyperlink{classas_1_1iterator__pair}{iterator\+\_\+pair}$<$ typename boost\+::graph\+\_\+traits$<$ Boost\+Graph $>$\+::in\+\_\+edge\+\_\+iterator $>$ \hyperlink{namespaceas_1_1graph_ab75a465b1d5869f0ea8b698f02b067aa}{in\+\_\+edges} (const typename boost\+::graph\+\_\+traits$<$ Boost\+Graph $>$\+::vertex\+\_\+descriptor \&vertex, const Boost\+Graph \&graph)
 \begin{DoxyCompactList}\small\item\em Gives an \hyperlink{classas_1_1iterator__pair}{iterator\+\_\+pair} that can be used in range-\/based for loops to cycle through the in-\/edges of a vertex of a graph. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Boost\+Graph $>$ }\\\hyperlink{classas_1_1iterator__pair}{iterator\+\_\+pair}$<$ typename boost\+::graph\+\_\+traits$<$ Boost\+Graph $>$\+::adjacency\+\_\+iterator $>$ \hyperlink{namespaceas_1_1graph_a7a86ebb168cf6ac390a5bd86d3380350}{neighbours} (const typename boost\+::graph\+\_\+traits$<$ Boost\+Graph $>$\+::vertex\+\_\+descriptor \&vertex, const Boost\+Graph \&graph)
+\begin{DoxyCompactList}\small\item\em Gives an \hyperlink{classas_1_1iterator__pair}{iterator\+\_\+pair} that can be used in range-\/based for loops to cycle through the vertices adjacent to a given vertex, in an undirected graph. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Boost\+Graph $>$ }\\bool \hyperlink{namespaceas_1_1graph_ac0b52ec1e242ac547157a42aac39e21a}{incident\+\_\+to\+\_\+the\+\_\+same\+\_\+vertex} (const typename boost\+::graph\+\_\+traits$<$ Boost\+Graph $>$\+::edge\+\_\+descriptor \&edge1, const typename boost\+::graph\+\_\+traits$<$ Boost\+Graph $>$\+::edge\+\_\+descriptor \&edge2, const Boost\+Graph \&graph)
 \begin{DoxyCompactList}\small\item\em Tells whether two edges of an undirected graph are incident to at least one common vertex. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -58,9 +60,9 @@ Gives an \hyperlink{classas_1_1iterator__pair}{iterator\+\_\+pair} that can be u
 \end{DoxyTemplParams}
 
 \begin{DoxyParams}{Parameters}
-{\em graph} & The graph. \\
-\hline
 {\em vertex} & The vertex. \\
+\hline
+{\em graph} & The graph. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -93,6 +95,34 @@ Tells whether two edges of an undirected graph are incident to at least one comm
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 True iff the two edges are incident to at least on common vertex. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespaceas_1_1graph_a7a86ebb168cf6ac390a5bd86d3380350}\label{namespaceas_1_1graph_a7a86ebb168cf6ac390a5bd86d3380350}} 
+\index{as\+::graph@{as\+::graph}!neighbours@{neighbours}}
+\index{neighbours@{neighbours}!as\+::graph@{as\+::graph}}
+\subsubsection{\texorpdfstring{neighbours()}{neighbours()}}
+{\footnotesize\ttfamily template$<$class Boost\+Graph $>$ \\
+\hyperlink{classas_1_1iterator__pair}{iterator\+\_\+pair}$<$typename boost\+::graph\+\_\+traits$<$Boost\+Graph$>$\+::adjacency\+\_\+iterator$>$ as\+::graph\+::neighbours (\begin{DoxyParamCaption}\item[{const typename boost\+::graph\+\_\+traits$<$ Boost\+Graph $>$\+::vertex\+\_\+descriptor \&}]{vertex,  }\item[{const Boost\+Graph \&}]{graph }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gives an \hyperlink{classas_1_1iterator__pair}{iterator\+\_\+pair} that can be used in range-\/based for loops to cycle through the vertices adjacent to a given vertex, in an undirected graph. 
+
+Unlike boost\+::adjacent\+\_\+vertices, this function statically checks that the graph is undirected.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Boost\+Graph} & The underlying graph type. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em vertex} & The vertex. \\
+\hline
+{\em graph} & The graph. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{classas_1_1iterator__pair}{iterator\+\_\+pair}. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{namespaceas_1_1graph_a00143e178e97f0e9787802953d74a9f7}\label{namespaceas_1_1graph_a00143e178e97f0e9787802953d74a9f7}} 
 \index{as\+::graph@{as\+::graph}!out\+\_\+edges@{out\+\_\+edges}}

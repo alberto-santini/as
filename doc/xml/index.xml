@@ -28,6 +28,9 @@
     <member refid="namespaceas_1aab6569c28591bebed9bd29b40c772bfc" kind="function"><name>join_and_print</name></member>
     <member refid="namespaceas_1a359f2d209e5ec052ec0d2752a589802d" kind="function"><name>skip_lines</name></member>
     <member refid="namespaceas_1a4d4e0fb99b7cc564adaa85b693392070" kind="function"><name>make_iter</name></member>
+    <member refid="namespaceas_1a4c9b0919bddf60796e9cc81ecd7d5bb2" kind="function"><name>get_seeded_mt</name></member>
+    <member refid="namespaceas_1a001b8303767234a8c93de5cb530a8f3d" kind="function"><name>sample</name></member>
+    <member refid="namespaceas_1ab2b3e64b4dee388f0ec34e41ae0b3e98" kind="function"><name>sample</name></member>
   </compound>
   <compound refid="namespaceas_1_1console" kind="namespace"><name>as::console</name>
     <member refid="namespaceas_1_1console_1ab2f5a531e43f4ee9e0f348f8aa5ce16c" kind="enum"><name>Colour</name></member>
@@ -56,6 +59,7 @@
     <member refid="namespaceas_1_1graph_1ae44b728c4acaf47bc2bb010831df9452" kind="function"><name>edges</name></member>
     <member refid="namespaceas_1_1graph_1a00143e178e97f0e9787802953d74a9f7" kind="function"><name>out_edges</name></member>
     <member refid="namespaceas_1_1graph_1ab75a465b1d5869f0ea8b698f02b067aa" kind="function"><name>in_edges</name></member>
+    <member refid="namespaceas_1_1graph_1a7a86ebb168cf6ac390a5bd86d3380350" kind="function"><name>neighbours</name></member>
     <member refid="namespaceas_1_1graph_1ac0b52ec1e242ac547157a42aac39e21a" kind="function"><name>incident_to_the_same_vertex</name></member>
   </compound>
   <compound refid="namespaceas_1_1tmp" kind="namespace"><name>as::tmp</name>
@@ -90,6 +94,8 @@
   <compound refid="is__associative_8h" kind="file"><name>is_associative.h</name>
   </compound>
   <compound refid="iterator__pair_8h" kind="file"><name>iterator_pair.h</name>
+  </compound>
+  <compound refid="random_8h" kind="file"><name>random.h</name>
   </compound>
   <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>src</name>
   </compound>

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['skip_5flines',['skip_lines',['../namespaceas.html#a359f2d209e5ec052ec0d2752a589802d',1,'as']]]
+  ['random_2eh',['random.h',['../random_8h.html',1,'']]],
+  ['red',['Red',['../namespaceas_1_1console.html#ab2f5a531e43f4ee9e0f348f8aa5ce16caee38e4d5dd68c4e440825018d549cb47',1,'as::console']]]
 ];
