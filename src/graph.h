@@ -120,6 +120,52 @@ namespace as {
 
             return (s1 == s2 || s1 == t2 || t1 == s2 || t1 == t2);
         }
+
+        /** @brief  Tells whether a vertex is an extreme of an edge, i.e.
+         *          if it is either its source or its target. For an undirected
+         *          graph, therefore, it tells whether the edge is incident
+         *          to the vertex.
+         *
+         *  @tparam BoostGraph  The underlying graph type. Can be both directed or undirected.
+         *  @param  vertex      The vertex.
+         *  @param  edge        The edge.
+         *  @param  graph       The graph.
+         *  @return             True iff the vertex is an extreme of the edge.
+         */
+        template<class BoostGraph>
+        inline bool is_extreme(
+            const typename boost::graph_traits<BoostGraph>::vertex_descriptor& vertex,
+            const typename boost::graph_traits<BoostGraph>::edge_descriptor& edge,
+            const BoostGraph& graph
+        ) {
+            return (boost::source(edge, graph) == vertex || boost::target(edge, graph) == vertex);
+        }
+
+        /** @brief  Given an edge and a vertex which is one of the two extremes
+         *          of the edge, it returns the other extreme.
+         *
+         *  @tparam BoostGraph  The underlying graph type. Can be both directed or undirected.
+         *  @param  vertex      The vertex.
+         *  @param  edge        The edge.
+         *  @param  graph       The graph.
+         *  @return             The other extreme of the edge.
+         */
+        template<class BoostGraph>
+        inline typename boost::graph_traits<BoostGraph>::vertex_descriptor other_extreme(
+            const typename boost::graph_traits<BoostGraph>::vertex_descriptor& vertex,
+            const typename boost::graph_traits<BoostGraph>::edge_descriptor& edge,
+            const BoostGraph& graph
+        ) {
+            assert(is_extreme(vertex, edge, graph));
+
+            auto source = boost::source(edge, graph);
+
+            if(vertex == source) {
+                return boost::target(edge, graph);
+            } else {
+                return source;
+            }
+        }
     }
 }
 

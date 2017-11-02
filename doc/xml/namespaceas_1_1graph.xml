@@ -292,6 +292,128 @@
         </inbodydescription>
         <location file="src/graph.h" line="106" column="1" bodyfile="src/graph.h" bodystart="106" bodyend="122"/>
       </memberdef>
+      <memberdef kind="function" id="namespaceas_1_1graph_1af020abed3b5b57f984d8ce940ee6f4cd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class BoostGraph</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool as::graph::is_extreme</definition>
+        <argsstring>(const typename boost::graph_traits&lt; BoostGraph &gt;::vertex_descriptor &amp;vertex, const typename boost::graph_traits&lt; BoostGraph &gt;::edge_descriptor &amp;edge, const BoostGraph &amp;graph)</argsstring>
+        <name>is_extreme</name>
+        <param>
+          <type>const typename boost::graph_traits&lt; BoostGraph &gt;::vertex_descriptor &amp;</type>
+          <declname>vertex</declname>
+        </param>
+        <param>
+          <type>const typename boost::graph_traits&lt; BoostGraph &gt;::edge_descriptor &amp;</type>
+          <declname>edge</declname>
+        </param>
+        <param>
+          <type>const BoostGraph &amp;</type>
+          <declname>graph</declname>
+        </param>
+        <briefdescription>
+<para>Tells whether a vertex is an extreme of an edge, i.e. if it is either its source or its target. For an undirected graph, therefore, it tells whether the edge is incident to the vertex. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>BoostGraph</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The underlying graph type. Can be both directed or undirected. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>vertex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vertex. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>edge</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The edge. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>graph</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The graph. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True iff the vertex is an extreme of the edge. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/graph.h" line="136" column="1" bodyfile="src/graph.h" bodystart="136" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceas_1_1graph_1a592c192d63c1c42820da78708adb9e61" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class BoostGraph</type>
+          </param>
+        </templateparamlist>
+        <type>boost::graph_traits&lt; BoostGraph &gt;::vertex_descriptor</type>
+        <definition>boost::graph_traits&lt;BoostGraph&gt;::vertex_descriptor as::graph::other_extreme</definition>
+        <argsstring>(const typename boost::graph_traits&lt; BoostGraph &gt;::vertex_descriptor &amp;vertex, const typename boost::graph_traits&lt; BoostGraph &gt;::edge_descriptor &amp;edge, const BoostGraph &amp;graph)</argsstring>
+        <name>other_extreme</name>
+        <param>
+          <type>const typename boost::graph_traits&lt; BoostGraph &gt;::vertex_descriptor &amp;</type>
+          <declname>vertex</declname>
+        </param>
+        <param>
+          <type>const typename boost::graph_traits&lt; BoostGraph &gt;::edge_descriptor &amp;</type>
+          <declname>edge</declname>
+        </param>
+        <param>
+          <type>const BoostGraph &amp;</type>
+          <declname>graph</declname>
+        </param>
+        <briefdescription>
+<para>Given an edge and a vertex which is one of the two extremes of the edge, it returns the other extreme. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>BoostGraph</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The underlying graph type. Can be both directed or undirected. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>vertex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vertex. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>edge</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The edge. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>graph</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The graph. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The other extreme of the edge. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/graph.h" line="154" column="1" bodyfile="src/graph.h" bodystart="154" bodyend="168"/>
+      </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
