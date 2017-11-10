@@ -94,7 +94,7 @@ namespace as {
      */
     template<class Container>
     inline void join_and_print(const Container& container, std::ostream& out = std::cout, std::string separator = ", ") {
-        if(container.begin() == container.end()) { return; }
+        if(container.begin() == container.end()) { out << std::endl; }
         for(auto it = container.begin(); it != std::prev(container.end()); ++it) {
             details::iterated_value(*it, out) << separator;
         }
