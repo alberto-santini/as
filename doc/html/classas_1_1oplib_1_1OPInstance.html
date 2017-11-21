@@ -97,7 +97,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a6324297e7797771f734a0e373dc6d218"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds an instance from an OPLIB file.  <a href="#a6324297e7797771f734a0e373dc6d218">More...</a><br /></td></tr>
 <tr class="separator:a6324297e7797771f734a0e373dc6d218"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e641c06d51b916cdf6ae88a4510ee0b"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classas_1_1oplib_1_1OPInstance.html#a7e641c06d51b916cdf6ae88a4510ee0b">get_prize</a> (std::size_t vertex) const</td></tr>
+<tr class="memdesc:a7e641c06d51b916cdf6ae88a4510ee0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the prize associated with a vertex.  <a href="#a7e641c06d51b916cdf6ae88a4510ee0b">More...</a><br /></td></tr>
 <tr class="separator:a7e641c06d51b916cdf6ae88a4510ee0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b3d893ac260f673f43d5bc63f24dba1"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classas_1_1oplib_1_1OPInstance.html#a8b3d893ac260f673f43d5bc63f24dba1">get_max_travel_time</a> () const</td></tr>
+<tr class="memdesc:a8b3d893ac260f673f43d5bc63f24dba1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the maximum travel time for this instance.  <a href="#a8b3d893ac260f673f43d5bc63f24dba1">More...</a><br /></td></tr>
+<tr class="separator:a8b3d893ac260f673f43d5bc63f24dba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classas_1_1tsplib_1_1TSPInstance"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classas_1_1tsplib_1_1TSPInstance')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classas_1_1tsplib_1_1TSPInstance.html">as::tsplib::TSPInstance</a></td></tr>
 <tr class="memitem:a5cc9de2e917ae7aa608e10b4375155d6 inherit pub_methods_classas_1_1tsplib_1_1TSPInstance"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classas_1_1tsplib_1_1TSPInstance.html#a5cc9de2e917ae7aa608e10b4375155d6">TSPInstance</a> (std::string <a class="el" href="classas_1_1tsplib_1_1TSPInstance.html#a6b2d4d7ad5e12825ceee49d32cdc28af">tsplib_file</a>)</td></tr>
 <tr class="memdesc:a5cc9de2e917ae7aa608e10b4375155d6 inherit pub_methods_classas_1_1tsplib_1_1TSPInstance"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds an instance from a TSPLIB file.  <a href="classas_1_1tsplib_1_1TSPInstance.html#a5cc9de2e917ae7aa608e10b4375155d6">More...</a><br /></td></tr>
@@ -173,6 +177,34 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a8b3d893ac260f673f43d5bc63f24dba1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b3d893ac260f673f43d5bc63f24dba1">&#9670;&nbsp;</a></span>get_max_travel_time()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float as::oplib::OPInstance::get_max_travel_time </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the maximum travel time for this instance. </p>
+<dl class="section return"><dt>Returns</dt><dd>The maximum travel time. </dd></dl>
+
+</div>
+</div>
 <a id="a7e641c06d51b916cdf6ae88a4510ee0b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7e641c06d51b916cdf6ae88a4510ee0b">&#9670;&nbsp;</a></span>get_prize()</h2>
 
@@ -196,6 +228,15 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns the prize associated with a vertex. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vertex</td><td>The vertex. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The prize. </dd></dl>
 
 </div>
 </div>

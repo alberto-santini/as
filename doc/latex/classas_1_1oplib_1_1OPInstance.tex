@@ -6,8 +6,7 @@
 
 
 
-Inheritance diagram for as\+:\+:oplib\+:\+:O\+P\+Instance\+:
-\nopagebreak
+Inheritance diagram for as\+:\+:oplib\+:\+:O\+P\+Instance\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -16,8 +15,7 @@ Inheritance diagram for as\+:\+:oplib\+:\+:O\+P\+Instance\+:
 \end{figure}
 
 
-Collaboration diagram for as\+:\+:oplib\+:\+:O\+P\+Instance\+:
-\nopagebreak
+Collaboration diagram for as\+:\+:oplib\+:\+:O\+P\+Instance\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -30,7 +28,9 @@ Collaboration diagram for as\+:\+:oplib\+:\+:O\+P\+Instance\+:
 \hyperlink{classas_1_1oplib_1_1OPInstance_a6324297e7797771f734a0e373dc6d218}{O\+P\+Instance} (std\+::string oplib\+\_\+file)
 \begin{DoxyCompactList}\small\item\em Builds an instance from an O\+P\+L\+IB file. \end{DoxyCompactList}\item 
 float \hyperlink{classas_1_1oplib_1_1OPInstance_a7e641c06d51b916cdf6ae88a4510ee0b}{get\+\_\+prize} (std\+::size\+\_\+t vertex) const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns the prize associated with a vertex. \end{DoxyCompactList}\item 
+float \hyperlink{classas_1_1oplib_1_1OPInstance_a8b3d893ac260f673f43d5bc63f24dba1}{get\+\_\+max\+\_\+travel\+\_\+time} () const
+\begin{DoxyCompactList}\small\item\em Gets the maximum travel time for this instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -59,12 +59,37 @@ Builds an instance from an O\+P\+L\+IB file.
 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{classas_1_1oplib_1_1OPInstance_a8b3d893ac260f673f43d5bc63f24dba1}\label{classas_1_1oplib_1_1OPInstance_a8b3d893ac260f673f43d5bc63f24dba1}} 
+\index{as\+::oplib\+::\+O\+P\+Instance@{as\+::oplib\+::\+O\+P\+Instance}!get\+\_\+max\+\_\+travel\+\_\+time@{get\+\_\+max\+\_\+travel\+\_\+time}}
+\index{get\+\_\+max\+\_\+travel\+\_\+time@{get\+\_\+max\+\_\+travel\+\_\+time}!as\+::oplib\+::\+O\+P\+Instance@{as\+::oplib\+::\+O\+P\+Instance}}
+\subsubsection{\texorpdfstring{get\+\_\+max\+\_\+travel\+\_\+time()}{get\_max\_travel\_time()}}
+{\footnotesize\ttfamily float as\+::oplib\+::\+O\+P\+Instance\+::get\+\_\+max\+\_\+travel\+\_\+time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the maximum travel time for this instance. 
+
+\begin{DoxyReturn}{Returns}
+The maximum travel time. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classas_1_1oplib_1_1OPInstance_a7e641c06d51b916cdf6ae88a4510ee0b}\label{classas_1_1oplib_1_1OPInstance_a7e641c06d51b916cdf6ae88a4510ee0b}} 
 \index{as\+::oplib\+::\+O\+P\+Instance@{as\+::oplib\+::\+O\+P\+Instance}!get\+\_\+prize@{get\+\_\+prize}}
 \index{get\+\_\+prize@{get\+\_\+prize}!as\+::oplib\+::\+O\+P\+Instance@{as\+::oplib\+::\+O\+P\+Instance}}
 \subsubsection{\texorpdfstring{get\+\_\+prize()}{get\_prize()}}
 {\footnotesize\ttfamily float as\+::oplib\+::\+O\+P\+Instance\+::get\+\_\+prize (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{vertex }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Returns the prize associated with a vertex. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex} & The vertex. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The prize. 
+\end{DoxyReturn}
 
 
 \subsection{Member Data Documentation}

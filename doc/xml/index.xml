@@ -22,6 +22,7 @@
     <member refid="classas_1_1oplib_1_1OPInstance_1ae04b2b823f630159c31d7c3f2f3fcdb5" kind="variable"><name>prizes</name></member>
     <member refid="classas_1_1oplib_1_1OPInstance_1a6324297e7797771f734a0e373dc6d218" kind="function"><name>OPInstance</name></member>
     <member refid="classas_1_1oplib_1_1OPInstance_1a7e641c06d51b916cdf6ae88a4510ee0b" kind="function"><name>get_prize</name></member>
+    <member refid="classas_1_1oplib_1_1OPInstance_1a8b3d893ac260f673f43d5bc63f24dba1" kind="function"><name>get_max_travel_time</name></member>
     <member refid="classas_1_1oplib_1_1OPInstance_1a843f3f660f032b843a665d48a12219ca" kind="function"><name>set_prizes</name></member>
   </compound>
   <compound refid="classas_1_1tsplib_1_1TSPInstance" kind="class"><name>as::tsplib::TSPInstance</name>

@@ -41,11 +41,24 @@ namespace as {
                 set_prizes();
             }
 
+            /** @brief          Returns the prize associated with a vertex.
+             *
+             *  @param vertex   The vertex.
+             *  @return         The prize.
+             */
             float get_prize(std::size_t vertex) const {
                 if(vertex >= n_vertices) {
                     throw std::out_of_range("No such vertex: " + std::to_string(vertex));
                 }
                 return prizes[vertex];
+            }
+
+            /** @brief  Gets the maximum travel time for this instance.
+             *
+             *  @return The maximum travel time.
+             */
+            float get_max_travel_time() const {
+                return max_travel_time;
             }
 
         private:
