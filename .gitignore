@@ -1,4 +1,4 @@
-build*
+*build*
 CMake*
 .idea
 main.cpp
