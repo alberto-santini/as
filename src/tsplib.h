@@ -490,8 +490,7 @@ namespace as {
                         reverse_engineer_coordinates();
                     }
                 } else {
-                    set_coordinates();
-                    set_weights_from_coordinates();
+                    set_coordinates_and_weights();
                 }
             }
 
@@ -607,23 +606,28 @@ namespace as {
                 }
             }
 
-            void set_coordinates() {
+            void set_coordinates_and_weights() {
                 const auto type = tsp.get_specification<std::string>("EDGE_WEIGHT_TYPE");
 
                 if(type == "GEO") {
-                    set_coordinates_geo();
+                    set_coordinates_and_weights_geo();
                 } else {
-                    set_coordinates_euclidean();
+                    set_coordinates_and_weights_euclidean();
                 }
             }
 
-            void set_coordinates_geo() {
+            void set_coordinates_and_weights_geo() {
                 // First get the coordinates as if they were
-                // Euclidean (x,y) coordinates.
+                // Euclidean (x,y) coordinates, i.e. by just using
+                // the raw values given in the instance file.
                 set_coordinates_euclidean();
 
-                // Then project them using an Azimuthal Equidistant Projection
-                // centre on the depot. For more information see:
+                // Then calculate the weights with these coordinates,
+                // using the GEO function.
+                set_weights_from_coordinates();
+
+                // Then project the coords using an Azimuthal Equidistant Projection
+                // centred on the depot. For more information see:
                 // http://mathworld.wolfram.com/AzimuthalEquidistantProjection.html
                 const auto eucl_coordinates = coordinates;
                 const auto centre_lat = detail::latlon(eucl_coordinates[0].x);
@@ -644,6 +648,11 @@ namespace as {
 
                     coordinates[i] = {x, y};
                 }
+            }
+
+            void set_coordinates_and_weights_euclidean() {
+                set_coordinates_euclidean();
+                set_weights_from_coordinates();
             }
 
             void set_coordinates_euclidean() {

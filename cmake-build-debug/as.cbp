@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="as"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/alberto/local/src/public-repos/as/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alberto/local/src/public-repos/as/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alberto/local/src/public-repos/as/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alberto/local/src/public-repos/as/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alberto/local/src/public-repos/as/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/alberto/local/src/public-repos/as/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alberto/local/src/public-repos/as/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alberto/local/src/public-repos/as/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alberto/local/src/public-repos/as/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alberto/local/src/public-repos/as/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/alberto/local/src/public-repos/as/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alberto/local/src/public-repos/as/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alberto/local/src/public-repos/as/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alberto/local/src/public-repos/as/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alberto/local/src/public-repos/as/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="as">
+				<Option output="/home/alberto/local/src/public-repos/as/cmake-build-debug/as" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/alberto/local/src/public-repos/as/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alberto/local/src/public-repos/as/cmake-build-debug/Makefile&quot;  VERBOSE=1 as"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alberto/local/src/public-repos/as/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alberto/local/src/public-repos/as/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alberto/local/src/public-repos/as/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="as/fast">
+				<Option output="/home/alberto/local/src/public-repos/as/cmake-build-debug/as" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/alberto/local/src/public-repos/as/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alberto/local/src/public-repos/as/cmake-build-debug/Makefile&quot;  VERBOSE=1 as/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alberto/local/src/public-repos/as/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alberto/local/src/public-repos/as/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alberto/local/src/public-repos/as/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/alberto/local/src/public-repos/as/main.cpp">
+			<Option target="as"/>
+		</Unit>
+		<Unit filename="/home/alberto/local/src/public-repos/as/src/and_die.h">
+			<Option target="as"/>
+		</Unit>
+		<Unit filename="/home/alberto/local/src/public-repos/as/src/as_version.h">
+			<Option target="as"/>
+		</Unit>
+		<Unit filename="/home/alberto/local/src/public-repos/as/src/can_apply.h">
+			<Option target="as"/>
+		</Unit>
+		<Unit filename="/home/alberto/local/src/public-repos/as/src/console.h">
+			<Option target="as"/>
+		</Unit>
+		<Unit filename="/home/alberto/local/src/public-repos/as/src/containers.h">
+			<Option target="as"/>
+		</Unit>
+		<Unit filename="/home/alberto/local/src/public-repos/as/src/file_stream.h">
+			<Option target="as"/>
+		</Unit>
+		<Unit filename="/home/alberto/local/src/public-repos/as/src/graph.h">
+			<Option target="as"/>
+		</Unit>
+		<Unit filename="/home/alberto/local/src/public-repos/as/src/is_associative.h">
+			<Option target="as"/>
+		</Unit>
+		<Unit filename="/home/alberto/local/src/public-repos/as/src/iterator_pair.h">
+			<Option target="as"/>
+		</Unit>
+		<Unit filename="/home/alberto/local/src/public-repos/as/src/oplib.h">
+			<Option target="as"/>
+		</Unit>
+		<Unit filename="/home/alberto/local/src/public-repos/as/src/point.h">
+			<Option target="as"/>
+		</Unit>
+		<Unit filename="/home/alberto/local/src/public-repos/as/src/random.h">
+			<Option target="as"/>
+		</Unit>
+		<Unit filename="/home/alberto/local/src/public-repos/as/src/string.h">
+			<Option target="as"/>
+		</Unit>
+		<Unit filename="/home/alberto/local/src/public-repos/as/src/tsplib.h">
+			<Option target="as"/>
+		</Unit>
+		<Unit filename="/home/alberto/local/src/public-repos/as/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
