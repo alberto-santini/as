@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['neighbours',['neighbours',['../namespaceas_1_1graph.html#a7a86ebb168cf6ac390a5bd86d3380350',1,'as::graph']]]
+  ['join_5fand_5fprint',['join_and_print',['../namespaceas.html#aab6569c28591bebed9bd29b40c772bfc',1,'as']]]
 ];

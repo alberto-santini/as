@@ -10,5 +10,6 @@ var searchData=
   ['console_2eh',['console.h',['../console_8h.html',1,'']]],
   ['containers_2eh',['containers.h',['../containers_8h.html',1,'']]],
   ['contains',['contains',['../namespaceas_1_1details.html#aaa1e2c1c370bddd0020956d333bbef26',1,'as::details::contains(std::false_type, const Container &amp;container, const T &amp;element)'],['../namespaceas_1_1details.html#aa25b4a9ab19e3b807bbd58dc208d2607',1,'as::details::contains(std::true_type, const Container &amp;container, const T &amp;element)'],['../namespaceas.html#a49cf7ae4239ab51e54f099d30a84811a',1,'as::contains()']]],
+  ['coordinates',['coordinates',['../classas_1_1tsplib_1_1TSPInstance.html#ad8e74403f222f9470bf320e5749e6d9a',1,'as::tsplib::TSPInstance']]],
   ['count_5fmethod_5ftype',['count_method_type',['../namespaceas.html#a9bd788709567003423247a9db4ba1074',1,'as']]]
 ];

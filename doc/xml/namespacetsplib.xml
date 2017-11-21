@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespacetsplib" kind="namespace" language="C++">
+    <compoundname>tsplib</compoundname>
+    <briefdescription>
+<para>This namespace contains classes and functions related to the TSPLIB. </para>    </briefdescription>
+    <detaileddescription>
+<para>The TSPLIB is a classical collection of instances of the Travelling Salesman Problem. The instance files have a perverted format which is vexing to parse. These utilities aim at making the parsing of the instances easier for the user. </para>    </detaileddescription>
+    <location file="src/tsplib.h" line="24" column="1"/>
+  </compounddef>
+</doxygen>

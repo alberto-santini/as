@@ -1,0 +1,334 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classas_1_1tsplib_1_1TSPInstance" kind="class" language="C++" prot="public">
+    <compoundname>as::tsplib::TSPInstance</compoundname>
+    <derivedcompoundref refid="classas_1_1oplib_1_1OPInstance" prot="public" virt="non-virtual">as::oplib::OPInstance</derivedcompoundref>
+    <includes refid="tsplib_8h" local="no">tsplib.h</includes>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classas_1_1tsplib_1_1TSPInstance_1a6a73219aae354011c905255dc687122b" prot="protected" static="no" mutable="no">
+        <type><ref refid="classas_1_1tsplib_1_1detail_1_1TSPLIBInput" kindref="compound">detail::TSPLIBInput</ref></type>
+        <definition>detail::TSPLIBInput as::tsplib::TSPInstance::tsp</definition>
+        <argsstring></argsstring>
+        <name>tsp</name>
+        <briefdescription>
+<para>Input object used to access the info contained in the instance file. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tsplib.h" line="456" column="1" bodyfile="src/tsplib.h" bodystart="456" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classas_1_1tsplib_1_1TSPInstance_1a6b2d4d7ad5e12825ceee49d32cdc28af" prot="protected" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string as::tsplib::TSPInstance::tsplib_file</definition>
+        <argsstring></argsstring>
+        <name>tsplib_file</name>
+        <briefdescription>
+<para>The file name of the file which contained the instance. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tsplib.h" line="460" column="1" bodyfile="src/tsplib.h" bodystart="460" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classas_1_1tsplib_1_1TSPInstance_1af62c22d7f09f0264f5e817268230cec9" prot="protected" static="no" mutable="no">
+        <type>std::size_t</type>
+        <definition>std::size_t as::tsplib::TSPInstance::n_vertices</definition>
+        <argsstring></argsstring>
+        <name>n_vertices</name>
+        <briefdescription>
+<para>Number of vertices in the instance. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tsplib.h" line="464" column="1" bodyfile="src/tsplib.h" bodystart="464" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classas_1_1tsplib_1_1TSPInstance_1ad8e74403f222f9470bf320e5749e6d9a" prot="protected" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structas_1_1TwoDimPoint" kindref="compound">TwoDimPoint</ref> &gt;</type>
+        <definition>std::vector&lt;TwoDimPoint&gt; as::tsplib::TSPInstance::coordinates</definition>
+        <argsstring></argsstring>
+        <name>coordinates</name>
+        <briefdescription>
+<para>Vertex coordinates. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tsplib.h" line="468" column="1" bodyfile="src/tsplib.h" bodystart="468" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classas_1_1tsplib_1_1TSPInstance_1a51073058c9b3f316da6b2115a9c8bec1" prot="protected" static="no" mutable="no">
+        <type>std::vector&lt; std::vector&lt; float &gt; &gt;</type>
+        <definition>std::vector&lt;std::vector&lt;float&gt; &gt; as::tsplib::TSPInstance::distances</definition>
+        <argsstring></argsstring>
+        <name>distances</name>
+        <briefdescription>
+<para>Distance matrix. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tsplib.h" line="472" column="1" bodyfile="src/tsplib.h" bodystart="472" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classas_1_1tsplib_1_1TSPInstance_1a5cc9de2e917ae7aa608e10b4375155d6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>as::tsplib::TSPInstance::TSPInstance</definition>
+        <argsstring>(std::string tsplib_file)</argsstring>
+        <name>TSPInstance</name>
+        <param>
+          <type>std::string</type>
+          <declname>tsplib_file</declname>
+        </param>
+        <briefdescription>
+<para>Builds an instance from a TSPLIB file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tsplib_file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file containing the instance data. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tsplib.h" line="480" column="1" bodyfile="src/tsplib.h" bodystart="480" bodyend="496"/>
+      </memberdef>
+      <memberdef kind="function" id="classas_1_1tsplib_1_1TSPInstance_1a3beae0a769669c417e8bc7d1e41a7550" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::size_t</type>
+        <definition>std::size_t as::tsplib::TSPInstance::number_of_vertices</definition>
+        <argsstring>() const</argsstring>
+        <name>number_of_vertices</name>
+        <briefdescription>
+<para>Gives the number of vertices in the graph. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The number of vertices in the graph. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tsplib.h" line="502" column="1" bodyfile="src/tsplib.h" bodystart="502" bodyend="504"/>
+      </memberdef>
+      <memberdef kind="function" id="classas_1_1tsplib_1_1TSPInstance_1a36962fb85e309faa3efb28fae3b2956b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structas_1_1TwoDimPoint" kindref="compound">TwoDimPoint</ref></type>
+        <definition>TwoDimPoint as::tsplib::TSPInstance::get_coordinates</definition>
+        <argsstring>(std::size_t vertex) const</argsstring>
+        <name>get_coordinates</name>
+        <param>
+          <type>std::size_t</type>
+          <declname>vertex</declname>
+        </param>
+        <briefdescription>
+<para>Gives the (x,y)-coordinates of a vertex. </para>        </briefdescription>
+        <detaileddescription>
+<para>The coordinates are returned in a simple struct with only two publicly-accessible members: x and y.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>vertex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vertex whose coordinate we want. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The (x,y)-coordinates. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tsplib.h" line="514" column="1" bodyfile="src/tsplib.h" bodystart="514" bodyend="519"/>
+      </memberdef>
+      <memberdef kind="function" id="classas_1_1tsplib_1_1TSPInstance_1a52535b9ad72eaaac80f2a7a1518e680f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float as::tsplib::TSPInstance::get_distance</definition>
+        <argsstring>(std::size_t v1, std::size_t v2) const</argsstring>
+        <name>get_distance</name>
+        <param>
+          <type>std::size_t</type>
+          <declname>v1</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>v2</declname>
+        </param>
+        <briefdescription>
+<para>Gives the distance between two vertices in the graph. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>v1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The first vertex. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>v2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The second vertex. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The distance between the vertices. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tsplib.h" line="527" column="1" bodyfile="src/tsplib.h" bodystart="527" bodyend="535"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classas_1_1tsplib_1_1TSPInstance_1a55b5c85a27eed3e5e24e831e207b8e8b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void as::tsplib::TSPInstance::set_explicit_weights</definition>
+        <argsstring>()</argsstring>
+        <name>set_explicit_weights</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tsplib.h" line="539" column="1" bodyfile="src/tsplib.h" bodystart="539" bodyend="549"/>
+      </memberdef>
+      <memberdef kind="function" id="classas_1_1tsplib_1_1TSPInstance_1a4fbd8004cace0c3e5e186b99c2de4cbe" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void as::tsplib::TSPInstance::set_explicit_weights_upper_row</definition>
+        <argsstring>()</argsstring>
+        <name>set_explicit_weights_upper_row</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tsplib.h" line="551" column="1" bodyfile="src/tsplib.h" bodystart="551" bodyend="580"/>
+      </memberdef>
+      <memberdef kind="function" id="classas_1_1tsplib_1_1TSPInstance_1acf708a88d35bc49640fcf6d0f47fd260" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void as::tsplib::TSPInstance::set_explicit_weights_lower_diag_row</definition>
+        <argsstring>()</argsstring>
+        <name>set_explicit_weights_lower_diag_row</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tsplib.h" line="582" column="1" bodyfile="src/tsplib.h" bodystart="582" bodyend="608"/>
+      </memberdef>
+      <memberdef kind="function" id="classas_1_1tsplib_1_1TSPInstance_1aaead2f7725de593b8357eeec233238ee" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void as::tsplib::TSPInstance::set_coordinates</definition>
+        <argsstring>()</argsstring>
+        <name>set_coordinates</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tsplib.h" line="610" column="1" bodyfile="src/tsplib.h" bodystart="610" bodyend="618"/>
+      </memberdef>
+      <memberdef kind="function" id="classas_1_1tsplib_1_1TSPInstance_1a0a069e6451697b6e24789ef243968dca" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void as::tsplib::TSPInstance::set_coordinates_geo</definition>
+        <argsstring>()</argsstring>
+        <name>set_coordinates_geo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tsplib.h" line="620" column="1" bodyfile="src/tsplib.h" bodystart="620" bodyend="647"/>
+      </memberdef>
+      <memberdef kind="function" id="classas_1_1tsplib_1_1TSPInstance_1ab59f351005750d8ab54a37c74b714565" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void as::tsplib::TSPInstance::set_coordinates_euclidean</definition>
+        <argsstring>()</argsstring>
+        <name>set_coordinates_euclidean</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tsplib.h" line="649" column="1" bodyfile="src/tsplib.h" bodystart="649" bodyend="667"/>
+      </memberdef>
+      <memberdef kind="function" id="classas_1_1tsplib_1_1TSPInstance_1a1afcd527885c01bb3a02085d63fa8199" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void as::tsplib::TSPInstance::set_weights_from_coordinates</definition>
+        <argsstring>()</argsstring>
+        <name>set_weights_from_coordinates</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tsplib.h" line="669" column="1" bodyfile="src/tsplib.h" bodystart="669" bodyend="683"/>
+      </memberdef>
+      <memberdef kind="function" id="classas_1_1tsplib_1_1TSPInstance_1a4de463a6ac47bf8a2bdeb95754111219" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void as::tsplib::TSPInstance::reverse_engineer_coordinates</definition>
+        <argsstring>()</argsstring>
+        <name>reverse_engineer_coordinates</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tsplib.h" line="685" column="1" bodyfile="src/tsplib.h" bodystart="685" bodyend="715"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This class represents a valid instance of the TSP. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="26">
+        <label>as::oplib::OPInstance</label>
+        <link refid="classas_1_1oplib_1_1OPInstance"/>
+        <childnode refid="25" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>as::tsplib::TSPInstance</label>
+        <link refid="classas_1_1tsplib_1_1TSPInstance"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="27">
+        <label>as::tsplib::TSPInstance</label>
+        <link refid="classas_1_1tsplib_1_1TSPInstance"/>
+        <childnode refid="28" relation="usage">
+          <edgelabel>tsp</edgelabel>
+        </childnode>
+      </node>
+      <node id="28">
+        <label>as::tsplib::detail::TSPLIBInput</label>
+        <link refid="classas_1_1tsplib_1_1detail_1_1TSPLIBInput"/>
+      </node>
+    </collaborationgraph>
+    <location file="src/tsplib.h" line="451" column="1" bodyfile="src/tsplib.h" bodystart="451" bodyend="716"/>
+    <listofallmembers>
+      <member refid="classas_1_1tsplib_1_1TSPInstance_1ad8e74403f222f9470bf320e5749e6d9a" prot="protected" virt="non-virtual"><scope>as::tsplib::TSPInstance</scope><name>coordinates</name></member>
+      <member refid="classas_1_1tsplib_1_1TSPInstance_1a51073058c9b3f316da6b2115a9c8bec1" prot="protected" virt="non-virtual"><scope>as::tsplib::TSPInstance</scope><name>distances</name></member>
+      <member refid="classas_1_1tsplib_1_1TSPInstance_1a36962fb85e309faa3efb28fae3b2956b" prot="public" virt="non-virtual"><scope>as::tsplib::TSPInstance</scope><name>get_coordinates</name></member>
+      <member refid="classas_1_1tsplib_1_1TSPInstance_1a52535b9ad72eaaac80f2a7a1518e680f" prot="public" virt="non-virtual"><scope>as::tsplib::TSPInstance</scope><name>get_distance</name></member>
+      <member refid="classas_1_1tsplib_1_1TSPInstance_1af62c22d7f09f0264f5e817268230cec9" prot="protected" virt="non-virtual"><scope>as::tsplib::TSPInstance</scope><name>n_vertices</name></member>
+      <member refid="classas_1_1tsplib_1_1TSPInstance_1a3beae0a769669c417e8bc7d1e41a7550" prot="public" virt="non-virtual"><scope>as::tsplib::TSPInstance</scope><name>number_of_vertices</name></member>
+      <member refid="classas_1_1tsplib_1_1TSPInstance_1a4de463a6ac47bf8a2bdeb95754111219" prot="private" virt="non-virtual"><scope>as::tsplib::TSPInstance</scope><name>reverse_engineer_coordinates</name></member>
+      <member refid="classas_1_1tsplib_1_1TSPInstance_1aaead2f7725de593b8357eeec233238ee" prot="private" virt="non-virtual"><scope>as::tsplib::TSPInstance</scope><name>set_coordinates</name></member>
+      <member refid="classas_1_1tsplib_1_1TSPInstance_1ab59f351005750d8ab54a37c74b714565" prot="private" virt="non-virtual"><scope>as::tsplib::TSPInstance</scope><name>set_coordinates_euclidean</name></member>
+      <member refid="classas_1_1tsplib_1_1TSPInstance_1a0a069e6451697b6e24789ef243968dca" prot="private" virt="non-virtual"><scope>as::tsplib::TSPInstance</scope><name>set_coordinates_geo</name></member>
+      <member refid="classas_1_1tsplib_1_1TSPInstance_1a55b5c85a27eed3e5e24e831e207b8e8b" prot="private" virt="non-virtual"><scope>as::tsplib::TSPInstance</scope><name>set_explicit_weights</name></member>
+      <member refid="classas_1_1tsplib_1_1TSPInstance_1acf708a88d35bc49640fcf6d0f47fd260" prot="private" virt="non-virtual"><scope>as::tsplib::TSPInstance</scope><name>set_explicit_weights_lower_diag_row</name></member>
+      <member refid="classas_1_1tsplib_1_1TSPInstance_1a4fbd8004cace0c3e5e186b99c2de4cbe" prot="private" virt="non-virtual"><scope>as::tsplib::TSPInstance</scope><name>set_explicit_weights_upper_row</name></member>
+      <member refid="classas_1_1tsplib_1_1TSPInstance_1a1afcd527885c01bb3a02085d63fa8199" prot="private" virt="non-virtual"><scope>as::tsplib::TSPInstance</scope><name>set_weights_from_coordinates</name></member>
+      <member refid="classas_1_1tsplib_1_1TSPInstance_1a6a73219aae354011c905255dc687122b" prot="protected" virt="non-virtual"><scope>as::tsplib::TSPInstance</scope><name>tsp</name></member>
+      <member refid="classas_1_1tsplib_1_1TSPInstance_1a5cc9de2e917ae7aa608e10b4375155d6" prot="public" virt="non-virtual"><scope>as::tsplib::TSPInstance</scope><name>TSPInstance</name></member>
+      <member refid="classas_1_1tsplib_1_1TSPInstance_1a6b2d4d7ad5e12825ceee49d32cdc28af" prot="protected" virt="non-virtual"><scope>as::tsplib::TSPInstance</scope><name>tsplib_file</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

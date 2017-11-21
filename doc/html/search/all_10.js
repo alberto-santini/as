@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['vertices',['vertices',['../namespaceas_1_1graph.html#ab93ee208eb116d3a3349c8de8cc91445',1,'as::graph']]]
+  ['sample',['sample',['../namespaceas.html#a001b8303767234a8c93de5cb530a8f3d',1,'as::sample(const Container container, typename Container::size_type how_many, Prng &amp;&amp;prng)'],['../namespaceas.html#ab2b3e64b4dee388f0ec34e41ae0b3e98',1,'as::sample(const Container container, typename Container::size_type how_many)']]],
+  ['skip_5flines',['skip_lines',['../namespaceas.html#a359f2d209e5ec052ec0d2752a589802d',1,'as']]],
+  ['string',['string',['../namespacestring.html',1,'']]],
+  ['string_2eh',['string.h',['../string_8h.html',1,'']]]
 ];

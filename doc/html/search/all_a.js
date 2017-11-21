@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['magenta',['Magenta',['../namespaceas_1_1console.html#ab2f5a531e43f4ee9e0f348f8aa5ce16cab91cc2c1416fcca942b61c7ac5b1a9ac',1,'as::console']]],
-  ['make_5fiter',['make_iter',['../namespaceas.html#a4d4e0fb99b7cc564adaa85b693392070',1,'as']]]
+  ['latlon',['latlon',['../namespaceas_1_1tsplib_1_1detail.html#a3ae3133c661a1284988d3615f1a3e3d1',1,'as::tsplib::detail']]],
+  ['left_5ftrim',['left_trim',['../namespaceas_1_1string.html#a608048dc1f3a08c88ad0f5ff87b58c1d',1,'as::string']]]
 ];

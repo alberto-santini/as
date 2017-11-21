@@ -1,0 +1,62 @@
+\hypertarget{tsplib_8h}{}\section{src/tsplib.h File Reference}
+\label{tsplib_8h}\index{src/tsplib.\+h@{src/tsplib.\+h}}
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$regex$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$cassert$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$experimental/filesystem$>$}\newline
+{\ttfamily \#include \char`\"{}point.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}console.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string.\+h\char`\"{}}\newline
+Include dependency graph for tsplib.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{tsplib_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=145pt]{tsplib_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classas_1_1tsplib_1_1detail_1_1TSPLIBInput}{as\+::tsplib\+::detail\+::\+T\+S\+P\+L\+I\+B\+Input}
+\begin{DoxyCompactList}\small\item\em This class represents the syntactic structure of a T\+S\+P\+L\+IB Instance, as it is read from a T\+S\+P\+L\+IB input file. \end{DoxyCompactList}\item 
+class \hyperlink{classas_1_1tsplib_1_1TSPInstance}{as\+::tsplib\+::\+T\+S\+P\+Instance}
+\begin{DoxyCompactList}\small\item\em This class represents a valid instance of the T\+SP. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespaceas}{as}
+\item 
+ \hyperlink{namespacetsplib}{tsplib}
+\begin{DoxyCompactList}\small\item\em This namespace contains classes and functions related to the T\+S\+P\+L\+IB. \end{DoxyCompactList}\item 
+ \hyperlink{namespaceas_1_1tsplib}{as\+::tsplib}
+\item 
+ \hyperlink{namespaceas_1_1tsplib_1_1detail}{as\+::tsplib\+::detail}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+T\+S\+P\+L\+I\+B\+Input \hyperlink{namespaceas_1_1tsplib_1_1detail_a3fabd21c4bc13069fbe2bcb9b6c59e74}{as\+::tsplib\+::detail\+::read\+\_\+tsplib\+\_\+file} (std\+::string tsplib\+\_\+file)
+\begin{DoxyCompactList}\small\item\em Reads the syntax of a T\+S\+P\+L\+IB file and makes sure it is correct, without delving into the semantics of what is being read. \end{DoxyCompactList}\item 
+constexpr float \hyperlink{namespaceas_1_1tsplib_1_1detail_a3ae3133c661a1284988d3615f1a3e3d1}{as\+::tsplib\+::detail\+::latlon} (float coordinate)
+\begin{DoxyCompactList}\small\item\em Function to be used to get the latitude or longitude from, respectively, the x or y coordinates of points in T\+S\+P\+L\+IB instances with geographical distances. \end{DoxyCompactList}\item 
+std\+::function$<$ float(float, float, float, float)$>$ \hyperlink{namespaceas_1_1tsplib_1_1detail_aa87df60b8ef17c19d0cb8329a7a28731}{as\+::tsplib\+::detail\+::get\+\_\+distance\+\_\+function} (std\+::string f\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Gets the distance function to use to compute T\+S\+P\+L\+IB distances from vertex coordinates. \end{DoxyCompactList}\item 
+std\+::pair$<$ Two\+Dim\+Point, Two\+Dim\+Point $>$ \hyperlink{namespaceas_1_1tsplib_1_1detail_a1337beecf37622b3597de699f3852380}{as\+::tsplib\+::detail\+::get\+\_\+circle\+\_\+intersection} (float dist\+\_\+centre\+\_\+1\+\_\+point, float dist\+\_\+centre\+\_\+2\+\_\+point, float dist\+\_\+centre\+\_\+1\+\_\+centre\+\_\+2)
+\begin{DoxyCompactList}\small\item\em Returns the two intersection points between two circles. \end{DoxyCompactList}\item 
+float \hyperlink{namespaceas_1_1tsplib_1_1detail_a6b7b8b134e00f78387c5fe70f5791572}{as\+::tsplib\+::detail\+::euclidean\+\_\+dist} (const Two\+Dim\+Point \&pt1, const Two\+Dim\+Point \&pt2)
+\begin{DoxyCompactList}\small\item\em Calculates the euclidean distance between two points. \end{DoxyCompactList}\end{DoxyCompactItemize}

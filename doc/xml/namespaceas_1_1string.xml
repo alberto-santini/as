@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespaceas_1_1string" kind="namespace" language="C++">
+    <compoundname>as::string</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceas_1_1string_1a608048dc1f3a08c88ad0f5ff87b58c1d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void as::string::left_trim</definition>
+        <argsstring>(std::string &amp;s)</argsstring>
+        <name>left_trim</name>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>Trims a string from the left, removing all initial whitespace. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string to trim. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/string.h" line="20" column="1" bodyfile="src/string.h" bodystart="20" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceas_1_1string_1a748afb440479e4824710ab07d92cbe68" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void as::string::right_trim</definition>
+        <argsstring>(std::string &amp;s)</argsstring>
+        <name>right_trim</name>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>Trims a string from the right, removing all final whitespace. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string to trim. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/string.h" line="30" column="1" bodyfile="src/string.h" bodystart="30" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceas_1_1string_1aa654dd12f0ebc738431eee149e2a8242" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void as::string::trim</definition>
+        <argsstring>(std::string &amp;s)</argsstring>
+        <name>trim</name>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+<para>Trims a string from the left and the right, removing all initial and final whitespace. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string to trim. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/string.h" line="40" column="1" bodyfile="src/string.h" bodystart="40" bodyend="43"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/string.h" line="15" column="1"/>
+  </compounddef>
+</doxygen>

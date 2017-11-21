@@ -17,6 +17,51 @@
     <member refid="classas_1_1iterator__pair_1a88c00afafd5ee4477b7ab2a1a89bb746" kind="function"><name>begin</name></member>
     <member refid="classas_1_1iterator__pair_1ae7cef6e91faecd20e6aebd2f21b29b41" kind="function"><name>end</name></member>
   </compound>
+  <compound refid="classas_1_1oplib_1_1OPInstance" kind="class"><name>as::oplib::OPInstance</name>
+    <member refid="classas_1_1oplib_1_1OPInstance_1a57be40043f2881e6ba41d62ad6bd223c" kind="variable"><name>max_travel_time</name></member>
+    <member refid="classas_1_1oplib_1_1OPInstance_1ae04b2b823f630159c31d7c3f2f3fcdb5" kind="variable"><name>prizes</name></member>
+    <member refid="classas_1_1oplib_1_1OPInstance_1a6324297e7797771f734a0e373dc6d218" kind="function"><name>OPInstance</name></member>
+    <member refid="classas_1_1oplib_1_1OPInstance_1a7e641c06d51b916cdf6ae88a4510ee0b" kind="function"><name>get_prize</name></member>
+    <member refid="classas_1_1oplib_1_1OPInstance_1a843f3f660f032b843a665d48a12219ca" kind="function"><name>set_prizes</name></member>
+  </compound>
+  <compound refid="classas_1_1tsplib_1_1TSPInstance" kind="class"><name>as::tsplib::TSPInstance</name>
+    <member refid="classas_1_1tsplib_1_1TSPInstance_1a6a73219aae354011c905255dc687122b" kind="variable"><name>tsp</name></member>
+    <member refid="classas_1_1tsplib_1_1TSPInstance_1a6b2d4d7ad5e12825ceee49d32cdc28af" kind="variable"><name>tsplib_file</name></member>
+    <member refid="classas_1_1tsplib_1_1TSPInstance_1af62c22d7f09f0264f5e817268230cec9" kind="variable"><name>n_vertices</name></member>
+    <member refid="classas_1_1tsplib_1_1TSPInstance_1ad8e74403f222f9470bf320e5749e6d9a" kind="variable"><name>coordinates</name></member>
+    <member refid="classas_1_1tsplib_1_1TSPInstance_1a51073058c9b3f316da6b2115a9c8bec1" kind="variable"><name>distances</name></member>
+    <member refid="classas_1_1tsplib_1_1TSPInstance_1a5cc9de2e917ae7aa608e10b4375155d6" kind="function"><name>TSPInstance</name></member>
+    <member refid="classas_1_1tsplib_1_1TSPInstance_1a3beae0a769669c417e8bc7d1e41a7550" kind="function"><name>number_of_vertices</name></member>
+    <member refid="classas_1_1tsplib_1_1TSPInstance_1a36962fb85e309faa3efb28fae3b2956b" kind="function"><name>get_coordinates</name></member>
+    <member refid="classas_1_1tsplib_1_1TSPInstance_1a52535b9ad72eaaac80f2a7a1518e680f" kind="function"><name>get_distance</name></member>
+    <member refid="classas_1_1tsplib_1_1TSPInstance_1a55b5c85a27eed3e5e24e831e207b8e8b" kind="function"><name>set_explicit_weights</name></member>
+    <member refid="classas_1_1tsplib_1_1TSPInstance_1a4fbd8004cace0c3e5e186b99c2de4cbe" kind="function"><name>set_explicit_weights_upper_row</name></member>
+    <member refid="classas_1_1tsplib_1_1TSPInstance_1acf708a88d35bc49640fcf6d0f47fd260" kind="function"><name>set_explicit_weights_lower_diag_row</name></member>
+    <member refid="classas_1_1tsplib_1_1TSPInstance_1aaead2f7725de593b8357eeec233238ee" kind="function"><name>set_coordinates</name></member>
+    <member refid="classas_1_1tsplib_1_1TSPInstance_1a0a069e6451697b6e24789ef243968dca" kind="function"><name>set_coordinates_geo</name></member>
+    <member refid="classas_1_1tsplib_1_1TSPInstance_1ab59f351005750d8ab54a37c74b714565" kind="function"><name>set_coordinates_euclidean</name></member>
+    <member refid="classas_1_1tsplib_1_1TSPInstance_1a1afcd527885c01bb3a02085d63fa8199" kind="function"><name>set_weights_from_coordinates</name></member>
+    <member refid="classas_1_1tsplib_1_1TSPInstance_1a4de463a6ac47bf8a2bdeb95754111219" kind="function"><name>reverse_engineer_coordinates</name></member>
+  </compound>
+  <compound refid="classas_1_1tsplib_1_1detail_1_1TSPLIBInput" kind="class"><name>as::tsplib::detail::TSPLIBInput</name>
+    <member refid="classas_1_1tsplib_1_1detail_1_1TSPLIBInput_1a8861529230f97316261b92df80cd3e20" kind="variable"><name>specification</name></member>
+    <member refid="classas_1_1tsplib_1_1detail_1_1TSPLIBInput_1ab8a5febb2f675a1902139ba31c8ec22a" kind="variable"><name>data</name></member>
+    <member refid="classas_1_1tsplib_1_1detail_1_1TSPLIBInput_1a169a52e7d6767159e3dd0b5e039e8087" kind="function"><name>add_specification</name></member>
+    <member refid="classas_1_1tsplib_1_1detail_1_1TSPLIBInput_1acd4def3a1df62f904de3bd9692ae7543" kind="function"><name>add_data_block</name></member>
+    <member refid="classas_1_1tsplib_1_1detail_1_1TSPLIBInput_1a36eb4a615d783273c4395b8554e7448c" kind="function"><name>add_data_block_element</name></member>
+    <member refid="classas_1_1tsplib_1_1detail_1_1TSPLIBInput_1ab046259b21565dce4c28136a72662484" kind="function"><name>add_data_block_elements</name></member>
+    <member refid="classas_1_1tsplib_1_1detail_1_1TSPLIBInput_1ad7fa65c8a6fde860fa52197af814e7de" kind="function"><name>has_specification</name></member>
+    <member refid="classas_1_1tsplib_1_1detail_1_1TSPLIBInput_1a5a47c5f9370f18a1e752ec6623db4269" kind="function"><name>has_data</name></member>
+    <member refid="classas_1_1tsplib_1_1detail_1_1TSPLIBInput_1a4af00dba4b765706aedb4bc8d90ba1dd" kind="function"><name>get_specification</name></member>
+    <member refid="classas_1_1tsplib_1_1detail_1_1TSPLIBInput_1ac91a185552ff34931a9a37862e03356a" kind="function"><name>get_data</name></member>
+    <member refid="classas_1_1tsplib_1_1detail_1_1TSPLIBInput_1a89c28bafe9767d749554861b052d9b14" kind="function"><name>get_specification</name></member>
+    <member refid="classas_1_1tsplib_1_1detail_1_1TSPLIBInput_1a58a16312cbf4297c8b6931cfc670cebb" kind="function"><name>get_specification</name></member>
+    <member refid="classas_1_1tsplib_1_1detail_1_1TSPLIBInput_1a0e7f98c294d79592b684722a2c8ac327" kind="function"><name>get_specification</name></member>
+  </compound>
+  <compound refid="structas_1_1TwoDimPoint" kind="struct"><name>as::TwoDimPoint</name>
+    <member refid="structas_1_1TwoDimPoint_1af11028c8dd15a4113e387633b0d12584" kind="variable"><name>x</name></member>
+    <member refid="structas_1_1TwoDimPoint_1a257d8f52b228b0fa8ea7f1c780626037" kind="variable"><name>y</name></member>
+  </compound>
   <compound refid="structas_1_1tmp_1_1types" kind="struct"><name>as::tmp::types</name>
     <member refid="structas_1_1tmp_1_1types_1a8fee0852270845709fbb995347ac8fa3" kind="typedef"><name>type</name></member>
   </compound>
@@ -64,17 +109,41 @@
     <member refid="namespaceas_1_1graph_1af020abed3b5b57f984d8ce940ee6f4cd" kind="function"><name>is_extreme</name></member>
     <member refid="namespaceas_1_1graph_1a592c192d63c1c42820da78708adb9e61" kind="function"><name>other_extreme</name></member>
   </compound>
+  <compound refid="namespaceas_1_1oplib" kind="namespace"><name>as::oplib</name>
+  </compound>
+  <compound refid="namespaceas_1_1string" kind="namespace"><name>as::string</name>
+    <member refid="namespaceas_1_1string_1a608048dc1f3a08c88ad0f5ff87b58c1d" kind="function"><name>left_trim</name></member>
+    <member refid="namespaceas_1_1string_1a748afb440479e4824710ab07d92cbe68" kind="function"><name>right_trim</name></member>
+    <member refid="namespaceas_1_1string_1aa654dd12f0ebc738431eee149e2a8242" kind="function"><name>trim</name></member>
+  </compound>
   <compound refid="namespaceas_1_1tmp" kind="namespace"><name>as::tmp</name>
     <member refid="namespaceas_1_1tmp_1a44a275bd3c66d727fb1b6f0179d49e19" kind="typedef"><name>can_apply</name></member>
     <member refid="namespaceas_1_1tmp_1a893659f8b2cd22837c8f494a6f4a61d9" kind="typedef"><name>is_associative</name></member>
   </compound>
   <compound refid="namespaceas_1_1tmp_1_1details" kind="namespace"><name>as::tmp::details</name>
   </compound>
+  <compound refid="namespaceas_1_1tsplib" kind="namespace"><name>as::tsplib</name>
+  </compound>
+  <compound refid="namespaceas_1_1tsplib_1_1detail" kind="namespace"><name>as::tsplib::detail</name>
+    <member refid="namespaceas_1_1tsplib_1_1detail_1ac5ff711af5bcc75d1df53108b0a6f9a4" kind="variable"><name>tsp_pi</name></member>
+    <member refid="namespaceas_1_1tsplib_1_1detail_1a784114698e6ab4a1ae57a2f38692d2c9" kind="variable"><name>tsp_earth_radius</name></member>
+    <member refid="namespaceas_1_1tsplib_1_1detail_1a3fabd21c4bc13069fbe2bcb9b6c59e74" kind="function"><name>read_tsplib_file</name></member>
+    <member refid="namespaceas_1_1tsplib_1_1detail_1a3ae3133c661a1284988d3615f1a3e3d1" kind="function"><name>latlon</name></member>
+    <member refid="namespaceas_1_1tsplib_1_1detail_1aa87df60b8ef17c19d0cb8329a7a28731" kind="function"><name>get_distance_function</name></member>
+    <member refid="namespaceas_1_1tsplib_1_1detail_1a1337beecf37622b3597de699f3852380" kind="function"><name>get_circle_intersection</name></member>
+    <member refid="namespaceas_1_1tsplib_1_1detail_1a6b7b8b134e00f78387c5fe70f5791572" kind="function"><name>euclidean_dist</name></member>
+  </compound>
   <compound refid="namespaceconsole" kind="namespace"><name>console</name>
   </compound>
   <compound refid="namespacegraph" kind="namespace"><name>graph</name>
   </compound>
+  <compound refid="namespaceoplib" kind="namespace"><name>oplib</name>
+  </compound>
+  <compound refid="namespacestring" kind="namespace"><name>string</name>
+  </compound>
   <compound refid="namespacetmp" kind="namespace"><name>tmp</name>
+  </compound>
+  <compound refid="namespacetsplib" kind="namespace"><name>tsplib</name>
   </compound>
   <compound refid="and__die_8h" kind="file"><name>and_die.h</name>
   </compound>
@@ -97,7 +166,15 @@
   </compound>
   <compound refid="iterator__pair_8h" kind="file"><name>iterator_pair.h</name>
   </compound>
+  <compound refid="oplib_8h" kind="file"><name>oplib.h</name>
+  </compound>
+  <compound refid="point_8h" kind="file"><name>point.h</name>
+  </compound>
   <compound refid="random_8h" kind="file"><name>random.h</name>
+  </compound>
+  <compound refid="string_8h" kind="file"><name>string.h</name>
+  </compound>
+  <compound refid="tsplib_8h" kind="file"><name>tsplib.h</name>
   </compound>
   <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>src</name>
   </compound>

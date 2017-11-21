@@ -29,7 +29,7 @@ namespace as {
      *  @return    In theory the same output stream, but in practice the programme dies and nothing is returned.
      */
     inline std::ostream& operator<<(std::ostream& out, const and_die&) {
-        out << std::endl;
+        out << "\n";
         std::exit(EXIT_FAILURE);
         return out; // You are not gong to see this!
     }

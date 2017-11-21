@@ -94,12 +94,12 @@ namespace as {
      */
     template<class Container>
     inline void join_and_print(const Container& container, std::ostream& out = std::cout, std::string separator = ", ") {
-        if(container.begin() == container.end()) { out << std::endl; return; }
+        if(container.begin() == container.end()) { out << "\n"; return; }
         for(auto it = container.begin(); it != std::prev(container.end()); ++it) {
             details::iterated_value(*it, out) << separator;
         }
         auto last = std::prev(container.end());
-        details::iterated_value(*last, out) << std::endl;
+        details::iterated_value(*last, out) << "\n";
     }
 }
 

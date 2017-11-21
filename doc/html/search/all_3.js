@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['default',['Default',['../namespaceas_1_1console.html#ab2f5a531e43f4ee9e0f348f8aa5ce16ca7a1920d61156abc05a60135aefe8bc67',1,'as::console']]]
+  ['default',['Default',['../namespaceas_1_1console.html#ab2f5a531e43f4ee9e0f348f8aa5ce16ca7a1920d61156abc05a60135aefe8bc67',1,'as::console']]],
+  ['distances',['distances',['../classas_1_1tsplib_1_1TSPInstance.html#a51073058c9b3f316da6b2115a9c8bec1',1,'as::tsplib::TSPInstance']]]
 ];

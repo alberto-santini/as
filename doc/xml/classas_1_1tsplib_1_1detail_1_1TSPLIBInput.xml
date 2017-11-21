@@ -1,0 +1,375 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classas_1_1tsplib_1_1detail_1_1TSPLIBInput" kind="class" language="C++" prot="public">
+    <compoundname>as::tsplib::detail::TSPLIBInput</compoundname>
+    <includes refid="tsplib_8h" local="no">tsplib.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classas_1_1tsplib_1_1detail_1_1TSPLIBInput_1a8861529230f97316261b92df80cd3e20" prot="private" static="no" mutable="no">
+        <type>std::map&lt; std::string, std::string &gt;</type>
+        <definition>std::map&lt;std::string, std::string&gt; as::tsplib::detail::TSPLIBInput::specification</definition>
+        <argsstring></argsstring>
+        <name>specification</name>
+        <briefdescription>
+<para>The specification part. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tsplib.h" line="50" column="1" bodyfile="src/tsplib.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classas_1_1tsplib_1_1detail_1_1TSPLIBInput_1ab8a5febb2f675a1902139ba31c8ec22a" prot="private" static="no" mutable="no">
+        <type>std::map&lt; std::string, std::vector&lt; float &gt; &gt;</type>
+        <definition>std::map&lt;std::string, std::vector&lt;float&gt; &gt; as::tsplib::detail::TSPLIBInput::data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <briefdescription>
+<para>The data part. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tsplib.h" line="54" column="1" bodyfile="src/tsplib.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classas_1_1tsplib_1_1detail_1_1TSPLIBInput_1a169a52e7d6767159e3dd0b5e039e8087" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void as::tsplib::detail::TSPLIBInput::add_specification</definition>
+        <argsstring>(std::string key, std::string value)</argsstring>
+        <name>add_specification</name>
+        <param>
+          <type>std::string</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Adds a key-value pair to the specification part. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tsplib.h" line="63" column="1" bodyfile="src/tsplib.h" bodystart="63" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="classas_1_1tsplib_1_1detail_1_1TSPLIBInput_1acd4def3a1df62f904de3bd9692ae7543" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void as::tsplib::detail::TSPLIBInput::add_data_block</definition>
+        <argsstring>(std::string label)</argsstring>
+        <name>add_data_block</name>
+        <param>
+          <type>std::string</type>
+          <declname>label</declname>
+        </param>
+        <briefdescription>
+<para>Adds a new, empty data bloack to the data part. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>label</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The label. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tsplib.h" line="80" column="1" bodyfile="src/tsplib.h" bodystart="80" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="classas_1_1tsplib_1_1detail_1_1TSPLIBInput_1a36eb4a615d783273c4395b8554e7448c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void as::tsplib::detail::TSPLIBInput::add_data_block_element</definition>
+        <argsstring>(std::string label, float value)</argsstring>
+        <name>add_data_block_element</name>
+        <param>
+          <type>std::string</type>
+          <declname>label</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Adds a single value to a data block. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>label</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data block label. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to add. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tsplib.h" line="95" column="1" bodyfile="src/tsplib.h" bodystart="95" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="classas_1_1tsplib_1_1detail_1_1TSPLIBInput_1ab046259b21565dce4c28136a72662484" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::size_t</type>
+        <definition>std::size_t as::tsplib::detail::TSPLIBInput::add_data_block_elements</definition>
+        <argsstring>(std::string label, const std::string &amp;elements)</argsstring>
+        <name>add_data_block_elements</name>
+        <param>
+          <type>std::string</type>
+          <declname>label</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>elements</declname>
+        </param>
+        <briefdescription>
+<para>Adds a whitespace-separated list of values to a data block. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>label</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data block label. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>elements</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A string containing a whitespace-separated list of values to add. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The number of elements added. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tsplib.h" line="110" column="1" bodyfile="src/tsplib.h" bodystart="110" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="classas_1_1tsplib_1_1detail_1_1TSPLIBInput_1ad7fa65c8a6fde860fa52197af814e7de" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool as::tsplib::detail::TSPLIBInput::has_specification</definition>
+        <argsstring>(std::string key) const</argsstring>
+        <name>has_specification</name>
+        <param>
+          <type>std::string</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+<para>Checks if a specification exists with the given key. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True iff there is a specification with the given key. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tsplib.h" line="136" column="1" bodyfile="src/tsplib.h" bodystart="136" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="classas_1_1tsplib_1_1detail_1_1TSPLIBInput_1a5a47c5f9370f18a1e752ec6623db4269" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool as::tsplib::detail::TSPLIBInput::has_data</definition>
+        <argsstring>(std::string label) const</argsstring>
+        <name>has_data</name>
+        <param>
+          <type>std::string</type>
+          <declname>label</declname>
+        </param>
+        <briefdescription>
+<para>Checks if a data block exists with the given label. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>label</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The label. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True iff there is a data block with the given label. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tsplib.h" line="145" column="1" bodyfile="src/tsplib.h" bodystart="145" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="classas_1_1tsplib_1_1detail_1_1TSPLIBInput_1a4af00dba4b765706aedb4bc8d90ba1dd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T as::tsplib::detail::TSPLIBInput::get_specification</definition>
+        <argsstring>(std::string key) const =delete</argsstring>
+        <name>get_specification</name>
+        <param>
+          <type>std::string</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+<para>Deleted function, as the user can only use the specialised versions. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tsplib.h" line="153" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classas_1_1tsplib_1_1detail_1_1TSPLIBInput_1ac91a185552ff34931a9a37862e03356a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; float &gt;</type>
+        <definition>std::vector&lt;float&gt; as::tsplib::detail::TSPLIBInput::get_data</definition>
+        <argsstring>(std::string label) const</argsstring>
+        <name>get_data</name>
+        <param>
+          <type>std::string</type>
+          <declname>label</declname>
+        </param>
+        <briefdescription>
+<para>Gets the vector of values associated with a label from the data part. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>label</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data label. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The values. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tsplib.h" line="160" column="1" bodyfile="src/tsplib.h" bodystart="160" bodyend="165"/>
+      </memberdef>
+      <memberdef kind="function" id="classas_1_1tsplib_1_1detail_1_1TSPLIBInput_1a89c28bafe9767d749554861b052d9b14" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+        </templateparamlist>
+        <type>std::size_t</type>
+        <definition>std::size_t as::tsplib::detail::TSPLIBInput::get_specification</definition>
+        <argsstring>(std::string key) const</argsstring>
+        <name>get_specification</name>
+        <param>
+          <type>std::string</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+<para>Gets an unsigned integer value from the specification part. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Specification key. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The value corresponding to the key, converted from string to size_t. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tsplib.h" line="174" column="1" bodyfile="src/tsplib.h" bodystart="174" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="classas_1_1tsplib_1_1detail_1_1TSPLIBInput_1a58a16312cbf4297c8b6931cfc670cebb" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+        </templateparamlist>
+        <type>float</type>
+        <definition>float as::tsplib::detail::TSPLIBInput::get_specification</definition>
+        <argsstring>(std::string key) const</argsstring>
+        <name>get_specification</name>
+        <param>
+          <type>std::string</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+<para>Gets a single-precision floating point value from the specification part. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Specification key. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The value corresponding to the key, converted from string to float. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tsplib.h" line="194" column="1" bodyfile="src/tsplib.h" bodystart="194" bodyend="206"/>
+      </memberdef>
+      <memberdef kind="function" id="classas_1_1tsplib_1_1detail_1_1TSPLIBInput_1a0e7f98c294d79592b684722a2c8ac327" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+        </templateparamlist>
+        <type>std::string</type>
+        <definition>std::string as::tsplib::detail::TSPLIBInput::get_specification</definition>
+        <argsstring>(std::string key) const</argsstring>
+        <name>get_specification</name>
+        <param>
+          <type>std::string</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+<para>Gets a string value from the specification part. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Specification key. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The value corresponding to the key. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tsplib.h" line="214" column="1" bodyfile="src/tsplib.h" bodystart="214" bodyend="219"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This class represents the syntactic structure of a TSPLIB Instance, as it is read from a TSPLIB input file. </para>    </briefdescription>
+    <detaileddescription>
+<para>The instance has two parts: a specification part which gives metadata on the instance, and a data part which contains the actual instance data. The first part contains one key-value pair per line, separated by a colon and with whitespace wherever the original authors felt like putting it. The second part contains blocks made by a label on a single line, followed by multiple lines, each containing an unspecified number of numerical data. The number of lines following each label is also unspecified. </para>    </detaileddescription>
+    <location file="src/tsplib.h" line="47" column="1" bodyfile="src/tsplib.h" bodystart="47" bodyend="166"/>
+    <listofallmembers>
+      <member refid="classas_1_1tsplib_1_1detail_1_1TSPLIBInput_1acd4def3a1df62f904de3bd9692ae7543" prot="public" virt="non-virtual"><scope>as::tsplib::detail::TSPLIBInput</scope><name>add_data_block</name></member>
+      <member refid="classas_1_1tsplib_1_1detail_1_1TSPLIBInput_1a36eb4a615d783273c4395b8554e7448c" prot="public" virt="non-virtual"><scope>as::tsplib::detail::TSPLIBInput</scope><name>add_data_block_element</name></member>
+      <member refid="classas_1_1tsplib_1_1detail_1_1TSPLIBInput_1ab046259b21565dce4c28136a72662484" prot="public" virt="non-virtual"><scope>as::tsplib::detail::TSPLIBInput</scope><name>add_data_block_elements</name></member>
+      <member refid="classas_1_1tsplib_1_1detail_1_1TSPLIBInput_1a169a52e7d6767159e3dd0b5e039e8087" prot="public" virt="non-virtual"><scope>as::tsplib::detail::TSPLIBInput</scope><name>add_specification</name></member>
+      <member refid="classas_1_1tsplib_1_1detail_1_1TSPLIBInput_1ab8a5febb2f675a1902139ba31c8ec22a" prot="private" virt="non-virtual"><scope>as::tsplib::detail::TSPLIBInput</scope><name>data</name></member>
+      <member refid="classas_1_1tsplib_1_1detail_1_1TSPLIBInput_1ac91a185552ff34931a9a37862e03356a" prot="public" virt="non-virtual"><scope>as::tsplib::detail::TSPLIBInput</scope><name>get_data</name></member>
+      <member refid="classas_1_1tsplib_1_1detail_1_1TSPLIBInput_1a4af00dba4b765706aedb4bc8d90ba1dd" prot="public" virt="non-virtual"><scope>as::tsplib::detail::TSPLIBInput</scope><name>get_specification</name></member>
+      <member refid="classas_1_1tsplib_1_1detail_1_1TSPLIBInput_1a89c28bafe9767d749554861b052d9b14" prot="public" virt="non-virtual"><scope>as::tsplib::detail::TSPLIBInput</scope><name>get_specification</name></member>
+      <member refid="classas_1_1tsplib_1_1detail_1_1TSPLIBInput_1a58a16312cbf4297c8b6931cfc670cebb" prot="public" virt="non-virtual"><scope>as::tsplib::detail::TSPLIBInput</scope><name>get_specification</name></member>
+      <member refid="classas_1_1tsplib_1_1detail_1_1TSPLIBInput_1a0e7f98c294d79592b684722a2c8ac327" prot="public" virt="non-virtual"><scope>as::tsplib::detail::TSPLIBInput</scope><name>get_specification</name></member>
+      <member refid="classas_1_1tsplib_1_1detail_1_1TSPLIBInput_1a5a47c5f9370f18a1e752ec6623db4269" prot="public" virt="non-virtual"><scope>as::tsplib::detail::TSPLIBInput</scope><name>has_data</name></member>
+      <member refid="classas_1_1tsplib_1_1detail_1_1TSPLIBInput_1ad7fa65c8a6fde860fa52197af814e7de" prot="public" virt="non-virtual"><scope>as::tsplib::detail::TSPLIBInput</scope><name>has_specification</name></member>
+      <member refid="classas_1_1tsplib_1_1detail_1_1TSPLIBInput_1a8861529230f97316261b92df80cd3e20" prot="private" virt="non-virtual"><scope>as::tsplib::detail::TSPLIBInput</scope><name>specification</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

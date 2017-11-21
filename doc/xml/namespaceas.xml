@@ -4,10 +4,14 @@
     <compoundname>as</compoundname>
     <innerclass refid="structas_1_1and__die" prot="public">as::and_die</innerclass>
     <innerclass refid="classas_1_1iterator__pair" prot="public">as::iterator_pair</innerclass>
+    <innerclass refid="structas_1_1TwoDimPoint" prot="public">as::TwoDimPoint</innerclass>
     <innernamespace refid="namespaceas_1_1console">as::console</innernamespace>
     <innernamespace refid="namespaceas_1_1details">as::details</innernamespace>
     <innernamespace refid="namespaceas_1_1graph">as::graph</innernamespace>
+    <innernamespace refid="namespaceas_1_1oplib">as::oplib</innernamespace>
+    <innernamespace refid="namespaceas_1_1string">as::string</innernamespace>
     <innernamespace refid="namespaceas_1_1tmp">as::tmp</innernamespace>
+    <innernamespace refid="namespaceas_1_1tsplib">as::tsplib</innernamespace>
       <sectiondef kind="typedef">
       <memberdef kind="typedef" id="namespaceas_1a9bd788709567003423247a9db4ba1074" prot="public" static="no">
         <type>decltype(std::declval&lt; Container &gt;().count(std::declval&lt; T &gt;()))</type>
@@ -186,7 +190,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/containers.h" line="96" column="1" bodyfile="src/containers.h" bodystart="96" bodyend="102"/>
+        <location file="src/containers.h" line="96" column="1" bodyfile="src/containers.h" bodystart="96" bodyend="103"/>
       </memberdef>
       <memberdef kind="function" id="namespaceas_1a359f2d209e5ec052ec0d2752a589802d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>

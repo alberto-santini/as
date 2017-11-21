@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classas_1_1oplib_1_1OPInstance" kind="class" language="C++" prot="public">
+    <compoundname>as::oplib::OPInstance</compoundname>
+    <basecompoundref refid="classas_1_1tsplib_1_1TSPInstance" prot="public" virt="non-virtual">as::tsplib::TSPInstance</basecompoundref>
+    <includes refid="oplib_8h" local="no">oplib.h</includes>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classas_1_1oplib_1_1OPInstance_1a57be40043f2881e6ba41d62ad6bd223c" prot="protected" static="no" mutable="no">
+        <type>float</type>
+        <definition>float as::oplib::OPInstance::max_travel_time</definition>
+        <argsstring></argsstring>
+        <name>max_travel_time</name>
+        <briefdescription>
+<para>Maximum travel time. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/oplib.h" line="27" column="1" bodyfile="src/oplib.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classas_1_1oplib_1_1OPInstance_1ae04b2b823f630159c31d7c3f2f3fcdb5" prot="protected" static="no" mutable="no">
+        <type>std::vector&lt; float &gt;</type>
+        <definition>std::vector&lt;float&gt; as::oplib::OPInstance::prizes</definition>
+        <argsstring></argsstring>
+        <name>prizes</name>
+        <briefdescription>
+<para>List of prizes collectable at vertices. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/oplib.h" line="31" column="1" bodyfile="src/oplib.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classas_1_1oplib_1_1OPInstance_1a6324297e7797771f734a0e373dc6d218" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>as::oplib::OPInstance::OPInstance</definition>
+        <argsstring>(std::string oplib_file)</argsstring>
+        <name>OPInstance</name>
+        <param>
+          <type>std::string</type>
+          <declname>oplib_file</declname>
+        </param>
+        <briefdescription>
+<para>Builds an instance from an OPLIB file. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>oplib_file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file containing the instance data. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/oplib.h" line="39" column="1" bodyfile="src/oplib.h" bodystart="39" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classas_1_1oplib_1_1OPInstance_1a7e641c06d51b916cdf6ae88a4510ee0b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float as::oplib::OPInstance::get_prize</definition>
+        <argsstring>(std::size_t vertex) const</argsstring>
+        <name>get_prize</name>
+        <param>
+          <type>std::size_t</type>
+          <declname>vertex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/oplib.h" line="44" column="1" bodyfile="src/oplib.h" bodystart="44" bodyend="49"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classas_1_1oplib_1_1OPInstance_1a843f3f660f032b843a665d48a12219ca" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void as::oplib::OPInstance::set_prizes</definition>
+        <argsstring>()</argsstring>
+        <name>set_prizes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/oplib.h" line="53" column="1" bodyfile="src/oplib.h" bodystart="53" bodyend="70"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="20">
+        <label>as::oplib::OPInstance</label>
+        <link refid="classas_1_1oplib_1_1OPInstance"/>
+        <childnode refid="21" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>as::tsplib::TSPInstance</label>
+        <link refid="classas_1_1tsplib_1_1TSPInstance"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="22">
+        <label>as::oplib::OPInstance</label>
+        <link refid="classas_1_1oplib_1_1OPInstance"/>
+        <childnode refid="23" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>as::tsplib::TSPInstance</label>
+        <link refid="classas_1_1tsplib_1_1TSPInstance"/>
+        <childnode refid="24" relation="usage">
+          <edgelabel>tsp</edgelabel>
+        </childnode>
+      </node>
+      <node id="24">
+        <label>as::tsplib::detail::TSPLIBInput</label>
+        <link refid="classas_1_1tsplib_1_1detail_1_1TSPLIBInput"/>
+      </node>
+    </collaborationgraph>
+    <location file="src/oplib.h" line="23" column="1" bodyfile="src/oplib.h" bodystart="23" bodyend="71"/>
+    <listofallmembers>
+      <member refid="classas_1_1tsplib_1_1TSPInstance_1ad8e74403f222f9470bf320e5749e6d9a" prot="protected" virt="non-virtual"><scope>as::oplib::OPInstance</scope><name>coordinates</name></member>
+      <member refid="classas_1_1tsplib_1_1TSPInstance_1a51073058c9b3f316da6b2115a9c8bec1" prot="protected" virt="non-virtual"><scope>as::oplib::OPInstance</scope><name>distances</name></member>
+      <member refid="classas_1_1tsplib_1_1TSPInstance_1a36962fb85e309faa3efb28fae3b2956b" prot="public" virt="non-virtual"><scope>as::oplib::OPInstance</scope><name>get_coordinates</name></member>
+      <member refid="classas_1_1tsplib_1_1TSPInstance_1a52535b9ad72eaaac80f2a7a1518e680f" prot="public" virt="non-virtual"><scope>as::oplib::OPInstance</scope><name>get_distance</name></member>
+      <member refid="classas_1_1oplib_1_1OPInstance_1a7e641c06d51b916cdf6ae88a4510ee0b" prot="public" virt="non-virtual"><scope>as::oplib::OPInstance</scope><name>get_prize</name></member>
+      <member refid="classas_1_1oplib_1_1OPInstance_1a57be40043f2881e6ba41d62ad6bd223c" prot="protected" virt="non-virtual"><scope>as::oplib::OPInstance</scope><name>max_travel_time</name></member>
+      <member refid="classas_1_1tsplib_1_1TSPInstance_1af62c22d7f09f0264f5e817268230cec9" prot="protected" virt="non-virtual"><scope>as::oplib::OPInstance</scope><name>n_vertices</name></member>
+      <member refid="classas_1_1tsplib_1_1TSPInstance_1a3beae0a769669c417e8bc7d1e41a7550" prot="public" virt="non-virtual"><scope>as::oplib::OPInstance</scope><name>number_of_vertices</name></member>
+      <member refid="classas_1_1oplib_1_1OPInstance_1a6324297e7797771f734a0e373dc6d218" prot="public" virt="non-virtual"><scope>as::oplib::OPInstance</scope><name>OPInstance</name></member>
+      <member refid="classas_1_1oplib_1_1OPInstance_1ae04b2b823f630159c31d7c3f2f3fcdb5" prot="protected" virt="non-virtual"><scope>as::oplib::OPInstance</scope><name>prizes</name></member>
+      <member refid="classas_1_1oplib_1_1OPInstance_1a843f3f660f032b843a665d48a12219ca" prot="private" virt="non-virtual"><scope>as::oplib::OPInstance</scope><name>set_prizes</name></member>
+      <member refid="classas_1_1tsplib_1_1TSPInstance_1a6a73219aae354011c905255dc687122b" prot="protected" virt="non-virtual"><scope>as::oplib::OPInstance</scope><name>tsp</name></member>
+      <member refid="classas_1_1tsplib_1_1TSPInstance_1a5cc9de2e917ae7aa608e10b4375155d6" prot="public" virt="non-virtual"><scope>as::oplib::OPInstance</scope><name>TSPInstance</name></member>
+      <member refid="classas_1_1tsplib_1_1TSPInstance_1a6b2d4d7ad5e12825ceee49d32cdc28af" prot="protected" virt="non-virtual"><scope>as::oplib::OPInstance</scope><name>tsplib_file</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

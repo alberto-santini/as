@@ -6,6 +6,7 @@
     <includes local="no">ostream</includes>
     <includes local="no">type_traits</includes>
     <includes local="no">sstream</includes>
+    <includedby refid="tsplib_8h" local="yes">src/tsplib.h</includedby>
     <incdepgraph>
       <node id="12">
         <label>string</label>
@@ -32,6 +33,24 @@
         </childnode>
       </node>
     </incdepgraph>
+    <invincdepgraph>
+      <node id="17">
+        <label>src/tsplib.h</label>
+        <link refid="tsplib_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>src/oplib.h</label>
+        <link refid="oplib_8h"/>
+      </node>
+      <node id="16">
+        <label>src/console.h</label>
+        <link refid="console_8h"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
     <innernamespace refid="namespaceas">as</innernamespace>
     <innernamespace refid="namespaceconsole">console</innernamespace>
     <innernamespace refid="namespaceas_1_1console">as::console</innernamespace>

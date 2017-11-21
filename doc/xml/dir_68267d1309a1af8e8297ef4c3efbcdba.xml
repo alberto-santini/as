@@ -11,7 +11,11 @@
     <innerfile refid="graph_8h">graph.h</innerfile>
     <innerfile refid="is__associative_8h">is_associative.h</innerfile>
     <innerfile refid="iterator__pair_8h">iterator_pair.h</innerfile>
+    <innerfile refid="oplib_8h">oplib.h</innerfile>
+    <innerfile refid="point_8h">point.h</innerfile>
     <innerfile refid="random_8h">random.h</innerfile>
+    <innerfile refid="string_8h">string.h</innerfile>
+    <innerfile refid="tsplib_8h">tsplib.h</innerfile>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
