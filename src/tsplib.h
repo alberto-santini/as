@@ -577,7 +577,7 @@ namespace as {
              *  @param label    The data label.
              *  @return         The data vector.
              */
-            std::vector<double> get_raw_data(std::string label) const {
+            std::vector<float> get_raw_data(std::string label) const {
                 return tsp.get_data(label);
             }
 

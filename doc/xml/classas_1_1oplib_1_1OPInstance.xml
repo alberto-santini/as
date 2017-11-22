@@ -158,7 +158,7 @@
       <member refid="classas_1_1oplib_1_1OPInstance_1a8b3d893ac260f673f43d5bc63f24dba1" prot="public" virt="non-virtual"><scope>as::oplib::OPInstance</scope><name>get_max_travel_time</name></member>
       <member refid="classas_1_1tsplib_1_1TSPInstance_1ace09ba6ff164a9569b95ebe772aeebfb" prot="public" virt="non-virtual"><scope>as::oplib::OPInstance</scope><name>get_original_coordinates</name></member>
       <member refid="classas_1_1oplib_1_1OPInstance_1a7e641c06d51b916cdf6ae88a4510ee0b" prot="public" virt="non-virtual"><scope>as::oplib::OPInstance</scope><name>get_prize</name></member>
-      <member refid="classas_1_1tsplib_1_1TSPInstance_1a9104ddf703ed589337edfbd44d7ffdf6" prot="public" virt="non-virtual"><scope>as::oplib::OPInstance</scope><name>get_raw_data</name></member>
+      <member refid="classas_1_1tsplib_1_1TSPInstance_1abba8d53e1d420920fd316f884ce2f10d" prot="public" virt="non-virtual"><scope>as::oplib::OPInstance</scope><name>get_raw_data</name></member>
       <member refid="classas_1_1tsplib_1_1TSPInstance_1a24f6eeee5dba6517265a9211da0b4962" prot="public" virt="non-virtual"><scope>as::oplib::OPInstance</scope><name>get_raw_specification</name></member>
       <member refid="classas_1_1oplib_1_1OPInstance_1a57be40043f2881e6ba41d62ad6bd223c" prot="protected" virt="non-virtual"><scope>as::oplib::OPInstance</scope><name>max_travel_time</name></member>
       <member refid="classas_1_1tsplib_1_1TSPInstance_1af62c22d7f09f0264f5e817268230cec9" prot="protected" virt="non-virtual"><scope>as::oplib::OPInstance</scope><name>n_vertices</name></member>
