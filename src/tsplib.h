@@ -606,6 +606,16 @@ namespace as {
                 }
             }
 
+            void set_coordinates() {
+                const auto type = tsp.get_specification<std::string>("EDGE_WEIGHT_TYPE");
+
+                if(type == "GEO") {
+                    set_coordinates_geo();
+                } else {
+                    set_coordinates_euclidean();
+                }
+            }
+
             void set_coordinates_and_weights() {
                 const auto type = tsp.get_specification<std::string>("EDGE_WEIGHT_TYPE");
 
@@ -617,6 +627,10 @@ namespace as {
             }
 
             void set_coordinates_and_weights_geo() {
+                set_coordinates_geo(true);
+            }
+
+            void set_coordinates_geo(bool set_weights = false) {
                 // First get the coordinates as if they were
                 // Euclidean (x,y) coordinates, i.e. by just using
                 // the raw values given in the instance file.
@@ -624,7 +638,9 @@ namespace as {
 
                 // Then calculate the weights with these coordinates,
                 // using the GEO function.
-                set_weights_from_coordinates();
+                if(set_weights) {
+                    set_weights_from_coordinates();
+                }
 
                 // Then project the coords using an Azimuthal Equidistant Projection
                 // centred on the depot. For more information see:
@@ -639,11 +655,11 @@ namespace as {
                     const auto v_lat = detail::latlon(eucl_coordinates[i].x);
                     const auto v_lon = detail::latlon(eucl_coordinates[i].y);
                     const auto cos_c = std::sin(centre_lat) * std::sin(v_lat) +
-                        std::cos(centre_lat) * std::cos(v_lat) * std::cos(v_lon - centre_lon);
+                                       std::cos(centre_lat) * std::cos(v_lat) * std::cos(v_lon - centre_lon);
                     const auto c = std::acos(cos_c);
                     const auto k = c / std::sin(c);
                     const auto x = detail::tsp_earth_radius * k *
-                        (std::cos(centre_lat) * std::sin(v_lat) - std::sin(centre_lat) * std::cos(v_lat) * std::cos(v_lon - centre_lon));
+                                   (std::cos(centre_lat) * std::sin(v_lat) - std::sin(centre_lat) * std::cos(v_lat) * std::cos(v_lon - centre_lon));
                     const auto y = detail::tsp_earth_radius * k * std::cos(v_lat) * std::sin(v_lon - centre_lon);
 
                     coordinates[i] = {x, y};

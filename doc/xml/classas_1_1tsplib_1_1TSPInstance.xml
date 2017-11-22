@@ -215,6 +215,19 @@
         </inbodydescription>
         <location file="src/tsplib.h" line="581" column="1" bodyfile="src/tsplib.h" bodystart="581" bodyend="607"/>
       </memberdef>
+      <memberdef kind="function" id="classas_1_1tsplib_1_1TSPInstance_1aaead2f7725de593b8357eeec233238ee" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void as::tsplib::TSPInstance::set_coordinates</definition>
+        <argsstring>()</argsstring>
+        <name>set_coordinates</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tsplib.h" line="609" column="1" bodyfile="src/tsplib.h" bodystart="609" bodyend="617"/>
+      </memberdef>
       <memberdef kind="function" id="classas_1_1tsplib_1_1TSPInstance_1ae4071717e6e85ccfbf051ee55f7e3c9f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void as::tsplib::TSPInstance::set_coordinates_and_weights</definition>
@@ -226,7 +239,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/tsplib.h" line="609" column="1" bodyfile="src/tsplib.h" bodystart="609" bodyend="617"/>
+        <location file="src/tsplib.h" line="619" column="1" bodyfile="src/tsplib.h" bodystart="619" bodyend="627"/>
       </memberdef>
       <memberdef kind="function" id="classas_1_1tsplib_1_1TSPInstance_1af1b42a22181d92014dd2114a0646453c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -239,7 +252,25 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/tsplib.h" line="619" column="1" bodyfile="src/tsplib.h" bodystart="619" bodyend="651"/>
+        <location file="src/tsplib.h" line="629" column="1" bodyfile="src/tsplib.h" bodystart="629" bodyend="631"/>
+      </memberdef>
+      <memberdef kind="function" id="classas_1_1tsplib_1_1TSPInstance_1a7a90f98e488e2de199865bd03beb580c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void as::tsplib::TSPInstance::set_coordinates_geo</definition>
+        <argsstring>(bool set_weights=false)</argsstring>
+        <name>set_coordinates_geo</name>
+        <param>
+          <type>bool</type>
+          <declname>set_weights</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tsplib.h" line="633" column="1" bodyfile="src/tsplib.h" bodystart="633" bodyend="667"/>
       </memberdef>
       <memberdef kind="function" id="classas_1_1tsplib_1_1TSPInstance_1ace7d02c3701fcd37f473304088167ecd" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -252,7 +283,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/tsplib.h" line="653" column="1" bodyfile="src/tsplib.h" bodystart="653" bodyend="656"/>
+        <location file="src/tsplib.h" line="669" column="1" bodyfile="src/tsplib.h" bodystart="669" bodyend="672"/>
       </memberdef>
       <memberdef kind="function" id="classas_1_1tsplib_1_1TSPInstance_1ab59f351005750d8ab54a37c74b714565" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -265,7 +296,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/tsplib.h" line="658" column="1" bodyfile="src/tsplib.h" bodystart="658" bodyend="676"/>
+        <location file="src/tsplib.h" line="674" column="1" bodyfile="src/tsplib.h" bodystart="674" bodyend="692"/>
       </memberdef>
       <memberdef kind="function" id="classas_1_1tsplib_1_1TSPInstance_1a1afcd527885c01bb3a02085d63fa8199" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -278,7 +309,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/tsplib.h" line="678" column="1" bodyfile="src/tsplib.h" bodystart="678" bodyend="692"/>
+        <location file="src/tsplib.h" line="694" column="1" bodyfile="src/tsplib.h" bodystart="694" bodyend="708"/>
       </memberdef>
       <memberdef kind="function" id="classas_1_1tsplib_1_1TSPInstance_1a4de463a6ac47bf8a2bdeb95754111219" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -291,7 +322,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/tsplib.h" line="694" column="1" bodyfile="src/tsplib.h" bodystart="694" bodyend="724"/>
+        <location file="src/tsplib.h" line="710" column="1" bodyfile="src/tsplib.h" bodystart="710" bodyend="740"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -323,7 +354,7 @@
         <link refid="classas_1_1tsplib_1_1detail_1_1TSPLIBInput"/>
       </node>
     </collaborationgraph>
-    <location file="src/tsplib.h" line="451" column="1" bodyfile="src/tsplib.h" bodystart="451" bodyend="725"/>
+    <location file="src/tsplib.h" line="451" column="1" bodyfile="src/tsplib.h" bodystart="451" bodyend="741"/>
     <listofallmembers>
       <member refid="classas_1_1tsplib_1_1TSPInstance_1ad8e74403f222f9470bf320e5749e6d9a" prot="protected" virt="non-virtual"><scope>as::tsplib::TSPInstance</scope><name>coordinates</name></member>
       <member refid="classas_1_1tsplib_1_1TSPInstance_1a51073058c9b3f316da6b2115a9c8bec1" prot="protected" virt="non-virtual"><scope>as::tsplib::TSPInstance</scope><name>distances</name></member>
@@ -332,10 +363,12 @@
       <member refid="classas_1_1tsplib_1_1TSPInstance_1af62c22d7f09f0264f5e817268230cec9" prot="protected" virt="non-virtual"><scope>as::tsplib::TSPInstance</scope><name>n_vertices</name></member>
       <member refid="classas_1_1tsplib_1_1TSPInstance_1a3beae0a769669c417e8bc7d1e41a7550" prot="public" virt="non-virtual"><scope>as::tsplib::TSPInstance</scope><name>number_of_vertices</name></member>
       <member refid="classas_1_1tsplib_1_1TSPInstance_1a4de463a6ac47bf8a2bdeb95754111219" prot="private" virt="non-virtual"><scope>as::tsplib::TSPInstance</scope><name>reverse_engineer_coordinates</name></member>
+      <member refid="classas_1_1tsplib_1_1TSPInstance_1aaead2f7725de593b8357eeec233238ee" prot="private" virt="non-virtual"><scope>as::tsplib::TSPInstance</scope><name>set_coordinates</name></member>
       <member refid="classas_1_1tsplib_1_1TSPInstance_1ae4071717e6e85ccfbf051ee55f7e3c9f" prot="private" virt="non-virtual"><scope>as::tsplib::TSPInstance</scope><name>set_coordinates_and_weights</name></member>
       <member refid="classas_1_1tsplib_1_1TSPInstance_1ace7d02c3701fcd37f473304088167ecd" prot="private" virt="non-virtual"><scope>as::tsplib::TSPInstance</scope><name>set_coordinates_and_weights_euclidean</name></member>
       <member refid="classas_1_1tsplib_1_1TSPInstance_1af1b42a22181d92014dd2114a0646453c" prot="private" virt="non-virtual"><scope>as::tsplib::TSPInstance</scope><name>set_coordinates_and_weights_geo</name></member>
       <member refid="classas_1_1tsplib_1_1TSPInstance_1ab59f351005750d8ab54a37c74b714565" prot="private" virt="non-virtual"><scope>as::tsplib::TSPInstance</scope><name>set_coordinates_euclidean</name></member>
+      <member refid="classas_1_1tsplib_1_1TSPInstance_1a7a90f98e488e2de199865bd03beb580c" prot="private" virt="non-virtual"><scope>as::tsplib::TSPInstance</scope><name>set_coordinates_geo</name></member>
       <member refid="classas_1_1tsplib_1_1TSPInstance_1a55b5c85a27eed3e5e24e831e207b8e8b" prot="private" virt="non-virtual"><scope>as::tsplib::TSPInstance</scope><name>set_explicit_weights</name></member>
       <member refid="classas_1_1tsplib_1_1TSPInstance_1acf708a88d35bc49640fcf6d0f47fd260" prot="private" virt="non-virtual"><scope>as::tsplib::TSPInstance</scope><name>set_explicit_weights_lower_diag_row</name></member>
       <member refid="classas_1_1tsplib_1_1TSPInstance_1a4fbd8004cace0c3e5e186b99c2de4cbe" prot="private" virt="non-virtual"><scope>as::tsplib::TSPInstance</scope><name>set_explicit_weights_upper_row</name></member>

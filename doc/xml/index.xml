@@ -38,8 +38,10 @@
     <member refid="classas_1_1tsplib_1_1TSPInstance_1a55b5c85a27eed3e5e24e831e207b8e8b" kind="function"><name>set_explicit_weights</name></member>
     <member refid="classas_1_1tsplib_1_1TSPInstance_1a4fbd8004cace0c3e5e186b99c2de4cbe" kind="function"><name>set_explicit_weights_upper_row</name></member>
     <member refid="classas_1_1tsplib_1_1TSPInstance_1acf708a88d35bc49640fcf6d0f47fd260" kind="function"><name>set_explicit_weights_lower_diag_row</name></member>
+    <member refid="classas_1_1tsplib_1_1TSPInstance_1aaead2f7725de593b8357eeec233238ee" kind="function"><name>set_coordinates</name></member>
     <member refid="classas_1_1tsplib_1_1TSPInstance_1ae4071717e6e85ccfbf051ee55f7e3c9f" kind="function"><name>set_coordinates_and_weights</name></member>
     <member refid="classas_1_1tsplib_1_1TSPInstance_1af1b42a22181d92014dd2114a0646453c" kind="function"><name>set_coordinates_and_weights_geo</name></member>
+    <member refid="classas_1_1tsplib_1_1TSPInstance_1a7a90f98e488e2de199865bd03beb580c" kind="function"><name>set_coordinates_geo</name></member>
     <member refid="classas_1_1tsplib_1_1TSPInstance_1ace7d02c3701fcd37f473304088167ecd" kind="function"><name>set_coordinates_and_weights_euclidean</name></member>
     <member refid="classas_1_1tsplib_1_1TSPInstance_1ab59f351005750d8ab54a37c74b714565" kind="function"><name>set_coordinates_euclidean</name></member>
     <member refid="classas_1_1tsplib_1_1TSPInstance_1a1afcd527885c01bb3a02085d63fa8199" kind="function"><name>set_weights_from_coordinates</name></member>
