@@ -37,7 +37,11 @@ std\+::size\+\_\+t \hyperlink{classas_1_1tsplib_1_1TSPInstance_a3beae0a769669c41
 \hyperlink{structas_1_1TwoDimPoint}{Two\+Dim\+Point} \hyperlink{classas_1_1tsplib_1_1TSPInstance_a36962fb85e309faa3efb28fae3b2956b}{get\+\_\+coordinates} (std\+::size\+\_\+t vertex) const
 \begin{DoxyCompactList}\small\item\em Gives the (x,y)-\/coordinates of a vertex. \end{DoxyCompactList}\item 
 float \hyperlink{classas_1_1tsplib_1_1TSPInstance_a52535b9ad72eaaac80f2a7a1518e680f}{get\+\_\+distance} (std\+::size\+\_\+t v1, std\+::size\+\_\+t v2) const
-\begin{DoxyCompactList}\small\item\em Gives the distance between two vertices in the graph. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Gives the distance between two vertices in the graph. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\T \hyperlink{classas_1_1tsplib_1_1TSPInstance_a24f6eeee5dba6517265a9211da0b4962}{get\+\_\+raw\+\_\+specification} (std\+::string key) const
+\begin{DoxyCompactList}\small\item\em Gets the raw specification directly from the T\+SP Instance file. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \hyperlink{classas_1_1tsplib_1_1TSPInstance_a9104ddf703ed589337edfbd44d7ffdf6}{get\+\_\+raw\+\_\+data} (std\+::string label) const
+\begin{DoxyCompactList}\small\item\em Gets the raw data vector directly from the T\+SP Instance file. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -116,6 +120,48 @@ Gives the distance between two vertices in the graph.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 The distance between the vertices. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classas_1_1tsplib_1_1TSPInstance_a9104ddf703ed589337edfbd44d7ffdf6}\label{classas_1_1tsplib_1_1TSPInstance_a9104ddf703ed589337edfbd44d7ffdf6}} 
+\index{as\+::tsplib\+::\+T\+S\+P\+Instance@{as\+::tsplib\+::\+T\+S\+P\+Instance}!get\+\_\+raw\+\_\+data@{get\+\_\+raw\+\_\+data}}
+\index{get\+\_\+raw\+\_\+data@{get\+\_\+raw\+\_\+data}!as\+::tsplib\+::\+T\+S\+P\+Instance@{as\+::tsplib\+::\+T\+S\+P\+Instance}}
+\subsubsection{\texorpdfstring{get\+\_\+raw\+\_\+data()}{get\_raw\_data()}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ as\+::tsplib\+::\+T\+S\+P\+Instance\+::get\+\_\+raw\+\_\+data (\begin{DoxyParamCaption}\item[{std\+::string}]{label }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the raw data vector directly from the T\+SP Instance file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em label} & The data label. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The data vector. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classas_1_1tsplib_1_1TSPInstance_a24f6eeee5dba6517265a9211da0b4962}\label{classas_1_1tsplib_1_1TSPInstance_a24f6eeee5dba6517265a9211da0b4962}} 
+\index{as\+::tsplib\+::\+T\+S\+P\+Instance@{as\+::tsplib\+::\+T\+S\+P\+Instance}!get\+\_\+raw\+\_\+specification@{get\+\_\+raw\+\_\+specification}}
+\index{get\+\_\+raw\+\_\+specification@{get\+\_\+raw\+\_\+specification}!as\+::tsplib\+::\+T\+S\+P\+Instance@{as\+::tsplib\+::\+T\+S\+P\+Instance}}
+\subsubsection{\texorpdfstring{get\+\_\+raw\+\_\+specification()}{get\_raw\_specification()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T as\+::tsplib\+::\+T\+S\+P\+Instance\+::get\+\_\+raw\+\_\+specification (\begin{DoxyParamCaption}\item[{std\+::string}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the raw specification directly from the T\+SP Instance file. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type the specification value should be returned. Allowed values are std\+::size\+\_\+t, float, and std\+::string. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The specification key. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The specification value. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classas_1_1tsplib_1_1TSPInstance_a3beae0a769669c417e8bc7d1e41a7550}\label{classas_1_1tsplib_1_1TSPInstance_a3beae0a769669c417e8bc7d1e41a7550}} 
 \index{as\+::tsplib\+::\+T\+S\+P\+Instance@{as\+::tsplib\+::\+T\+S\+P\+Instance}!number\+\_\+of\+\_\+vertices@{number\+\_\+of\+\_\+vertices}}

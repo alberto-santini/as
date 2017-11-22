@@ -107,6 +107,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a52535b9ad72eaaac80f2a7a1518e680f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classas_1_1tsplib_1_1TSPInstance.html#a52535b9ad72eaaac80f2a7a1518e680f">get_distance</a> (std::size_t v1, std::size_t v2) const</td></tr>
 <tr class="memdesc:a52535b9ad72eaaac80f2a7a1518e680f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives the distance between two vertices in the graph.  <a href="#a52535b9ad72eaaac80f2a7a1518e680f">More...</a><br /></td></tr>
 <tr class="separator:a52535b9ad72eaaac80f2a7a1518e680f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24f6eeee5dba6517265a9211da0b4962"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a24f6eeee5dba6517265a9211da0b4962"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classas_1_1tsplib_1_1TSPInstance.html#a24f6eeee5dba6517265a9211da0b4962">get_raw_specification</a> (std::string key) const</td></tr>
+<tr class="memdesc:a24f6eeee5dba6517265a9211da0b4962"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the raw specification directly from the TSP Instance file.  <a href="#a24f6eeee5dba6517265a9211da0b4962">More...</a><br /></td></tr>
+<tr class="separator:a24f6eeee5dba6517265a9211da0b4962"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9104ddf703ed589337edfbd44d7ffdf6"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classas_1_1tsplib_1_1TSPInstance.html#a9104ddf703ed589337edfbd44d7ffdf6">get_raw_data</a> (std::string label) const</td></tr>
+<tr class="memdesc:a9104ddf703ed589337edfbd44d7ffdf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the raw data vector directly from the TSP Instance file.  <a href="#a9104ddf703ed589337edfbd44d7ffdf6">More...</a><br /></td></tr>
+<tr class="separator:a9104ddf703ed589337edfbd44d7ffdf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -246,6 +253,84 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The distance between the vertices. </dd></dl>
+
+</div>
+</div>
+<a id="a9104ddf703ed589337edfbd44d7ffdf6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9104ddf703ed589337edfbd44d7ffdf6">&#9670;&nbsp;</a></span>get_raw_data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;double&gt; as::tsplib::TSPInstance::get_raw_data </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>label</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the raw data vector directly from the TSP Instance file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">label</td><td>The data label. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The data vector. </dd></dl>
+
+</div>
+</div>
+<a id="a24f6eeee5dba6517265a9211da0b4962"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24f6eeee5dba6517265a9211da0b4962">&#9670;&nbsp;</a></span>get_raw_specification()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T as::tsplib::TSPInstance::get_raw_specification </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the raw specification directly from the TSP Instance file. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The type the specification value should be returned. Allowed values are std::size_t, float, and std::string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>The specification key. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The specification value. </dd></dl>
 
 </div>
 </div>

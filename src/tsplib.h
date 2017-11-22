@@ -538,6 +538,29 @@ namespace as {
                 return distances[v1][v2];
             }
 
+            /** @brief          Gets the raw specification directly from the
+             *                  TSP Instance file.
+             *
+             *  @tparam T       The type the specification value should be returned.
+             *                  Allowed values are std::size_t, float, and std::string.
+             *  @param key      The specification key.
+             *  @return         The specification value.
+             */
+            template<class T>
+            T get_raw_specification(std::string key) const {
+                return tsp.get_specification<T>(key);
+            }
+
+            /** @brief          Gets the raw data vector directly from the
+             *                  TSP Instance file.
+             *
+             *  @param label    The data label.
+             *  @return         The data vector.
+             */
+            std::vector<double> get_raw_data(std::string label) const {
+                return tsp.get_data(label);
+            }
+
         private:
 
             void set_explicit_weights() {
