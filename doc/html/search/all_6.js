@@ -6,6 +6,7 @@ var searchData=
   ['get_5fdistance',['get_distance',['../classas_1_1tsplib_1_1TSPInstance.html#a52535b9ad72eaaac80f2a7a1518e680f',1,'as::tsplib::TSPInstance']]],
   ['get_5fdistance_5ffunction',['get_distance_function',['../namespaceas_1_1tsplib_1_1detail.html#aa87df60b8ef17c19d0cb8329a7a28731',1,'as::tsplib::detail']]],
   ['get_5fmax_5ftravel_5ftime',['get_max_travel_time',['../classas_1_1oplib_1_1OPInstance.html#a8b3d893ac260f673f43d5bc63f24dba1',1,'as::oplib::OPInstance']]],
+  ['get_5foriginal_5fcoordinates',['get_original_coordinates',['../classas_1_1tsplib_1_1TSPInstance.html#ace09ba6ff164a9569b95ebe772aeebfb',1,'as::tsplib::TSPInstance']]],
   ['get_5fprize',['get_prize',['../classas_1_1oplib_1_1OPInstance.html#a7e641c06d51b916cdf6ae88a4510ee0b',1,'as::oplib::OPInstance']]],
   ['get_5fraw_5fdata',['get_raw_data',['../classas_1_1tsplib_1_1TSPInstance.html#a9104ddf703ed589337edfbd44d7ffdf6',1,'as::tsplib::TSPInstance']]],
   ['get_5fraw_5fspecification',['get_raw_specification',['../classas_1_1tsplib_1_1TSPInstance.html#a24f6eeee5dba6517265a9211da0b4962',1,'as::tsplib::TSPInstance']]],

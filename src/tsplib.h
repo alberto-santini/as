@@ -512,7 +512,7 @@ namespace as {
              *                  The coordinates are returned in a simple struct with
              *                  only two publicly-accessible members: x and y.
              *
-             *  @param vertex   The vertex whose coordinate we want.
+             *  @param vertex   The vertex whose coordinates we want.
              *  @return         The (x,y)-coordinates.
              */
             TwoDimPoint get_coordinates(std::size_t vertex) const {
@@ -520,6 +520,26 @@ namespace as {
                     throw std::out_of_range("No such vertex: " + std::to_string(vertex));
                 }
                 return coordinates[vertex];
+            }
+
+            /** @brief          Gives the original (x,y)-coordinates of a vertex,
+             *                  as they appear in the instance file.
+             *
+             *                  The coordinates are returned in a simple struct with
+             *                  only two publicly-accessible members: x and y.
+             *
+             *  @param vertex   The vertex whose original coordinates we want.
+             *  @return         The original (x,y)-coordinates.
+             */
+            TwoDimPoint get_original_coordinates(std::size_t vertex) const {
+                if(vertex >= n_vertices) {
+                    throw std::out_of_range("No such vertex: " + std::to_string(vertex));
+                }
+                if(original_coordinates.empty()) {
+                    throw std::logic_error("The instance did not have coordinates");
+                }
+
+                return original_coordinates[vertex];
             }
 
             /** @brief          Gives the distance between two vertices in the graph.

@@ -104,6 +104,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a36962fb85e309faa3efb28fae3b2956b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structas_1_1TwoDimPoint.html">TwoDimPoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classas_1_1tsplib_1_1TSPInstance.html#a36962fb85e309faa3efb28fae3b2956b">get_coordinates</a> (std::size_t vertex) const</td></tr>
 <tr class="memdesc:a36962fb85e309faa3efb28fae3b2956b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives the (x,y)-coordinates of a vertex.  <a href="#a36962fb85e309faa3efb28fae3b2956b">More...</a><br /></td></tr>
 <tr class="separator:a36962fb85e309faa3efb28fae3b2956b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace09ba6ff164a9569b95ebe772aeebfb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structas_1_1TwoDimPoint.html">TwoDimPoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classas_1_1tsplib_1_1TSPInstance.html#ace09ba6ff164a9569b95ebe772aeebfb">get_original_coordinates</a> (std::size_t vertex) const</td></tr>
+<tr class="memdesc:ace09ba6ff164a9569b95ebe772aeebfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives the original (x,y)-coordinates of a vertex, as they appear in the instance file.  <a href="#ace09ba6ff164a9569b95ebe772aeebfb">More...</a><br /></td></tr>
+<tr class="separator:ace09ba6ff164a9569b95ebe772aeebfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52535b9ad72eaaac80f2a7a1518e680f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classas_1_1tsplib_1_1TSPInstance.html#a52535b9ad72eaaac80f2a7a1518e680f">get_distance</a> (std::size_t v1, std::size_t v2) const</td></tr>
 <tr class="memdesc:a52535b9ad72eaaac80f2a7a1518e680f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives the distance between two vertices in the graph.  <a href="#a52535b9ad72eaaac80f2a7a1518e680f">More...</a><br /></td></tr>
 <tr class="separator:a52535b9ad72eaaac80f2a7a1518e680f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -202,7 +205,7 @@ Protected Attributes</h2></td></tr>
 <p>The coordinates are returned in a simple struct with only two publicly-accessible members: x and y.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">vertex</td><td>The vertex whose coordinate we want. </td></tr>
+    <tr><td class="paramname">vertex</td><td>The vertex whose coordinates we want. </td></tr>
   </table>
   </dd>
 </dl>
@@ -253,6 +256,42 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The distance between the vertices. </dd></dl>
+
+</div>
+</div>
+<a id="ace09ba6ff164a9569b95ebe772aeebfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace09ba6ff164a9569b95ebe772aeebfb">&#9670;&nbsp;</a></span>get_original_coordinates()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structas_1_1TwoDimPoint.html">TwoDimPoint</a> as::tsplib::TSPInstance::get_original_coordinates </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>vertex</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gives the original (x,y)-coordinates of a vertex, as they appear in the instance file. </p>
+<p>The coordinates are returned in a simple struct with only two publicly-accessible members: x and y.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vertex</td><td>The vertex whose original coordinates we want. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The original (x,y)-coordinates. </dd></dl>
 
 </div>
 </div>

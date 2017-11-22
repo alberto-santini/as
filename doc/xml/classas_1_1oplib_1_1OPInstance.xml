@@ -156,6 +156,7 @@
       <member refid="classas_1_1tsplib_1_1TSPInstance_1a36962fb85e309faa3efb28fae3b2956b" prot="public" virt="non-virtual"><scope>as::oplib::OPInstance</scope><name>get_coordinates</name></member>
       <member refid="classas_1_1tsplib_1_1TSPInstance_1a52535b9ad72eaaac80f2a7a1518e680f" prot="public" virt="non-virtual"><scope>as::oplib::OPInstance</scope><name>get_distance</name></member>
       <member refid="classas_1_1oplib_1_1OPInstance_1a8b3d893ac260f673f43d5bc63f24dba1" prot="public" virt="non-virtual"><scope>as::oplib::OPInstance</scope><name>get_max_travel_time</name></member>
+      <member refid="classas_1_1tsplib_1_1TSPInstance_1ace09ba6ff164a9569b95ebe772aeebfb" prot="public" virt="non-virtual"><scope>as::oplib::OPInstance</scope><name>get_original_coordinates</name></member>
       <member refid="classas_1_1oplib_1_1OPInstance_1a7e641c06d51b916cdf6ae88a4510ee0b" prot="public" virt="non-virtual"><scope>as::oplib::OPInstance</scope><name>get_prize</name></member>
       <member refid="classas_1_1tsplib_1_1TSPInstance_1a9104ddf703ed589337edfbd44d7ffdf6" prot="public" virt="non-virtual"><scope>as::oplib::OPInstance</scope><name>get_raw_data</name></member>
       <member refid="classas_1_1tsplib_1_1TSPInstance_1a24f6eeee5dba6517265a9211da0b4962" prot="public" virt="non-virtual"><scope>as::oplib::OPInstance</scope><name>get_raw_specification</name></member>

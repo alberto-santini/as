@@ -36,6 +36,8 @@ std\+::size\+\_\+t \hyperlink{classas_1_1tsplib_1_1TSPInstance_a3beae0a769669c41
 \begin{DoxyCompactList}\small\item\em Gives the number of vertices in the graph. \end{DoxyCompactList}\item 
 \hyperlink{structas_1_1TwoDimPoint}{Two\+Dim\+Point} \hyperlink{classas_1_1tsplib_1_1TSPInstance_a36962fb85e309faa3efb28fae3b2956b}{get\+\_\+coordinates} (std\+::size\+\_\+t vertex) const
 \begin{DoxyCompactList}\small\item\em Gives the (x,y)-\/coordinates of a vertex. \end{DoxyCompactList}\item 
+\hyperlink{structas_1_1TwoDimPoint}{Two\+Dim\+Point} \hyperlink{classas_1_1tsplib_1_1TSPInstance_ace09ba6ff164a9569b95ebe772aeebfb}{get\+\_\+original\+\_\+coordinates} (std\+::size\+\_\+t vertex) const
+\begin{DoxyCompactList}\small\item\em Gives the original (x,y)-\/coordinates of a vertex, as they appear in the instance file. \end{DoxyCompactList}\item 
 float \hyperlink{classas_1_1tsplib_1_1TSPInstance_a52535b9ad72eaaac80f2a7a1518e680f}{get\+\_\+distance} (std\+::size\+\_\+t v1, std\+::size\+\_\+t v2) const
 \begin{DoxyCompactList}\small\item\em Gives the distance between two vertices in the graph. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class T $>$ }\\T \hyperlink{classas_1_1tsplib_1_1TSPInstance_a24f6eeee5dba6517265a9211da0b4962}{get\+\_\+raw\+\_\+specification} (std\+::string key) const
@@ -95,7 +97,7 @@ The coordinates are returned in a simple struct with only two publicly-\/accessi
 
 
 \begin{DoxyParams}{Parameters}
-{\em vertex} & The vertex whose coordinate we want. \\
+{\em vertex} & The vertex whose coordinates we want. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -120,6 +122,26 @@ Gives the distance between two vertices in the graph.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 The distance between the vertices. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classas_1_1tsplib_1_1TSPInstance_ace09ba6ff164a9569b95ebe772aeebfb}\label{classas_1_1tsplib_1_1TSPInstance_ace09ba6ff164a9569b95ebe772aeebfb}} 
+\index{as\+::tsplib\+::\+T\+S\+P\+Instance@{as\+::tsplib\+::\+T\+S\+P\+Instance}!get\+\_\+original\+\_\+coordinates@{get\+\_\+original\+\_\+coordinates}}
+\index{get\+\_\+original\+\_\+coordinates@{get\+\_\+original\+\_\+coordinates}!as\+::tsplib\+::\+T\+S\+P\+Instance@{as\+::tsplib\+::\+T\+S\+P\+Instance}}
+\subsubsection{\texorpdfstring{get\+\_\+original\+\_\+coordinates()}{get\_original\_coordinates()}}
+{\footnotesize\ttfamily \hyperlink{structas_1_1TwoDimPoint}{Two\+Dim\+Point} as\+::tsplib\+::\+T\+S\+P\+Instance\+::get\+\_\+original\+\_\+coordinates (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{vertex }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gives the original (x,y)-\/coordinates of a vertex, as they appear in the instance file. 
+
+The coordinates are returned in a simple struct with only two publicly-\/accessible members\+: x and y.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex} & The vertex whose original coordinates we want. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The original (x,y)-\/coordinates. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classas_1_1tsplib_1_1TSPInstance_a9104ddf703ed589337edfbd44d7ffdf6}\label{classas_1_1tsplib_1_1TSPInstance_a9104ddf703ed589337edfbd44d7ffdf6}} 
 \index{as\+::tsplib\+::\+T\+S\+P\+Instance@{as\+::tsplib\+::\+T\+S\+P\+Instance}!get\+\_\+raw\+\_\+data@{get\+\_\+raw\+\_\+data}}

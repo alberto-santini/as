@@ -35,6 +35,7 @@
     <member refid="classas_1_1tsplib_1_1TSPInstance_1a5cc9de2e917ae7aa608e10b4375155d6" kind="function"><name>TSPInstance</name></member>
     <member refid="classas_1_1tsplib_1_1TSPInstance_1a3beae0a769669c417e8bc7d1e41a7550" kind="function"><name>number_of_vertices</name></member>
     <member refid="classas_1_1tsplib_1_1TSPInstance_1a36962fb85e309faa3efb28fae3b2956b" kind="function"><name>get_coordinates</name></member>
+    <member refid="classas_1_1tsplib_1_1TSPInstance_1ace09ba6ff164a9569b95ebe772aeebfb" kind="function"><name>get_original_coordinates</name></member>
     <member refid="classas_1_1tsplib_1_1TSPInstance_1a52535b9ad72eaaac80f2a7a1518e680f" kind="function"><name>get_distance</name></member>
     <member refid="classas_1_1tsplib_1_1TSPInstance_1a24f6eeee5dba6517265a9211da0b4962" kind="function"><name>get_raw_specification</name></member>
     <member refid="classas_1_1tsplib_1_1TSPInstance_1a9104ddf703ed589337edfbd44d7ffdf6" kind="function"><name>get_raw_data</name></member>
