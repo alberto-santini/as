@@ -57,6 +57,19 @@
         </inbodydescription>
         <location file="src/tsplib.h" line="468" column="1" bodyfile="src/tsplib.h" bodystart="468" bodyend="-1"/>
       </memberdef>
+      <memberdef kind="variable" id="classas_1_1tsplib_1_1TSPInstance_1a9302433a12f60203d11f7af163f56fee" prot="protected" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structas_1_1TwoDimPoint" kindref="compound">TwoDimPoint</ref> &gt;</type>
+        <definition>std::vector&lt;TwoDimPoint&gt; as::tsplib::TSPInstance::original_coordinates</definition>
+        <argsstring></argsstring>
+        <name>original_coordinates</name>
+        <briefdescription>
+<para>Original vertex coordinates, as per how they appear in the instance file (if they appear at all). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tsplib.h" line="473" column="1" bodyfile="src/tsplib.h" bodystart="473" bodyend="-1"/>
+      </memberdef>
       <memberdef kind="variable" id="classas_1_1tsplib_1_1TSPInstance_1a51073058c9b3f316da6b2115a9c8bec1" prot="protected" static="no" mutable="no">
         <type>std::vector&lt; std::vector&lt; float &gt; &gt;</type>
         <definition>std::vector&lt;std::vector&lt;float&gt; &gt; as::tsplib::TSPInstance::distances</definition>
@@ -68,7 +81,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/tsplib.h" line="472" column="1" bodyfile="src/tsplib.h" bodystart="472" bodyend="-1"/>
+        <location file="src/tsplib.h" line="477" column="1" bodyfile="src/tsplib.h" bodystart="477" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -95,7 +108,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/tsplib.h" line="480" column="1" bodyfile="src/tsplib.h" bodystart="480" bodyend="495"/>
+        <location file="src/tsplib.h" line="485" column="1" bodyfile="src/tsplib.h" bodystart="485" bodyend="500"/>
       </memberdef>
       <memberdef kind="function" id="classas_1_1tsplib_1_1TSPInstance_1a3beae0a769669c417e8bc7d1e41a7550" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>std::size_t</type>
@@ -109,7 +122,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/tsplib.h" line="501" column="1" bodyfile="src/tsplib.h" bodystart="501" bodyend="503"/>
+        <location file="src/tsplib.h" line="506" column="1" bodyfile="src/tsplib.h" bodystart="506" bodyend="508"/>
       </memberdef>
       <memberdef kind="function" id="classas_1_1tsplib_1_1TSPInstance_1a36962fb85e309faa3efb28fae3b2956b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="structas_1_1TwoDimPoint" kindref="compound">TwoDimPoint</ref></type>
@@ -135,7 +148,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/tsplib.h" line="513" column="1" bodyfile="src/tsplib.h" bodystart="513" bodyend="518"/>
+        <location file="src/tsplib.h" line="518" column="1" bodyfile="src/tsplib.h" bodystart="518" bodyend="523"/>
       </memberdef>
       <memberdef kind="function" id="classas_1_1tsplib_1_1TSPInstance_1a52535b9ad72eaaac80f2a7a1518e680f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>float</type>
@@ -172,7 +185,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/tsplib.h" line="526" column="1" bodyfile="src/tsplib.h" bodystart="526" bodyend="534"/>
+        <location file="src/tsplib.h" line="531" column="1" bodyfile="src/tsplib.h" bodystart="531" bodyend="539"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -187,7 +200,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/tsplib.h" line="538" column="1" bodyfile="src/tsplib.h" bodystart="538" bodyend="548"/>
+        <location file="src/tsplib.h" line="543" column="1" bodyfile="src/tsplib.h" bodystart="543" bodyend="553"/>
       </memberdef>
       <memberdef kind="function" id="classas_1_1tsplib_1_1TSPInstance_1a4fbd8004cace0c3e5e186b99c2de4cbe" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -200,7 +213,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/tsplib.h" line="550" column="1" bodyfile="src/tsplib.h" bodystart="550" bodyend="579"/>
+        <location file="src/tsplib.h" line="555" column="1" bodyfile="src/tsplib.h" bodystart="555" bodyend="584"/>
       </memberdef>
       <memberdef kind="function" id="classas_1_1tsplib_1_1TSPInstance_1acf708a88d35bc49640fcf6d0f47fd260" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -213,7 +226,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/tsplib.h" line="581" column="1" bodyfile="src/tsplib.h" bodystart="581" bodyend="607"/>
+        <location file="src/tsplib.h" line="586" column="1" bodyfile="src/tsplib.h" bodystart="586" bodyend="612"/>
       </memberdef>
       <memberdef kind="function" id="classas_1_1tsplib_1_1TSPInstance_1aaead2f7725de593b8357eeec233238ee" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -226,7 +239,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/tsplib.h" line="609" column="1" bodyfile="src/tsplib.h" bodystart="609" bodyend="617"/>
+        <location file="src/tsplib.h" line="614" column="1" bodyfile="src/tsplib.h" bodystart="614" bodyend="622"/>
       </memberdef>
       <memberdef kind="function" id="classas_1_1tsplib_1_1TSPInstance_1ae4071717e6e85ccfbf051ee55f7e3c9f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -239,7 +252,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/tsplib.h" line="619" column="1" bodyfile="src/tsplib.h" bodystart="619" bodyend="627"/>
+        <location file="src/tsplib.h" line="624" column="1" bodyfile="src/tsplib.h" bodystart="624" bodyend="632"/>
       </memberdef>
       <memberdef kind="function" id="classas_1_1tsplib_1_1TSPInstance_1af1b42a22181d92014dd2114a0646453c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -252,7 +265,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/tsplib.h" line="629" column="1" bodyfile="src/tsplib.h" bodystart="629" bodyend="631"/>
+        <location file="src/tsplib.h" line="634" column="1" bodyfile="src/tsplib.h" bodystart="634" bodyend="636"/>
       </memberdef>
       <memberdef kind="function" id="classas_1_1tsplib_1_1TSPInstance_1a7a90f98e488e2de199865bd03beb580c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -270,7 +283,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/tsplib.h" line="633" column="1" bodyfile="src/tsplib.h" bodystart="633" bodyend="667"/>
+        <location file="src/tsplib.h" line="638" column="1" bodyfile="src/tsplib.h" bodystart="638" bodyend="676"/>
       </memberdef>
       <memberdef kind="function" id="classas_1_1tsplib_1_1TSPInstance_1ace7d02c3701fcd37f473304088167ecd" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -283,7 +296,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/tsplib.h" line="669" column="1" bodyfile="src/tsplib.h" bodystart="669" bodyend="672"/>
+        <location file="src/tsplib.h" line="678" column="1" bodyfile="src/tsplib.h" bodystart="678" bodyend="681"/>
       </memberdef>
       <memberdef kind="function" id="classas_1_1tsplib_1_1TSPInstance_1ab59f351005750d8ab54a37c74b714565" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -296,7 +309,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/tsplib.h" line="674" column="1" bodyfile="src/tsplib.h" bodystart="674" bodyend="692"/>
+        <location file="src/tsplib.h" line="683" column="1" bodyfile="src/tsplib.h" bodystart="683" bodyend="705"/>
       </memberdef>
       <memberdef kind="function" id="classas_1_1tsplib_1_1TSPInstance_1a1afcd527885c01bb3a02085d63fa8199" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -309,7 +322,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/tsplib.h" line="694" column="1" bodyfile="src/tsplib.h" bodystart="694" bodyend="708"/>
+        <location file="src/tsplib.h" line="707" column="1" bodyfile="src/tsplib.h" bodystart="707" bodyend="721"/>
       </memberdef>
       <memberdef kind="function" id="classas_1_1tsplib_1_1TSPInstance_1a4de463a6ac47bf8a2bdeb95754111219" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -322,7 +335,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/tsplib.h" line="710" column="1" bodyfile="src/tsplib.h" bodystart="710" bodyend="740"/>
+        <location file="src/tsplib.h" line="723" column="1" bodyfile="src/tsplib.h" bodystart="723" bodyend="757"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -354,7 +367,7 @@
         <link refid="classas_1_1tsplib_1_1detail_1_1TSPLIBInput"/>
       </node>
     </collaborationgraph>
-    <location file="src/tsplib.h" line="451" column="1" bodyfile="src/tsplib.h" bodystart="451" bodyend="741"/>
+    <location file="src/tsplib.h" line="451" column="1" bodyfile="src/tsplib.h" bodystart="451" bodyend="758"/>
     <listofallmembers>
       <member refid="classas_1_1tsplib_1_1TSPInstance_1ad8e74403f222f9470bf320e5749e6d9a" prot="protected" virt="non-virtual"><scope>as::tsplib::TSPInstance</scope><name>coordinates</name></member>
       <member refid="classas_1_1tsplib_1_1TSPInstance_1a51073058c9b3f316da6b2115a9c8bec1" prot="protected" virt="non-virtual"><scope>as::tsplib::TSPInstance</scope><name>distances</name></member>
@@ -362,6 +375,7 @@
       <member refid="classas_1_1tsplib_1_1TSPInstance_1a52535b9ad72eaaac80f2a7a1518e680f" prot="public" virt="non-virtual"><scope>as::tsplib::TSPInstance</scope><name>get_distance</name></member>
       <member refid="classas_1_1tsplib_1_1TSPInstance_1af62c22d7f09f0264f5e817268230cec9" prot="protected" virt="non-virtual"><scope>as::tsplib::TSPInstance</scope><name>n_vertices</name></member>
       <member refid="classas_1_1tsplib_1_1TSPInstance_1a3beae0a769669c417e8bc7d1e41a7550" prot="public" virt="non-virtual"><scope>as::tsplib::TSPInstance</scope><name>number_of_vertices</name></member>
+      <member refid="classas_1_1tsplib_1_1TSPInstance_1a9302433a12f60203d11f7af163f56fee" prot="protected" virt="non-virtual"><scope>as::tsplib::TSPInstance</scope><name>original_coordinates</name></member>
       <member refid="classas_1_1tsplib_1_1TSPInstance_1a4de463a6ac47bf8a2bdeb95754111219" prot="private" virt="non-virtual"><scope>as::tsplib::TSPInstance</scope><name>reverse_engineer_coordinates</name></member>
       <member refid="classas_1_1tsplib_1_1TSPInstance_1aaead2f7725de593b8357eeec233238ee" prot="private" virt="non-virtual"><scope>as::tsplib::TSPInstance</scope><name>set_coordinates</name></member>
       <member refid="classas_1_1tsplib_1_1TSPInstance_1ae4071717e6e85ccfbf051ee55f7e3c9f" prot="private" virt="non-virtual"><scope>as::tsplib::TSPInstance</scope><name>set_coordinates_and_weights</name></member>

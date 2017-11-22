@@ -4,6 +4,7 @@ var searchData=
   ['opinstance',['OPInstance',['../classas_1_1oplib_1_1OPInstance.html',1,'as::oplib::OPInstance'],['../classas_1_1oplib_1_1OPInstance.html#a6324297e7797771f734a0e373dc6d218',1,'as::oplib::OPInstance::OPInstance()']]],
   ['oplib',['oplib',['../namespaceoplib.html',1,'']]],
   ['oplib_2eh',['oplib.h',['../oplib_8h.html',1,'']]],
+  ['original_5fcoordinates',['original_coordinates',['../classas_1_1tsplib_1_1TSPInstance.html#a9302433a12f60203d11f7af163f56fee',1,'as::tsplib::TSPInstance']]],
   ['other_5fextreme',['other_extreme',['../namespaceas_1_1graph.html#a592c192d63c1c42820da78708adb9e61',1,'as::graph']]],
   ['out_5fedges',['out_edges',['../namespaceas_1_1graph.html#a00143e178e97f0e9787802953d74a9f7',1,'as::graph']]]
 ];

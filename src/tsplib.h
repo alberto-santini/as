@@ -467,6 +467,11 @@ namespace as {
              */
             std::vector<TwoDimPoint> coordinates;
 
+            /** @brief  Original vertex coordinates, as per how they appear in
+             *          the instance file (if they appear at all).
+             */
+            std::vector<TwoDimPoint> original_coordinates;
+
             /** @brief Distance matrix.
              */
             std::vector<std::vector<float>> distances;
@@ -636,6 +641,10 @@ namespace as {
                 // the raw values given in the instance file.
                 set_coordinates_euclidean();
 
+                // Save the coordinates as per how they are in the
+                // file.
+                original_coordinates = coordinates;
+
                 // Then calculate the weights with these coordinates,
                 // using the GEO function.
                 if(set_weights) {
@@ -689,6 +698,10 @@ namespace as {
 
                     coordinates[vertex_id] = {coords[i+1], coords[i+2]};
                 }
+
+                // We do not modify the original coordinates when they
+                // are already euclidean.
+                original_coordinates = coordinates;
             }
 
             void set_weights_from_coordinates() {
@@ -737,6 +750,10 @@ namespace as {
                         coordinates[i] = positions.second;
                     }
                 }
+
+                // When we have to reverse-engineer the coordinates,
+                // there are no original coordinates! :-)
+                original_coordinates = std::vector<TwoDimPoint>();
             }
         };
     }

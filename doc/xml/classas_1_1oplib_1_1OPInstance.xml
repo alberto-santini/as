@@ -161,6 +161,7 @@
       <member refid="classas_1_1tsplib_1_1TSPInstance_1af62c22d7f09f0264f5e817268230cec9" prot="protected" virt="non-virtual"><scope>as::oplib::OPInstance</scope><name>n_vertices</name></member>
       <member refid="classas_1_1tsplib_1_1TSPInstance_1a3beae0a769669c417e8bc7d1e41a7550" prot="public" virt="non-virtual"><scope>as::oplib::OPInstance</scope><name>number_of_vertices</name></member>
       <member refid="classas_1_1oplib_1_1OPInstance_1a6324297e7797771f734a0e373dc6d218" prot="public" virt="non-virtual"><scope>as::oplib::OPInstance</scope><name>OPInstance</name></member>
+      <member refid="classas_1_1tsplib_1_1TSPInstance_1a9302433a12f60203d11f7af163f56fee" prot="protected" virt="non-virtual"><scope>as::oplib::OPInstance</scope><name>original_coordinates</name></member>
       <member refid="classas_1_1oplib_1_1OPInstance_1ae04b2b823f630159c31d7c3f2f3fcdb5" prot="protected" virt="non-virtual"><scope>as::oplib::OPInstance</scope><name>prizes</name></member>
       <member refid="classas_1_1oplib_1_1OPInstance_1a843f3f660f032b843a665d48a12219ca" prot="private" virt="non-virtual"><scope>as::oplib::OPInstance</scope><name>set_prizes</name></member>
       <member refid="classas_1_1tsplib_1_1TSPInstance_1a6a73219aae354011c905255dc687122b" prot="protected" virt="non-virtual"><scope>as::oplib::OPInstance</scope><name>tsp</name></member>

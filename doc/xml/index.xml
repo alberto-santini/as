@@ -30,6 +30,7 @@
     <member refid="classas_1_1tsplib_1_1TSPInstance_1a6b2d4d7ad5e12825ceee49d32cdc28af" kind="variable"><name>tsplib_file</name></member>
     <member refid="classas_1_1tsplib_1_1TSPInstance_1af62c22d7f09f0264f5e817268230cec9" kind="variable"><name>n_vertices</name></member>
     <member refid="classas_1_1tsplib_1_1TSPInstance_1ad8e74403f222f9470bf320e5749e6d9a" kind="variable"><name>coordinates</name></member>
+    <member refid="classas_1_1tsplib_1_1TSPInstance_1a9302433a12f60203d11f7af163f56fee" kind="variable"><name>original_coordinates</name></member>
     <member refid="classas_1_1tsplib_1_1TSPInstance_1a51073058c9b3f316da6b2115a9c8bec1" kind="variable"><name>distances</name></member>
     <member refid="classas_1_1tsplib_1_1TSPInstance_1a5cc9de2e917ae7aa608e10b4375155d6" kind="function"><name>TSPInstance</name></member>
     <member refid="classas_1_1tsplib_1_1TSPInstance_1a3beae0a769669c417e8bc7d1e41a7550" kind="function"><name>number_of_vertices</name></member>
