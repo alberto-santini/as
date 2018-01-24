@@ -8,6 +8,7 @@
 #include "iterator_pair.h"
 #include <boost/graph/graph_traits.hpp>
 #include <boost/graph/adjacency_list.hpp>
+#include <numeric>
 
 namespace as {
     /** @namespace  graph
@@ -165,6 +166,47 @@ namespace as {
             } else {
                 return source;
             }
+        }
+
+        /** @brief  Given a subset of vertices, return the complement of the subset,
+         *          i.e. all vertices not contained in the subset.
+         *
+         *  @tparam BoostGraph  The underlying graph type.
+         *  @param vertices     The set of vertices, given as a vector.
+         *  @param graph        The graph.
+         *  @return             The complement set, returned as a vector.
+         */
+        template<typename BoostGraph>
+        inline std::vector<typename boost::graph_traits<BoostGraph>::vertex_descriptor> vertex_complement(
+            std::vector<typename boost::graph_traits<BoostGraph>::vertex_descriptor> vertices,
+            const BoostGraph& graph
+        ) {
+            static_assert(
+                std::is_same<typename BoostGraph::vertex_list_selector, boost::vecS>::value,
+                "vertex_complement only works when vertices are stored in a vector."
+            );
+
+            // Check that there are no duplicates in the vertex set passed by the user.
+            assert(
+                std::set<typename boost::graph_traits<BoostGraph>::vertex_descriptor>(
+                    vertices.begin(), vertices.end()
+                ).size() == vertices.size()
+            );
+
+            // Get the (ordered) set of all vertices in the graph.
+            std::vector<typename boost::graph_traits<BoostGraph>::vertex_descriptor> all_vertices(boost::num_vertices(graph));
+            std::iota(all_vertices.begin(), all_vertices.end(), typename boost::graph_traits<BoostGraph>::vertex_descriptor{});
+
+            // Order the set of vertices passed by the user.
+            std::sort(vertices.begin(), vertices.end());
+
+            // Return the set difference between the two.
+            std::vector<typename boost::graph_traits<BoostGraph>::vertex_descriptor> difference;
+            std::set_difference(all_vertices.begin(), all_vertices.end(),
+                                vertices.begin(), vertices.end(),
+                                std::inserter(difference, difference.begin())
+            );
+            return difference;
         }
     }
 }
