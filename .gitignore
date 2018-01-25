@@ -1,4 +1,5 @@
 *build*
 CMake*
 .idea
+doc
 main.cpp
