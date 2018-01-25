@@ -4,19 +4,19 @@
     <compoundname>point.h</compoundname>
     <includedby refid="tsplib_8h" local="yes">src/tsplib.h</includedby>
     <invincdepgraph>
-      <node id="70">
+      <node id="71">
         <label>src/tsplib.h</label>
         <link refid="tsplib_8h"/>
+        <childnode refid="72" relation="include">
+        </childnode>
+      </node>
+      <node id="70">
+        <label>src/point.h</label>
+        <link refid="point_8h"/>
         <childnode refid="71" relation="include">
         </childnode>
       </node>
-      <node id="69">
-        <label>src/point.h</label>
-        <link refid="point_8h"/>
-        <childnode refid="70" relation="include">
-        </childnode>
-      </node>
-      <node id="71">
+      <node id="72">
         <label>src/oplib.h</label>
         <link refid="oplib_8h"/>
       </node>

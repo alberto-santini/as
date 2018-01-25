@@ -116,6 +116,7 @@
     <member refid="namespaceas_1_1graph_1ac0b52ec1e242ac547157a42aac39e21a" kind="function"><name>incident_to_the_same_vertex</name></member>
     <member refid="namespaceas_1_1graph_1af020abed3b5b57f984d8ce940ee6f4cd" kind="function"><name>is_extreme</name></member>
     <member refid="namespaceas_1_1graph_1a592c192d63c1c42820da78708adb9e61" kind="function"><name>other_extreme</name></member>
+    <member refid="namespaceas_1_1graph_1aec6bce35a79299f552d227442f399580" kind="function"><name>vertex_complement</name></member>
   </compound>
   <compound refid="namespaceas_1_1oplib" kind="namespace"><name>as::oplib</name>
   </compound>

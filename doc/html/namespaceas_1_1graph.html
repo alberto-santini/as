@@ -104,6 +104,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a592c192d63c1c42820da78708adb9e61"><td class="memTemplItemLeft" align="right" valign="top">boost::graph_traits&lt; BoostGraph &gt;::vertex_descriptor&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceas_1_1graph.html#a592c192d63c1c42820da78708adb9e61">other_extreme</a> (const typename boost::graph_traits&lt; BoostGraph &gt;::vertex_descriptor &amp;vertex, const typename boost::graph_traits&lt; BoostGraph &gt;::edge_descriptor &amp;edge, const BoostGraph &amp;graph)</td></tr>
 <tr class="memdesc:a592c192d63c1c42820da78708adb9e61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given an edge and a vertex which is one of the two extremes of the edge, it returns the other extreme.  <a href="#a592c192d63c1c42820da78708adb9e61">More...</a><br /></td></tr>
 <tr class="separator:a592c192d63c1c42820da78708adb9e61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec6bce35a79299f552d227442f399580"><td class="memTemplParams" colspan="2">template&lt;typename BoostGraph &gt; </td></tr>
+<tr class="memitem:aec6bce35a79299f552d227442f399580"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; typename boost::graph_traits&lt; BoostGraph &gt;::vertex_descriptor &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceas_1_1graph.html#aec6bce35a79299f552d227442f399580">vertex_complement</a> (std::vector&lt; typename boost::graph_traits&lt; BoostGraph &gt;::vertex_descriptor &gt; <a class="el" href="namespaceas_1_1graph.html#ab93ee208eb116d3a3349c8de8cc91445">vertices</a>, const BoostGraph &amp;graph)</td></tr>
+<tr class="memdesc:aec6bce35a79299f552d227442f399580"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a subset of vertices, return the complement of the subset, i.e. all vertices not contained in the subset.  <a href="#aec6bce35a79299f552d227442f399580">More...</a><br /></td></tr>
+<tr class="separator:aec6bce35a79299f552d227442f399580"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ae44b728c4acaf47bc2bb010831df9452"></a>
@@ -492,6 +496,60 @@ template&lt;class BoostGraph &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="classas_1_1iterator__pair.html" title="This class wraps a pair of begin and end iterators, and exposes them via begin() and end() function...">iterator_pair</a>. </dd></dl>
+
+</div>
+</div>
+<a id="aec6bce35a79299f552d227442f399580"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec6bce35a79299f552d227442f399580">&#9670;&nbsp;</a></span>vertex_complement()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BoostGraph &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;typename boost::graph_traits&lt;BoostGraph&gt;::vertex_descriptor&gt; as::graph::vertex_complement </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; typename boost::graph_traits&lt; BoostGraph &gt;::vertex_descriptor &gt;&#160;</td>
+          <td class="paramname"><em>vertices</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const BoostGraph &amp;&#160;</td>
+          <td class="paramname"><em>graph</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Given a subset of vertices, return the complement of the subset, i.e. all vertices not contained in the subset. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">BoostGraph</td><td>The underlying graph type. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vertices</td><td>The set of vertices, given as a vector. </td></tr>
+    <tr><td class="paramname">graph</td><td>The graph. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The complement set, returned as a vector. </dd></dl>
 
 </div>
 </div>

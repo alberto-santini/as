@@ -3,7 +3,9 @@
 {\ttfamily \#include \char`\"{}iterator\+\_\+pair.\+h\char`\"{}}\newline
 {\ttfamily \#include $<$boost/graph/graph\+\_\+traits.\+hpp$>$}\newline
 {\ttfamily \#include $<$boost/graph/adjacency\+\_\+list.\+hpp$>$}\newline
-Include dependency graph for graph.\+h\+:\nopagebreak
+{\ttfamily \#include $<$numeric$>$}\newline
+Include dependency graph for graph.\+h\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -37,4 +39,6 @@ Include dependency graph for graph.\+h\+:\nopagebreak
 {\footnotesize template$<$class Boost\+Graph $>$ }\\bool \hyperlink{namespaceas_1_1graph_af020abed3b5b57f984d8ce940ee6f4cd}{as\+::graph\+::is\+\_\+extreme} (const typename boost\+::graph\+\_\+traits$<$ Boost\+Graph $>$\+::vertex\+\_\+descriptor \&vertex, const typename boost\+::graph\+\_\+traits$<$ Boost\+Graph $>$\+::edge\+\_\+descriptor \&edge, const Boost\+Graph \&graph)
 \begin{DoxyCompactList}\small\item\em Tells whether a vertex is an extreme of an edge, i.\+e. if it is either its source or its target. For an undirected graph, therefore, it tells whether the edge is incident to the vertex. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Boost\+Graph $>$ }\\boost\+::graph\+\_\+traits$<$ Boost\+Graph $>$\+::vertex\+\_\+descriptor \hyperlink{namespaceas_1_1graph_a592c192d63c1c42820da78708adb9e61}{as\+::graph\+::other\+\_\+extreme} (const typename boost\+::graph\+\_\+traits$<$ Boost\+Graph $>$\+::vertex\+\_\+descriptor \&vertex, const typename boost\+::graph\+\_\+traits$<$ Boost\+Graph $>$\+::edge\+\_\+descriptor \&edge, const Boost\+Graph \&graph)
-\begin{DoxyCompactList}\small\item\em Given an edge and a vertex which is one of the two extremes of the edge, it returns the other extreme. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Given an edge and a vertex which is one of the two extremes of the edge, it returns the other extreme. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Boost\+Graph $>$ }\\std\+::vector$<$ typename boost\+::graph\+\_\+traits$<$ Boost\+Graph $>$\+::vertex\+\_\+descriptor $>$ \hyperlink{namespaceas_1_1graph_aec6bce35a79299f552d227442f399580}{as\+::graph\+::vertex\+\_\+complement} (std\+::vector$<$ typename boost\+::graph\+\_\+traits$<$ Boost\+Graph $>$\+::vertex\+\_\+descriptor $>$ vertices, const Boost\+Graph \&graph)
+\begin{DoxyCompactList}\small\item\em Given a subset of vertices, return the complement of the subset, i.\+e. all vertices not contained in the subset. \end{DoxyCompactList}\end{DoxyCompactItemize}

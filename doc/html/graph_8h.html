@@ -73,6 +73,7 @@ $(function() {
 <div class="textblock"><code>#include &quot;<a class="el" href="iterator__pair_8h_source.html">iterator_pair.h</a>&quot;</code><br />
 <code>#include &lt;boost/graph/graph_traits.hpp&gt;</code><br />
 <code>#include &lt;boost/graph/adjacency_list.hpp&gt;</code><br />
+<code>#include &lt;numeric&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for graph.h:</div>
 <div class="dyncontent">
@@ -128,6 +129,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a592c192d63c1c42820da78708adb9e61"><td class="memTemplItemLeft" align="right" valign="top">boost::graph_traits&lt; BoostGraph &gt;::vertex_descriptor&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceas_1_1graph.html#a592c192d63c1c42820da78708adb9e61">as::graph::other_extreme</a> (const typename boost::graph_traits&lt; BoostGraph &gt;::vertex_descriptor &amp;vertex, const typename boost::graph_traits&lt; BoostGraph &gt;::edge_descriptor &amp;edge, const BoostGraph &amp;graph)</td></tr>
 <tr class="memdesc:a592c192d63c1c42820da78708adb9e61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given an edge and a vertex which is one of the two extremes of the edge, it returns the other extreme.  <a href="namespaceas_1_1graph.html#a592c192d63c1c42820da78708adb9e61">More...</a><br /></td></tr>
 <tr class="separator:a592c192d63c1c42820da78708adb9e61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec6bce35a79299f552d227442f399580"><td class="memTemplParams" colspan="2">template&lt;typename BoostGraph &gt; </td></tr>
+<tr class="memitem:aec6bce35a79299f552d227442f399580"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; typename boost::graph_traits&lt; BoostGraph &gt;::vertex_descriptor &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceas_1_1graph.html#aec6bce35a79299f552d227442f399580">as::graph::vertex_complement</a> (std::vector&lt; typename boost::graph_traits&lt; BoostGraph &gt;::vertex_descriptor &gt; vertices, const BoostGraph &amp;graph)</td></tr>
+<tr class="memdesc:aec6bce35a79299f552d227442f399580"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given a subset of vertices, return the complement of the subset, i.e. all vertices not contained in the subset.  <a href="namespaceas_1_1graph.html#aec6bce35a79299f552d227442f399580">More...</a><br /></td></tr>
+<tr class="separator:aec6bce35a79299f552d227442f399580"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

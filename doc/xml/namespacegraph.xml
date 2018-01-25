@@ -6,6 +6,6 @@
 <para>This namespace provides functions which work with boost graphs. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/graph.h" line="13" column="1"/>
+    <location file="src/graph.h" line="14" column="1"/>
   </compounddef>
 </doxygen>

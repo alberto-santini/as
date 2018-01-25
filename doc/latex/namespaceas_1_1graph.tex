@@ -18,7 +18,9 @@
 {\footnotesize template$<$class Boost\+Graph $>$ }\\bool \hyperlink{namespaceas_1_1graph_af020abed3b5b57f984d8ce940ee6f4cd}{is\+\_\+extreme} (const typename boost\+::graph\+\_\+traits$<$ Boost\+Graph $>$\+::vertex\+\_\+descriptor \&vertex, const typename boost\+::graph\+\_\+traits$<$ Boost\+Graph $>$\+::edge\+\_\+descriptor \&edge, const Boost\+Graph \&graph)
 \begin{DoxyCompactList}\small\item\em Tells whether a vertex is an extreme of an edge, i.\+e. if it is either its source or its target. For an undirected graph, therefore, it tells whether the edge is incident to the vertex. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Boost\+Graph $>$ }\\boost\+::graph\+\_\+traits$<$ Boost\+Graph $>$\+::vertex\+\_\+descriptor \hyperlink{namespaceas_1_1graph_a592c192d63c1c42820da78708adb9e61}{other\+\_\+extreme} (const typename boost\+::graph\+\_\+traits$<$ Boost\+Graph $>$\+::vertex\+\_\+descriptor \&vertex, const typename boost\+::graph\+\_\+traits$<$ Boost\+Graph $>$\+::edge\+\_\+descriptor \&edge, const Boost\+Graph \&graph)
-\begin{DoxyCompactList}\small\item\em Given an edge and a vertex which is one of the two extremes of the edge, it returns the other extreme. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Given an edge and a vertex which is one of the two extremes of the edge, it returns the other extreme. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Boost\+Graph $>$ }\\std\+::vector$<$ typename boost\+::graph\+\_\+traits$<$ Boost\+Graph $>$\+::vertex\+\_\+descriptor $>$ \hyperlink{namespaceas_1_1graph_aec6bce35a79299f552d227442f399580}{vertex\+\_\+complement} (std\+::vector$<$ typename boost\+::graph\+\_\+traits$<$ Boost\+Graph $>$\+::vertex\+\_\+descriptor $>$ \hyperlink{namespaceas_1_1graph_ab93ee208eb116d3a3349c8de8cc91445}{vertices}, const Boost\+Graph \&graph)
+\begin{DoxyCompactList}\small\item\em Given a subset of vertices, return the complement of the subset, i.\+e. all vertices not contained in the subset. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
@@ -209,6 +211,32 @@ Gives an \hyperlink{classas_1_1iterator__pair}{iterator\+\_\+pair} that can be u
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 The \hyperlink{classas_1_1iterator__pair}{iterator\+\_\+pair}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespaceas_1_1graph_aec6bce35a79299f552d227442f399580}\label{namespaceas_1_1graph_aec6bce35a79299f552d227442f399580}} 
+\index{as\+::graph@{as\+::graph}!vertex\+\_\+complement@{vertex\+\_\+complement}}
+\index{vertex\+\_\+complement@{vertex\+\_\+complement}!as\+::graph@{as\+::graph}}
+\subsubsection{\texorpdfstring{vertex\+\_\+complement()}{vertex\_complement()}}
+{\footnotesize\ttfamily template$<$typename Boost\+Graph $>$ \\
+std\+::vector$<$typename boost\+::graph\+\_\+traits$<$Boost\+Graph$>$\+::vertex\+\_\+descriptor$>$ as\+::graph\+::vertex\+\_\+complement (\begin{DoxyParamCaption}\item[{std\+::vector$<$ typename boost\+::graph\+\_\+traits$<$ Boost\+Graph $>$\+::vertex\+\_\+descriptor $>$}]{vertices,  }\item[{const Boost\+Graph \&}]{graph }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Given a subset of vertices, return the complement of the subset, i.\+e. all vertices not contained in the subset. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Boost\+Graph} & The underlying graph type. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em vertices} & The set of vertices, given as a vector. \\
+\hline
+{\em graph} & The graph. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The complement set, returned as a vector. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{namespaceas_1_1graph_ab93ee208eb116d3a3349c8de8cc91445}\label{namespaceas_1_1graph_ab93ee208eb116d3a3349c8de8cc91445}} 
 \index{as\+::graph@{as\+::graph}!vertices@{vertices}}
