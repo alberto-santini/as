@@ -23,7 +23,7 @@ namespace as {
          *  @return             True iff the numeric value fits into the target type.
          */
         template <typename TargetType, typename SourceType>
-        bool can_type_fit_value(const SourceType& value) {
+        inline bool can_type_fit_value(const SourceType& value) {
             const std::intmax_t bottom_target = std::intmax_t{std::numeric_limits<TargetType>::min()};
             const std::intmax_t bottom_source = std::intmax_t{std::numeric_limits<SourceType>::min()};
             const std::uintmax_t top_target = std::uintmax_t{std::numeric_limits<TargetType>::max()};
