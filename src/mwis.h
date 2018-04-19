@@ -5,7 +5,7 @@
 #ifndef AS_MWIS_HPP
 #define AS_MWIS_HPP
 
-#include "numeric_conversions.h"
+#include "numeric.h"
 #include "graph.h"
 #include <boost/graph/graph_traits.hpp>
 #include <boost/graph/adjacency_list.hpp>

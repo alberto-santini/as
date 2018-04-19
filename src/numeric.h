@@ -2,8 +2,8 @@
 // Created by alberto on 15/02/18.
 //
 
-#ifndef AS_NUMERIC_CONVERSIONS_H
-#define AS_NUMERIC_CONVERSIONS_H
+#ifndef AS_NUMERIC_H
+#define AS_NUMERIC_H
 
 #include <limits>
 #include <cstdint>
@@ -36,4 +36,4 @@ namespace as {
     }
 }
 
-#endif //AS_NUMERIC_CONVERSIONS_H
+#endif //AS_NUMERIC

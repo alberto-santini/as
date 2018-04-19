@@ -16,7 +16,7 @@
 #include <stdexcept>
 #include <experimental/filesystem>
 
-#include "point.h"
+#include "geometry.h"
 #include "console.h"
 #include "string.h"
 
@@ -401,7 +401,7 @@ namespace as {
              *  @return                          Coordinates of the two intersection points
              *                                   between the two circles.
              */
-            inline std::pair<TwoDimPoint, TwoDimPoint> get_circle_intersection(
+            inline std::pair<geo::TwoDimPoint, geo::TwoDimPoint> get_circle_intersection(
                 float dist_centre_1_point,
                 float dist_centre_2_point,
                 float dist_centre_1_centre_2
@@ -413,7 +413,7 @@ namespace as {
                     // equality, that is, the three points are aligned. So there
                     // will only be one intersection, lying on the x axis.
                     const auto adj_x = dist_centre_1_centre_2 - dist_centre_2_point;
-                    return std::make_pair(TwoDimPoint{adj_x, 0.0f}, TwoDimPoint{adj_x, 0.0f});
+                    return std::make_pair(geo::TwoDimPoint{adj_x, 0.0f}, geo::TwoDimPoint{adj_x, 0.0f});
                 }
 
                 const float delta = std::pow(dist_centre_1_point, 2.0f) -
@@ -428,7 +428,7 @@ namespace as {
                 const float x = delta / (2.0f * dist_centre_1_centre_2);
                 const float y = std::sqrt(std::abs(beta)) / (2.0f * dist_centre_1_centre_2);
 
-                return std::make_pair(TwoDimPoint{x, y}, TwoDimPoint{x, -y});
+                return std::make_pair(geo::TwoDimPoint{x, y}, geo::TwoDimPoint{x, -y});
             }
 
             /** @brief      Calculates the euclidean distance between two points.
@@ -437,7 +437,7 @@ namespace as {
              *  @param pt2  The second point.
              *  @return     The euclidean distance.
              */
-            inline float euclidean_dist(const TwoDimPoint& pt1, const TwoDimPoint& pt2) {
+            inline float euclidean_dist(const geo::TwoDimPoint& pt1, const geo::TwoDimPoint& pt2) {
                 return std::sqrt(
                     std::pow(pt1.x - pt2.x, 2.0f) +
                     std::pow(pt1.y - pt2.y, 2.0f)
@@ -465,12 +465,12 @@ namespace as {
 
             /** @brief Vertex coordinates.
              */
-            std::vector<TwoDimPoint> coordinates;
+            std::vector<geo::TwoDimPoint> coordinates;
 
             /** @brief  Original vertex coordinates, as per how they appear in
              *          the instance file (if they appear at all).
              */
-            std::vector<TwoDimPoint> original_coordinates;
+            std::vector<geo::TwoDimPoint> original_coordinates;
 
             /** @brief Distance matrix.
              */
@@ -515,7 +515,7 @@ namespace as {
              *  @param vertex   The vertex whose coordinates we want.
              *  @return         The (x,y)-coordinates.
              */
-            TwoDimPoint get_coordinates(std::size_t vertex) const {
+            geo::TwoDimPoint get_coordinates(std::size_t vertex) const {
                 if(vertex >= n_vertices) {
                     throw std::out_of_range("No such vertex: " + std::to_string(vertex));
                 }
@@ -531,7 +531,7 @@ namespace as {
              *  @param vertex   The vertex whose original coordinates we want.
              *  @return         The original (x,y)-coordinates.
              */
-            TwoDimPoint get_original_coordinates(std::size_t vertex) const {
+            geo::TwoDimPoint get_original_coordinates(std::size_t vertex) const {
                 if(vertex >= n_vertices) {
                     throw std::out_of_range("No such vertex: " + std::to_string(vertex));
                 }
@@ -796,7 +796,7 @@ namespace as {
 
                 // When we have to reverse-engineer the coordinates,
                 // there are no original coordinates! :-)
-                original_coordinates = std::vector<TwoDimPoint>();
+                original_coordinates = std::vector<geo::TwoDimPoint>();
             }
         };
     }

@@ -3,4 +3,3 @@ CMake*
 *.cmake
 .idea
 doc
-main.cpp

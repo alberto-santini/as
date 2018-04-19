@@ -22,6 +22,6 @@
 /** @def    AS_VERSION_BUILD
  *  @brief  Build version of the as library.
  */
-#define AS_VERSION_BUILD    1
+#define AS_VERSION_BUILD    2
 
 #endif //AS_AS_VERSION_H_H

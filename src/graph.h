@@ -23,8 +23,8 @@ namespace as {
          *  @return              The iterator_pair.
          */
         template<class BoostGraph>
-        inline iterator_pair<typename boost::graph_traits<BoostGraph>::vertex_iterator> vertices(const BoostGraph& graph) {
-            return make_iter(boost::vertices(graph));
+        inline iterators::iterator_pair<typename boost::graph_traits<BoostGraph>::vertex_iterator> vertices(const BoostGraph& graph) {
+            return iterators::make_iter(boost::vertices(graph));
         }
 
         /** @brief  Gives an \ref iterator_pair that can be used in range-based for loops to cycle
@@ -35,8 +35,8 @@ namespace as {
          *  @return              The iterator_pair.
          */
         template<class BoostGraph>
-        inline iterator_pair<typename boost::graph_traits<BoostGraph>::edge_iterator> edges(const BoostGraph& graph) {
-            return make_iter(boost::edges(graph));
+        inline iterators::iterator_pair<typename boost::graph_traits<BoostGraph>::edge_iterator> edges(const BoostGraph& graph) {
+            return iterators::make_iter(boost::edges(graph));
         }
 
         /** @brief  Gives an \ref iterator_pair that can be used in range-based for loops to cycle
@@ -48,11 +48,11 @@ namespace as {
          *  @return              The iterator_pair.
          */
         template<class BoostGraph>
-        inline iterator_pair<typename boost::graph_traits<BoostGraph>::out_edge_iterator> out_edges(
+        inline iterators::iterator_pair<typename boost::graph_traits<BoostGraph>::out_edge_iterator> out_edges(
             const typename boost::graph_traits<BoostGraph>::vertex_descriptor& vertex,
             const BoostGraph& graph
         ) {
-            return make_iter(boost::out_edges(vertex, graph));
+            return iterators::make_iter(boost::out_edges(vertex, graph));
         }
 
         /** @brief  Gives an \ref iterator_pair that can be used in range-based for loops to cycle
@@ -64,11 +64,11 @@ namespace as {
          *  @return              The iterator_pair.
          */
         template<class BoostGraph>
-        inline iterator_pair<typename boost::graph_traits<BoostGraph>::in_edge_iterator> in_edges(
+        inline iterators::iterator_pair<typename boost::graph_traits<BoostGraph>::in_edge_iterator> in_edges(
             const typename boost::graph_traits<BoostGraph>::vertex_descriptor& vertex,
             const BoostGraph& graph
         ) {
-            return make_iter(boost::in_edges(vertex, graph));
+            return iterators::make_iter(boost::in_edges(vertex, graph));
         }
 
         /** @brief  Gives an \ref iterator_pair that can be used in range-based for loops to cycle
@@ -83,7 +83,7 @@ namespace as {
          *  @return                 The iterator_pair.
          */
         template<class BoostGraph>
-        inline iterator_pair<typename boost::graph_traits<BoostGraph>::adjacency_iterator> neighbours(
+        inline iterators::iterator_pair<typename boost::graph_traits<BoostGraph>::adjacency_iterator> neighbours(
             const typename boost::graph_traits<BoostGraph>::vertex_descriptor& vertex,
             const BoostGraph& graph
         ) {
@@ -91,7 +91,7 @@ namespace as {
                 std::is_same<typename boost::graph_traits<BoostGraph>::directed_category, boost::undirected_tag>::value,
                 "neighbours is intended to be used with undirected graphs."
             );
-            return make_iter(boost::adjacent_vertices(vertex, graph));
+            return iterators::make_iter(boost::adjacent_vertices(vertex, graph));
         }
 
         /** @brief  Tells whether two edges of an undirected graph are incident to
