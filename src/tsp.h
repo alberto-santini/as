@@ -67,6 +67,28 @@ namespace as {
             std::iota(nodes.begin(), nodes.end(), 0u);
             return solve(instance, nodes);
         }
+
+        /** @brief  Computes the cost (i.e., the total distance) of a tour.
+         *
+         *  @param  instance    The TSP instance.
+         *  @param  tour        The tour.
+         *  @return             The distances travelled along the tour.
+         */
+        inline float tour_cost(const tsplib::TSPInstance& instance, const std::vector<std::uint32_t>& tour) {
+            float cost = 0.0f;
+
+            for(auto i = 0u; i < tour.size(); ++i) {
+                const auto v = tour[i];
+                const auto w = tour[(i + 1) % tour.size()];
+
+                assert(v < instance.number_of_vertices());
+                assert(w < instance.number_of_vertices());
+
+                cost += instance.get_distance(v, w);
+            }
+
+            return cost;
+        }
     }
 }
 
