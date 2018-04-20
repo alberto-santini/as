@@ -10,6 +10,7 @@
 #include <cstdint>
 #include <vector>
 #include <csignal>
+#include <numeric>
 #include <algorithm>
 
 #include "tsplib.h"
