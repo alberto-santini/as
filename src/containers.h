@@ -8,6 +8,7 @@
 #include "tmp.h"
 #include <algorithm>
 #include <set>
+#include <vector>
 #include <iostream>
 
 #if __has_include(<experimental/iterator>)
@@ -136,7 +137,33 @@ namespace as {
          */
         template<class Container>
         using is_associative = detail::is_associative<Container>;
-    }
+
+        /** @brief  Erase elements from a vector, if they satisfy a user-given condition.
+         *          It doesn't guarantee that the order of non-deleted elements will be preserved.
+         *
+         *          This methods has the same effect as the erase-remove_if idiom, but it doesn't
+         *          guarantee to preserve the order of non-erased elements. On the other end,
+         *          it uses fewer moves on the objects of the vector.
+         *
+         *  @tparam Object      Type of object contained in the vector.
+         *  @tparam Condition   Class of the functor object, taking a const reference to an
+         *                      \p Object and returning true iff it needs to be erased.
+         *  @param vec          The vector from which to erase.
+         *  @param condition    The functor.
+         */
+        template<typename Object, typename Condition>
+        inline void swap_erase(std::vector<Object>& vec, const Condition& condition) {
+            auto last = vec.end();
+
+            for(auto it = vec.begin(); it < last; ++it) {
+                if(condition(*it)) {
+                    std::iter_swap(it--, --last);
+                }
+            }
+
+            vec.erase(last, vec.end());
+        }
+    };
 }
 
 #endif //AS_CONTAINERS_H

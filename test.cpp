@@ -122,6 +122,53 @@ namespace {
         ASSERT_EQ(::testing::internal::GetCapturedStdout(), "1; 2; 3\n");
     }
 
+    TEST(ContainerTest, EraseSwap) {
+        using namespace as::containers;
+
+        std::vector<int> v = { 1, 2, 3, 4, 5, 6, 7 };
+        const std::set<int> w = { 1, 3, 5, 7 };
+        const std::set<int> x = {};
+
+        const auto is_even = [] (const int& n) -> bool { return n % 2 == 0; };
+        const auto is_odd = [] (const int& n) -> bool { return n % 2 != 0; };
+
+        swap_erase(v, is_even);
+
+        ASSERT_EQ(std::set<int>(v.begin(), v.end()), w);
+
+        swap_erase(v, is_odd);
+
+        ASSERT_EQ(std::set<int>(v.begin(), v.end()), x);
+    }
+
+    TEST(ContainerTest, EraseSwapEdgeCases) {
+        using namespace as::containers;
+
+        std::vector<int> v = { 1, 2, 3 };
+        std::vector<int> x = {};
+        const std::vector<int> w = { 1, 2, 3 };
+        const std::vector<int> y = {};
+
+        const auto always = [] (const int& n) -> bool { return true; };
+        const auto never = [] (const int& n) -> bool { return false; };
+
+        swap_erase(v, never);
+
+        ASSERT_EQ(v, w);
+
+        swap_erase(v, always);
+
+        ASSERT_EQ(v, y);
+
+        swap_erase(x, never);
+
+        ASSERT_EQ(x, y);
+
+        swap_erase(x, always);
+
+        ASSERT_EQ(x, y);
+    }
+
     class GraphTest : public ::testing::Test {
     public:
         boost::adjacency_list<boost::vecS, boost::vecS, boost::undirectedS> u;
