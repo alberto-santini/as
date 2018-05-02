@@ -187,6 +187,21 @@ namespace as {
                     return *this;
                 }
 
+                /** @brief  Sets a global scaling coefficient.
+                 * 
+                 *  Individual scaling for each dimension can be overridden using
+                 *  set_width and set_height.
+                 *  This method returns a reference to the current object, so that
+                 *  multiple methods can be chained.
+                 * 
+                 *  @param  factor  The scaling factor.
+                 *  @return         A reference to self.
+                 */
+                PlottedGraph& set_scaling(float factor) {
+                    scaling_x = factor;
+                    scaling_y = factor;
+                }
+
                 /** @brief Sets the picture padding.
                  *
                  *  This method returns a reference to the current object, so that
@@ -276,6 +291,19 @@ namespace as {
                     return *this;
                 }
 
+                /** @brief Add one highlighted vertex, which will be printed in colour.
+                 *
+                 *  This method returns a reference to the current object, so that
+                 *  multiple methods can be chained.
+                 *
+                 *  @param  vertex      The vertex to highlight.
+                 *  @return             A reference to self.
+                 */
+                PlottedGraph& add_highlighted_vertex(const Vertex& vertex) {
+                    highlight_vertices.push_back({vertex});
+                    return *this;
+                }
+
                 /** @brief Add a collection of highlighted edges, which will be printed in colour.
                  *
                  *  This method returns a reference to the current object, so that
@@ -291,6 +319,19 @@ namespace as {
                     return *this;
                 }
 
+                /** @brief Add a highlighted edge, which will be printed in colour.
+                 *
+                 *  This method returns a reference to the current object, so that
+                 *  multiple methods can be chained.
+                 *
+                 *  @param  edge        The edge to highlight.
+                 *  @return             A reference to self.
+                 */
+                PlottedGraph& add_highlited_edge(const Edge& edge) {
+                    highlight_edges.push_back({edge});
+                    return *this;
+                }
+
                 /** @brief Plots the graph to file, in PNG format.
                  *
                  *  @param filename The path of the file where the png picture will be saved.
@@ -303,17 +344,15 @@ namespace as {
 
                     if(resize_width) {
                         scaling_x = static_cast<float>(*resize_width) / original_width;
-                        image_width = *resize_width;
-                    } else {
-                        scaling_x = 1.0f;
                     }
+
+                    image_width *= scaling_x;
 
                     if(resize_height) {
                         scaling_y = static_cast<float>(*resize_height) / original_height;
-                        image_height = *resize_height;
-                    } else {
-                        scaling_y = 1.0f;
                     }
+
+                    image_height *= scaling_y;
 
                     Image img(
                             static_cast<unsigned int>(image_width + 2 * padding),    // X dimension
