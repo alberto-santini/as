@@ -91,11 +91,13 @@ namespace as {
             try {
                 solved = cplex.solve();
             } catch(const IloException& e) {
+                env.end();
                 throw std::runtime_error("Cplex crashed when solving the problem");
             }
 
             if(!solved) {
                 cplex.exportModel("error.lp");
+                env.end();
                 throw std::runtime_error("Cplex could not find a solution for this instance of the problem");
             }
 
@@ -113,6 +115,7 @@ namespace as {
                 }
             } while(current_index != 0u);
 
+            env.end();
             return tour;
         }
 

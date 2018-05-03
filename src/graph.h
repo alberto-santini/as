@@ -260,6 +260,24 @@ namespace as {
 
             return digraph;
         }
+
+        /** @brief  Tells whether two vertices are adjacent, i.e. linked by an undirected edge or a
+         *          directed arc, in any direction.
+         *
+         *  @tparam BoostGraph  The underlying graph type.
+         *  @param  v1          First vertex.
+         *  @param  v2          Second vertex.
+         *  @param  graph       The graph.
+         *  @return             True iff the two vertices are linked by an edge or arc.
+         */
+        template<typename BoostGraph>
+        inline bool are_adjacent(
+                const typename boost::graph_traits<BoostGraph>::vertex_descriptor& v1,
+                const typename boost::graph_traits<BoostGraph>::vertex_descriptor& v2,
+                const BoostGraph& graph
+        ) {
+            return boost::edge(v1, v2, graph).second || boost::edge(v2, v1, graph).second;
+        }
     }
 }
 

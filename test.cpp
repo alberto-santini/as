@@ -13,6 +13,7 @@
 #include "src/mwis.h"
 #include "src/numeric.h"
 #include "src/geometry.h"
+#include "src/max_clique.h"
 #include "src/random.h"
 #include "src/string.h"
 #include "src/combinatorial.h"
@@ -169,6 +170,43 @@ namespace {
         ASSERT_EQ(x, y);
     }
 
+    class CliqueTest : public ::testing::Test {
+    public:
+        boost::adjacency_list<boost::vecS, boost::vecS, boost::undirectedS> u;
+        boost::adjacency_list<boost::vecS, boost::vecS, boost::directedS> d;
+
+        CliqueTest() {
+            // Build a directed and an undirected triangle with an attached vertex
+            for(auto i = 0u; i < 4u; ++i) {
+                boost::add_vertex(u);
+                boost::add_vertex(d);
+            }
+
+            boost::add_edge(0u, 1u, u);
+            boost::add_edge(0u, 1u, d);
+
+            boost::add_edge(1u, 2u, u);
+            boost::add_edge(1u, 2u, d);
+
+            boost::add_edge(2u, 0u, u);
+            boost::add_edge(2u, 0u, d);
+
+            boost::add_edge(0u, 3u, u);
+            boost::add_edge(0u, 3u, d);
+        }
+    };
+
+    TEST_F(CliqueTest, MipClique) {
+        using namespace as::max_clique;
+
+        const auto clique_u = solve_with_mip(u);
+        const auto clique_d = solve_with_mip(d);
+        const std::vector<unsigned long> expected = { 0u, 1u, 2u };
+
+        ASSERT_EQ(clique_u, expected);
+        ASSERT_EQ(clique_d, expected);
+    }
+
     class GraphTest : public ::testing::Test {
     public:
         boost::adjacency_list<boost::vecS, boost::vecS, boost::undirectedS> u;
@@ -286,6 +324,17 @@ namespace {
 
         ASSERT_TRUE(boost::edge(3u, 0u, und).second);
         ASSERT_FALSE(boost::edge(3u, 0u, dir).second);
+    }
+
+    TEST_F(GraphTest, AreAdjacent) {
+        using namespace as::graph;
+
+        ASSERT_TRUE(are_adjacent(0u, 1u, u));
+        ASSERT_TRUE(are_adjacent(1u, 0u, u));
+        ASSERT_TRUE(are_adjacent(0u, 1u, d));
+        ASSERT_TRUE(are_adjacent(1u, 0u, d));
+        ASSERT_FALSE(are_adjacent(0u, 2u, u));
+        ASSERT_FALSE(are_adjacent(0u, 2u, d));
     }
 
     class MwisTest : public ::testing::Test {
