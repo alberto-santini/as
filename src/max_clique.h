@@ -19,7 +19,16 @@
 #include "numeric.h"
 
 namespace as {
+    /** @namespace  max_clique
+     *  @brief      This namespace contains utilities to solve the Maximum Clique Problem on boost graphs.
+     */
     namespace max_clique {
+        /** @brief  Solves the Maximum Clique Problem via a simple MIP model through CPLEX.
+         *
+         *  @tparam BoostGraph  The underlying graph type.
+         *  @param  g           The graph.
+         *  @return             The largest clique in the graph.
+         */
         template<typename BoostGraph>
         inline std::vector<typename boost::graph_traits<BoostGraph>::vertex_descriptor> solve_with_mip(const BoostGraph& g) {
             static_assert(
