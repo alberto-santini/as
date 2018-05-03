@@ -208,6 +208,58 @@ namespace as {
             );
             return difference;
         }
+
+        /** @brief Computes an acyclic orientation of an undirected boost graph.
+         *
+         *  An acyclic orientation of an undirected graph consists in assigning an orientation
+         *  to each of its edges, so that the resulting directed graph is acyclic.
+         *
+         *  Clearly, the starting graph should be undirected (boost::undirectedS).
+         *  Furthermore, since the orientation depends on a total order relationship between
+         *  the vertices, we constrain the starting graph to store vertices in a vector
+         *  (boost::vecS), so that we can use their index as an ordering.
+         *
+         *  All other properties of the starting graph are preserved, including the containers
+         *  storing edges and out-edges, as well as vertex, edge, and graph properties.
+         *
+         *  @tparam OutEdgeListS        The starting boost graph out-edge storage container type.
+         *  @tparam VertexProperties    The starting boost graph vertex property type.
+         *  @tparam EdgeProperties      The starting boost graph edge property type.
+         *  @tparam GraphProperty       The starting boost graph graph-property type.
+         *  @tparam EdgeListS           The starting boost graph edge storage container type.
+         *  @param  graph               The starting undirected graph.
+         *  @return                     The acyclic orientation of the starting graph.
+         */
+        template<
+                typename OutEdgeListS = boost::vecS,             // boost's default
+                typename VertexProperties = boost::no_property,  // boost's default
+                typename EdgeProperties = boost::no_property,    // boost's default
+                typename GraphProperty = boost::no_property,     // boost's default
+                typename EdgeListS = boost::listS                // boost's default
+        > inline boost::adjacency_list<OutEdgeListS, boost::vecS, boost::directedS, VertexProperties, EdgeProperties, GraphProperty, EdgeListS>
+        acyclic_orientation(
+                const boost::adjacency_list<OutEdgeListS, boost::vecS, boost::undirectedS, VertexProperties, EdgeProperties, GraphProperty, EdgeListS>& graph
+        ) {
+            boost::adjacency_list<OutEdgeListS, boost::vecS, boost::directedS, VertexProperties, EdgeProperties, GraphProperty, EdgeListS> digraph;
+
+            for(const auto& v : vertices(graph)) {
+                boost::add_vertex(graph[v], digraph);
+            }
+
+            for(auto i = 0u; i < boost::num_vertices(graph); ++i) {
+                for(auto j = i + 1; j < boost::num_vertices(graph); ++j) {
+                    const auto& [edge, edge_exists] = boost::edge(i, j, graph);
+
+                    if(edge_exists) {
+                        boost::add_edge(i, j, graph[edge], digraph);
+                    }
+                }
+            }
+
+            digraph[boost::graph_bundle] = graph[boost::graph_bundle];
+
+            return digraph;
+        }
     }
 }
 
