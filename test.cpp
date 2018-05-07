@@ -207,6 +207,17 @@ namespace {
         ASSERT_EQ(clique_d, expected);
     }
 
+    TEST_F(CliqueTest, PmcClique) {
+        using namespace as::max_clique;
+
+        const auto clique_u = solve_with_pmc(u);
+        const auto clique_d = solve_with_pmc(d);
+        const std::unordered_set<unsigned long> expected = { 0u, 1u, 2u };
+
+        ASSERT_EQ(std::unordered_set<unsigned long>(clique_u.begin(), clique_u.end()), expected);
+        ASSERT_EQ(std::unordered_set<unsigned long>(clique_d.begin(), clique_d.end()), expected);
+    }
+
     class GraphTest : public ::testing::Test {
     public:
         boost::adjacency_list<boost::vecS, boost::vecS, boost::undirectedS> u;

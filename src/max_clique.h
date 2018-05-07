@@ -14,6 +14,11 @@
 #include <boost/graph/adjacency_list.hpp>
 #include <boost/graph/graph_traits.hpp>
 #include <vector>
+#include <cstring>
+
+extern "C" {
+    #include <pmc/pmc.h>
+};
 
 #include "graph.h"
 #include "numeric.h"
@@ -90,6 +95,56 @@ namespace as {
             env.end();
             return clique;
         };
+
+        template<typename BoostGraph>
+        inline std::vector<typename boost::graph_traits<BoostGraph>::vertex_descriptor> solve_with_pmc(const BoostGraph& g) {
+            static_assert(
+                    std::is_same<typename BoostGraph::vertex_list_selector, boost::vecS>::value,
+                    "solve_with_mip relies on vertices to be stored in a vertex to map their indices to the variables' indices."
+            );
+
+            const long long number_of_edges = boost::num_edges(g);
+            std::vector<int> edge_tails;
+            std::vector<int> edge_heads;
+
+            edge_tails.reserve(number_of_edges);
+            edge_heads.reserve(number_of_edges);
+
+            for(const auto& edge : graph::edges(g)) {
+                const auto tail = boost::source(edge, g);
+                const auto head = boost::target(edge, g);
+
+                assert(numeric::can_type_fit_value<int>(head));
+                assert(numeric::can_type_fit_value<int>(tail));
+
+                const int first = std::max(static_cast<int>(head), static_cast<int>(tail));
+                const int second = std::min(static_cast<int>(head), static_cast<int>(tail));
+
+                edge_tails.push_back(first);
+                edge_heads.push_back(second);
+            }
+
+            const auto num_vertices = boost::num_vertices(g);
+
+            assert(numeric::can_type_fit_value<int>(num_vertices));
+
+            const auto max_clique_size = static_cast<int>(num_vertices);
+            auto* clique = new int[max_clique_size];
+            std::memset(clique, -1, sizeof clique);
+
+            auto clique_sz = ::max_clique(number_of_edges, edge_tails.data(), edge_heads.data(), 0, max_clique_size, clique);
+
+            std::vector<typename boost::graph_traits<BoostGraph>::vertex_descriptor> ret_clique;
+            int i = 0;
+
+            while(clique[i] >= 0 && i < clique_sz && i < max_clique_size) {
+                ret_clique.push_back(clique[i++]);
+            }
+
+            delete[] clique;
+
+            return ret_clique;
+        }
     }
 }
 
