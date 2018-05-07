@@ -100,7 +100,7 @@ namespace as {
         inline std::vector<typename boost::graph_traits<BoostGraph>::vertex_descriptor> solve_with_pmc(const BoostGraph& g) {
             static_assert(
                     std::is_same<typename BoostGraph::vertex_list_selector, boost::vecS>::value,
-                    "solve_with_mip relies on vertices to be stored in a vertex to map their indices to the variables' indices."
+                    "solve_with_pmc relies on vertices to be stored in a vertex to map their indices to the variables' indices."
             );
 
             const long long number_of_edges = boost::num_edges(g);
