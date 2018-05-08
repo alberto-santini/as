@@ -8,6 +8,7 @@
 #include <random>
 #include <functional>
 #include <algorithm>
+#include <numeric>
 #include <type_traits>
 #include "containers.h"
 
@@ -100,6 +101,67 @@ namespace as {
         template<class Container>
         inline Container sample(const Container container, typename Container::size_type how_many) {
             return sample(container, how_many, get_seeded_mt());
+        }
+
+        /** @brief  Selects a position in a vector of floating-point numbers according
+         *          to a roulette-wheel criterion.
+         *
+         *          In a roulette-wheel random choice, each position has a probability
+         *          to be chosen proportional to the weight at that position.
+         *
+         *  @tparam FloatingPoint   A floating-point type (e.g. float, double).
+         *  @tparam Prng            The type of the pseudo-random number generator.
+         *  @param  weights         The non-empty vector with weights.
+         *  @param  prng            The pseudo-random number generator.
+         *  @return                 An index of the vector of \ref weights.
+         */
+        template<class FloatingPoint, class Prng = std::mt19937>
+        inline typename std::vector<FloatingPoint>::size_type roulette_wheel(
+                const std::vector<FloatingPoint>& weights,
+                Prng&& prng
+        ) {
+            static_assert(std::is_floating_point<FloatingPoint>::value, "FloatingPoint needs to be a floating point type");
+
+            // Roulette wheel selection only works if all weights are non-negative.
+            assert(std::all_of(weights.begin(), weights.end(), [](auto w){return w >= 0;}));
+
+            // There needs to be at least one element in the vector.
+            assert(!weights.empty());
+
+            const FloatingPoint sum = std::accumulate(weights.begin(), weights.end(), 0.0f);
+            std::uniform_real_distribution<FloatingPoint> dist(0, sum);
+            const FloatingPoint pivot = dist(prng);
+
+            FloatingPoint partial = 0;
+
+            for(typename std::vector<FloatingPoint>::size_type i = 0u; i < weights.size() - 1u; ++i) {
+                partial += weights[i];
+
+                if(partial >= pivot) {
+                    return i;
+                }
+            }
+
+            return weights.size() - 1u;
+        }
+
+        /** @brief  Selects a position in a vector of floating-point numbers according
+         *          to a roulette-wheel criterion.
+         *
+         *          In a roulette-wheel random choice, each position has a probability
+         *          to be chosen proportional to the weight at that position.
+         *          A Mersenne Twister pseudo-random number generator is built,
+         *          seeded and used for the selection.
+         *
+         *  @tparam FloatingPoint   A floating-point type (e.g. float, double).
+         *  @param  weights         The non-empty vector with weights.
+         *  @return                 An index of the vector of \ref weights.
+         */
+        template<class FloatingPoint>
+        inline typename std::vector<FloatingPoint>::size_type roulette_wheel(
+                const std::vector<FloatingPoint>& weights
+        ) {
+            return roulette_wheel(weights, get_seeded_mt());
         }
     }
 }

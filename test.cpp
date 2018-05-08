@@ -416,6 +416,21 @@ namespace {
         ASSERT_EQ(u2, u);
     }
 
+    TEST(RandomTest, RouletteWheel) {
+        using namespace as::rnd;
+
+        const std::vector<float> v1 = { 0.5f, 0.5f };
+        const auto r1 = roulette_wheel(v1);
+
+        ASSERT_TRUE(r1 == 0u || r1 == 1u);
+
+        const std::vector<float> v2 = { 0.0f, 1.0f };
+        std::vector<std::size_t> r(10u);
+        std::generate(r.begin(), r.end(), [&]() {return roulette_wheel(v2);});
+
+        ASSERT_TRUE(std::all_of(r.begin(), r.end(), [](std::size_t n) {return n == 1u;}));
+    }
+
     TEST(StringTest, LeftTrim) {
         std::string s{"  abc  "};
         as::string::left_trim(s);
