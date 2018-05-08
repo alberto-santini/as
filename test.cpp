@@ -20,6 +20,7 @@
 #include "src/tsplib.h"
 #include "src/discorde.h"
 #include "src/mtz.h"
+#include "src/repeat.h"
 
 namespace {
     using namespace as;
@@ -558,6 +559,17 @@ namespace {
         const std::vector<std::uint32_t> vertices = { 0, 1, 5, 6 };
 
         ASSERT_THROW(discorde_solve_tsp(instance, vertices), std::runtime_error);
+    }
+
+    TEST(RepeatTest, Repeats5Times) {
+        using namespace as;
+
+        std::vector<int> v = {};
+        std::vector<int> expected = { 0, 0, 0, 0, 0 };
+
+        repeat(5u, [&] () { v.push_back(0); });
+
+        ASSERT_EQ(v, expected);
     }
 }
 
