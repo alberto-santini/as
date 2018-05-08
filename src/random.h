@@ -8,6 +8,7 @@
 #include <random>
 #include <functional>
 #include <algorithm>
+#include <type_traits>
 #include "containers.h"
 
 namespace as {
@@ -39,7 +40,7 @@ namespace as {
          *          be unsuitable for particularly large containers.
          *
          *  @tparam Container    The container type.
-         *                       Must be copiable, implement begin() and end(),
+         *                       Must be copiable, usable with std::begin() and std::end(),
          *                       and constructible from a pair of iterators.
          *  @tparam Prng         The pseudo-random number generator type to use.
          *  @param container     The container to sample.
@@ -49,8 +50,10 @@ namespace as {
          */
         template<class Container, class Prng = std::mt19937>
         inline Container sample(const Container container, typename Container::size_type how_many, Prng&& prng) {
+            static_assert(std::is_copy_constructible<Container>::value, "Container needs to be copy constructible");
+
             Container container_copy(container);
-            auto length = std::distance(container_copy.begin(), container_copy.end());
+            auto length = std::distance(std::begin(container_copy), std::end(container_copy));
 
             if(length == 0u) {
                 return container_copy;
@@ -60,7 +63,7 @@ namespace as {
                 how_many = length;
             }
 
-            auto begin = container_copy.begin();
+            auto begin = std::begin(container_copy);
             auto n_samples = how_many;
 
             while(n_samples--) {
@@ -74,7 +77,7 @@ namespace as {
                 --length;
             }
 
-            return Container(container_copy.begin(), container_copy.begin() + how_many);
+            return Container(std::begin(container_copy), std::begin(container_copy) + how_many);
         }
 
         /** @brief  Gets samples from a container. The samples are guaranteed
@@ -88,8 +91,8 @@ namespace as {
          *          seeded and used to extract the samples.
          *
          *  @tparam Container    The container type.
-         *                      Must be copiable, implement begin() and end(),
-         *                      and constructible from a pair of iterators.
+         *                       Must be copiable, usable with std::begin() and std::end(),
+         *                       and constructible from a pair of iterators.
          *  @param container     The container to sample.
          *  @param how_many      The number of samples to extract.
          *  @return              A container with \ref how_many elements from \ref container.
