@@ -122,6 +122,50 @@ namespace as {
             return (s1 == s2 || s1 == t2 || t1 == s2 || t1 == t2);
         }
 
+        /** @brief Tells whether two vertices are connected by an edge (undirected
+         *         graphs) or an arc (in either direction, for directed graphs).
+         *
+         *  @tparam BoostGraph  The underlying graph type. Can be directed or undirected.
+         *  @param  vertex1     The first vertex.
+         *  @param  vertex2     The second vertex.
+         *  @param  graph       The graph.
+         *  @return             True iff the vertices are connected by an edge or arc.
+         */
+        template<class BoostGraph>
+        inline bool are_connected(
+                const typename boost::graph_traits<BoostGraph>::vertex_descriptor& vertex1,
+                const typename boost::graph_traits<BoostGraph>::vertex_descriptor& vertex2,
+                const BoostGraph& graph
+        ) {
+            return boost::edge(vertex1, vertex2, graph).second || boost::edge(vertex2, vertex1, graph).second;
+        }
+
+        /** @brief  Tells whether a pair of arcs forms a simplicial pair.
+         *
+         *          Two arcs form a simplicial pair if they have the same tail and
+         *          their heads are connected by another arc, in any direction.
+         *
+         *  @tparam BoostGraph  The underlying graph type. Must be directed.
+         *  @param  arc1        The first arc.
+         *  @param  arc2        The second arc.
+         *  @param  graph       The graph.
+         *  @return             True iff the two arcs form a simplicial pair.
+         */
+        template<class BoostGraph>
+        inline bool is_simplicial_pair(
+                const typename boost::graph_traits<BoostGraph>::edge_descriptor& arc1,
+                const typename boost::graph_traits<BoostGraph>::edge_descriptor& arc2,
+                const BoostGraph& graph
+        ) {
+            static_assert(
+                    std::is_same<typename boost::graph_traits<BoostGraph>::directed_category, boost::directed_tag>::value,
+                    "simplicial pairs only make sense in directed graphs"
+            );
+
+            return boost::source(arc1, graph) == boost::source(arc2, graph) &&
+                   are_connected(boost::target(arc1, graph), boost::target(arc2, graph), graph);
+        }
+
         /** @brief  Tells whether a vertex is an extreme of an edge, i.e.
          *          if it is either its source or its target. For an undirected
          *          graph, therefore, it tells whether the edge is incident
@@ -219,8 +263,11 @@ namespace as {
          *  the vertices, we constrain the starting graph to store vertices in a vector
          *  (boost::vecS), so that we can use their index as an ordering.
          *
-         *  All other properties of the starting graph are preserved, including the containers
-         *  storing edges and out-edges, as well as vertex, edge, and graph properties.
+         *  All other characteristics of the starting graph are preserved, including the
+         *  types of the containers storing edges and out-edges, as well as vertex, edge,
+         *  and graph properties.
+         *  Since we preserve graph, edge, and vertex properties, we require them to be
+         *  default-constructible and assignable.
          *
          *  @tparam OutEdgeListS        The starting boost graph out-edge storage container type.
          *  @tparam VertexProperties    The starting boost graph vertex property type.
@@ -261,22 +308,43 @@ namespace as {
             return digraph;
         }
 
-        /** @brief  Tells whether two vertices are adjacent, i.e. linked by an undirected edge or a
-         *          directed arc, in any direction.
+        /** @brief  Returns the complement of an undirected graph, i.e. a
+         *          graph with the same vertex set and with an edge beteween
+         *          two vertices iff the original graph does not have such
+         *          edge.
          *
-         *  @tparam BoostGraph  The underlying graph type.
-         *  @param  v1          First vertex.
-         *  @param  v2          Second vertex.
-         *  @param  graph       The graph.
-         *  @return             True iff the two vertices are linked by an edge or arc.
+         *          Since we preserve graph and vertex properties, we require
+         *          them to be default constructible and assignable.
+         *
+         * @tparam  BoostGraph  The underlying graph type. Must be undirected.
+         * @param   graph       The graph.
+         * @return              The complement of the graph.
          */
         template<typename BoostGraph>
-        inline bool are_adjacent(
-                const typename boost::graph_traits<BoostGraph>::vertex_descriptor& v1,
-                const typename boost::graph_traits<BoostGraph>::vertex_descriptor& v2,
-                const BoostGraph& graph
-        ) {
-            return boost::edge(v1, v2, graph).second || boost::edge(v2, v1, graph).second;
+        inline BoostGraph complementary(const BoostGraph& graph) {
+            static_assert(
+                    std::is_same<typename boost::graph_traits<BoostGraph>::directed_category, boost::undirected_tag>::value,
+                    "complimentary only works on undirected graphs"
+            );
+
+            BoostGraph comp;
+
+            for(const auto& v : vertices(graph)) {
+                boost::add_vertex(graph[v], comp);
+            }
+
+            for(auto i = 0u; i < boost::num_vertices(graph); ++i) {
+                for(auto j = i + 1; j < boost::num_vertices(graph); ++j) {
+                    const bool edge_exists = boost::edge(i, j, graph).second;
+                    if(!edge_exists) {
+                        boost::add_edge(i, j, comp);
+                    }
+                }
+            }
+
+            comp[boost::graph_bundle] = graph[boost::graph_bundle];
+
+            return comp;
         }
     }
 }

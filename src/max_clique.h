@@ -60,7 +60,7 @@ namespace as {
 
             for(auto v = 0u; v < n; ++v) {
                 for(auto w = v + 1; w < n; ++w) {
-                    if(!graph::are_adjacent(v, w, g)) {
+                    if(!graph::are_connected(v, w, g)) {
                         model.add(x[v] + x[w] <= 1);
                     }
                 }

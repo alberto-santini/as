@@ -338,15 +338,43 @@ namespace {
         ASSERT_FALSE(boost::edge(3u, 0u, dir).second);
     }
 
-    TEST_F(GraphTest, AreAdjacent) {
+    TEST_F(GraphTest, AreConnected) {
         using namespace as::graph;
 
-        ASSERT_TRUE(are_adjacent(0u, 1u, u));
-        ASSERT_TRUE(are_adjacent(1u, 0u, u));
-        ASSERT_TRUE(are_adjacent(0u, 1u, d));
-        ASSERT_TRUE(are_adjacent(1u, 0u, d));
-        ASSERT_FALSE(are_adjacent(0u, 2u, u));
-        ASSERT_FALSE(are_adjacent(0u, 2u, d));
+        ASSERT_TRUE(are_connected(0u, 1u, u));
+        ASSERT_TRUE(are_connected(1u, 0u, u));
+        ASSERT_TRUE(are_connected(0u, 1u, d));
+        ASSERT_TRUE(are_connected(1u, 0u, d));
+        ASSERT_FALSE(are_connected(0u, 2u, u));
+        ASSERT_FALSE(are_connected(0u, 2u, d));
+    }
+
+    TEST_F(GraphTest, AreSimplicialPair) {
+        using namespace as::graph;
+
+        boost::adjacency_list<boost::vecS, boost::vecS, boost::directedS> dir;
+
+        as::repeat(4u, [&] () { boost::add_vertex(dir); });
+        const auto a01 = boost::add_edge(0u, 1u, dir).first;
+        const auto a02 = boost::add_edge(0u, 2u, dir).first;
+        const auto a03 = boost::add_edge(0u, 3u, dir).first;
+        const auto a12 = boost::add_edge(1u, 2u, dir).first;
+
+        ASSERT_TRUE(is_simplicial_pair(a01, a02, dir));
+        ASSERT_FALSE(is_simplicial_pair(a01, a03, dir));
+    }
+
+    TEST_F(GraphTest, ComplementGraph) {
+        using namespace as::graph;
+
+        const auto comp = complementary(u);
+
+        ASSERT_TRUE(boost::edge(0u, 2u, comp).second);
+        ASSERT_TRUE(boost::edge(1u, 3u, comp).second);
+
+        for(auto i = 0u; i < 4u; ++i) {
+            EXPECT_FALSE(boost::edge(i, (i + 1) % 4u, comp).second);
+        }
     }
 
     class MwisTest : public ::testing::Test {
