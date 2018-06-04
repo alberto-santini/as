@@ -220,7 +220,7 @@ namespace as {
          *  @param graph        The graph.
          *  @return             The complement set, returned as a vector.
          */
-        template<typename BoostGraph>
+        template<class BoostGraph>
         inline std::vector<typename boost::graph_traits<BoostGraph>::vertex_descriptor> vertex_complement(
             std::vector<typename boost::graph_traits<BoostGraph>::vertex_descriptor> vertices,
             const BoostGraph& graph
@@ -278,11 +278,11 @@ namespace as {
          *  @return                     The acyclic orientation of the starting graph.
          */
         template<
-                typename OutEdgeListS = boost::vecS,             // boost's default
-                typename VertexProperties = boost::no_property,  // boost's default
-                typename EdgeProperties = boost::no_property,    // boost's default
-                typename GraphProperty = boost::no_property,     // boost's default
-                typename EdgeListS = boost::listS                // boost's default
+                class OutEdgeListS = boost::vecS,             // boost's default
+                class VertexProperties = boost::no_property,  // boost's default
+                class EdgeProperties = boost::no_property,    // boost's default
+                class GraphProperty = boost::no_property,     // boost's default
+                class EdgeListS = boost::listS                // boost's default
         > inline boost::adjacency_list<OutEdgeListS, boost::vecS, boost::directedS, VertexProperties, EdgeProperties, GraphProperty, EdgeListS>
         acyclic_orientation(
                 const boost::adjacency_list<OutEdgeListS, boost::vecS, boost::undirectedS, VertexProperties, EdgeProperties, GraphProperty, EdgeListS>& graph
@@ -320,7 +320,7 @@ namespace as {
          * @param   graph       The graph.
          * @return              The complement of the graph.
          */
-        template<typename BoostGraph>
+        template<class BoostGraph>
         inline BoostGraph complementary(const BoostGraph& graph) {
             static_assert(
                     std::is_same<typename boost::graph_traits<BoostGraph>::directed_category, boost::undirected_tag>::value,
