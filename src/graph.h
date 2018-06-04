@@ -308,6 +308,78 @@ namespace as {
             return digraph;
         }
 
+        /** @brief Computes an acyclic orientation of an undirected boost graph.
+         *
+         *  An acyclic orientation of an undirected graph consists in assigning an orientation
+         *  to each of its edges, so that the resulting directed graph is acyclic.
+         *
+         *  Clearly, the starting graph should be undirected (boost::undirectedS).
+         *  Furthermore, the orientation depends on a total order relationship between
+         *  the vertices. This relation is provided via the \ref ord parameter, which
+         *  is a functor taking to vertex descriptors and returning true iff the first
+         *  one precedes the second in the total order relationship.
+         *
+         *  All other characteristics of the starting graph are preserved, including the
+         *  types of the containers storing edges and out-edges, as well as vertex, edge,
+         *  and graph properties.
+         *  Since we preserve graph, edge, and vertex properties, we require them to be
+         *  default-constructible and assignable.
+         *
+         *  @tparam BoostGraph          The starting boost graph type.
+         *  @tparam VertexOrder         The type of the functor used to establish a total order of vertices.
+         *  @param  graph               The starting undirected graph.
+         *  @param  ord                 An instance of the functor used to establish a total order of vertices.
+         *  @return                     The acyclic orientation of the starting graph.
+         */
+        template<class BoostGraph, class VertexOrder = std::less<>>
+        inline boost::adjacency_list<
+            typename BoostGraph::out_edge_list_selector,
+            typename BoostGraph::vertex_list_selector,
+            boost::directedS, // Note: this is not copied from the input type!
+            typename boost::vertex_bundle_type<BoostGraph>::type,
+            typename boost::edge_bundle_type<BoostGraph>::type,
+            typename boost::graph_bundle_type<BoostGraph>::type,
+            typename BoostGraph::edge_list_selector
+        > acyclic_orientation_with_order(const BoostGraph& graph, const VertexOrder& ord = VertexOrder{}) {
+            static_assert(
+                std::is_same<typename boost::graph_traits<BoostGraph>::directed_category, boost::undirected_tag>::value,
+                "to get an acyclic orientation, we need an undirected starting graph"
+            );
+
+            boost::adjacency_list<
+                typename BoostGraph::out_edge_list_selector,
+                typename BoostGraph::vertex_list_selector,
+                boost::directedS, // Note: this is not copied from the input type!
+                typename boost::vertex_bundle_type<BoostGraph>::type,
+                typename boost::edge_bundle_type<BoostGraph>::type,
+                typename boost::graph_bundle_type<BoostGraph>::type,
+                typename BoostGraph::edge_list_selector
+            > digraph;
+
+            for(const auto& v : vertices(graph)) {
+                boost::add_vertex(graph[v], digraph);
+            }
+
+            for(const auto& v : vertices(graph)) {
+                for(const auto& w : vertices(graph)) {
+                    if(v == w) { continue; }
+                    
+                    const auto& [edge, edge_exist] = boost::edge(v, w, graph);
+
+                    if(edge_exist) {
+                        const auto& source = ord(v, w) ? v : w;
+                        const auto& target = ord(v, w) ? w : v;
+
+                        boost::add_edge(source, target, graph[edge], digraph);
+                    }
+                }
+            }
+
+            digraph[boost::graph_bundle] = graph[boost::graph_bundle];
+
+            return digraph;
+        }
+
         /** @brief  Returns the complement of an undirected graph, i.e. a
          *          graph with the same vertex set and with an edge beteween
          *          two vertices iff the original graph does not have such

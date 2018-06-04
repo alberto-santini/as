@@ -338,6 +338,60 @@ namespace {
         ASSERT_FALSE(boost::edge(3u, 0u, dir).second);
     }
 
+    TEST_F(GraphTest, AcyclicOrientationWithOrder) {
+        using namespace as::graph;
+
+        const auto dir = acyclic_orientation_with_order(u);
+
+        ASSERT_EQ(boost::num_vertices(dir), 4u);
+        ASSERT_TRUE(boost::edge(0u, 1u, dir).second);
+        ASSERT_TRUE(boost::edge(0u, 3u, dir).second);
+        ASSERT_TRUE(boost::edge(1u, 2u, dir).second);
+        ASSERT_TRUE(boost::edge(2u, 3u, dir).second);
+        ASSERT_FALSE(boost::edge(3u, 0u, dir).second);
+    }
+
+    TEST_F(GraphTest, AcyclicOrientationWithOrderCustom) {
+        using namespace as::graph;
+
+        const auto dir = acyclic_orientation_with_order(u, std::greater<>{});
+
+        ASSERT_EQ(boost::num_vertices(dir), 4u);
+        ASSERT_TRUE(boost::edge(1u, 0u, dir).second);
+        ASSERT_TRUE(boost::edge(3u, 0u, dir).second);
+        ASSERT_TRUE(boost::edge(2u, 1u, dir).second);
+        ASSERT_TRUE(boost::edge(3u, 2u, dir).second);
+        ASSERT_FALSE(boost::edge(0u, 3u, dir).second);
+    }
+
+    TEST_F(GraphTest, AcyclicOrientationWithOrderWithProperties) {
+        using namespace as::graph;
+
+        boost::adjacency_list<boost::listS, boost::vecS, boost::undirectedS, int, int, int, boost::vecS> und;
+        for(auto i = 0u; i < 4u; ++i) {
+            boost::add_vertex(static_cast<int>(i), und);
+        }
+        for(auto i = 0u; i < 4u; ++i) {
+            boost::add_edge(i, (i + 1) % 4u, static_cast<int>(i * 5 + 1), und);
+        }
+        und[boost::graph_bundle] = 1000;
+
+        const auto dir = acyclic_orientation_with_order(und);
+
+        for(auto i = 0u; i < 4u; ++i) {
+            EXPECT_EQ(und[i], dir[i]);
+        }
+
+        const auto& e1 = boost::edge(0u, 1u, und).first;
+        const auto& [a1, t1] = boost::edge(0u, 1u, dir);
+
+        ASSERT_TRUE(t1);
+        ASSERT_EQ(und[e1], dir[a1]);
+
+        ASSERT_TRUE(boost::edge(3u, 0u, und).second);
+        ASSERT_FALSE(boost::edge(3u, 0u, dir).second);
+    }
+
     TEST_F(GraphTest, AreConnected) {
         using namespace as::graph;
 
