@@ -35,7 +35,7 @@ namespace as {
          *  @return             The largest clique in the graph.
          */
         template<typename BoostGraph>
-        inline std::vector<typename boost::graph_traits<BoostGraph>::vertex_descriptor> solve_with_mip(const BoostGraph& g) {
+        inline std::vector<typename boost::graph_traits<BoostGraph>::vertex_descriptor> solve_with_mip(const BoostGraph& g, std::optional<float> timeout = std::nullopt) {
             static_assert(
                 std::is_same<typename BoostGraph::vertex_list_selector, boost::vecS>::value,
                 "solve_with_mip relies on vertices to be stored in a vertex to map their indices to the variables' indices."
@@ -68,6 +68,10 @@ namespace as {
 
             IloCplex cplex{model};
             IloBool solved{false};
+
+            if(timeout) {
+                cplex.setParam(IloCplex::Param::TimeLimit, *timeout);
+            }
 
             cplex.exportModel("error.lp");
 
