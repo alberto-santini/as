@@ -2,4 +2,5 @@
 CMake*
 *.cmake
 .idea
+.vscode
 doc
