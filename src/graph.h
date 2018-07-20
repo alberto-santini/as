@@ -259,64 +259,9 @@ namespace as {
          *  to each of its edges, so that the resulting directed graph is acyclic.
          *
          *  Clearly, the starting graph should be undirected (boost::undirectedS).
-         *  Furthermore, since the orientation depends on a total order relationship between
-         *  the vertices, we constrain the starting graph to store vertices in a vector
-         *  (boost::vecS), so that we can use their index as an ordering.
-         *
-         *  All other characteristics of the starting graph are preserved, including the
-         *  types of the containers storing edges and out-edges, as well as vertex, edge,
-         *  and graph properties.
-         *  Since we preserve graph, edge, and vertex properties, we require them to be
-         *  default-constructible and assignable.
-         *
-         *  @tparam OutEdgeListS        The starting boost graph out-edge storage container type.
-         *  @tparam VertexProperties    The starting boost graph vertex property type.
-         *  @tparam EdgeProperties      The starting boost graph edge property type.
-         *  @tparam GraphProperty       The starting boost graph graph-property type.
-         *  @tparam EdgeListS           The starting boost graph edge storage container type.
-         *  @param  graph               The starting undirected graph.
-         *  @return                     The acyclic orientation of the starting graph.
-         */
-        template<
-                class OutEdgeListS = boost::vecS,             // boost's default
-                class VertexProperties = boost::no_property,  // boost's default
-                class EdgeProperties = boost::no_property,    // boost's default
-                class GraphProperty = boost::no_property,     // boost's default
-                class EdgeListS = boost::listS                // boost's default
-        > inline boost::adjacency_list<OutEdgeListS, boost::vecS, boost::directedS, VertexProperties, EdgeProperties, GraphProperty, EdgeListS>
-        acyclic_orientation(
-                const boost::adjacency_list<OutEdgeListS, boost::vecS, boost::undirectedS, VertexProperties, EdgeProperties, GraphProperty, EdgeListS>& graph
-        ) {
-            boost::adjacency_list<OutEdgeListS, boost::vecS, boost::directedS, VertexProperties, EdgeProperties, GraphProperty, EdgeListS> digraph;
-
-            for(const auto& v : vertices(graph)) {
-                boost::add_vertex(graph[v], digraph);
-            }
-
-            for(auto i = 0u; i < boost::num_vertices(graph); ++i) {
-                for(auto j = i + 1; j < boost::num_vertices(graph); ++j) {
-                    const auto& [edge, edge_exists] = boost::edge(i, j, graph);
-
-                    if(edge_exists) {
-                        boost::add_edge(i, j, graph[edge], digraph);
-                    }
-                }
-            }
-
-            digraph[boost::graph_bundle] = graph[boost::graph_bundle];
-
-            return digraph;
-        }
-
-        /** @brief Computes an acyclic orientation of an undirected boost graph.
-         *
-         *  An acyclic orientation of an undirected graph consists in assigning an orientation
-         *  to each of its edges, so that the resulting directed graph is acyclic.
-         *
-         *  Clearly, the starting graph should be undirected (boost::undirectedS).
          *  Furthermore, the orientation depends on a total order relationship between
          *  the vertices. This relation is provided via the \ref ord parameter, which
-         *  is a functor taking to vertex descriptors and returning true iff the first
+         *  is a functor taking two vertex descriptors and returning true iff the first
          *  one precedes the second in the total order relationship.
          *
          *  All other characteristics of the starting graph are preserved, including the
@@ -324,6 +269,10 @@ namespace as {
          *  and graph properties.
          *  Since we preserve graph, edge, and vertex properties, we require them to be
          *  default-constructible and assignable.
+         * 
+         *  Notice that \ref VertexOrder defaults to std::less, so when the default is used
+         *  the user need to be sure that it makes sense to compare the vertex descriptors
+         *  using std::less.
          *
          *  @tparam BoostGraph          The starting boost graph type.
          *  @tparam VertexOrder         The type of the functor used to establish a total order of vertices.
@@ -340,7 +289,7 @@ namespace as {
             typename boost::edge_bundle_type<BoostGraph>::type,
             typename boost::graph_bundle_type<BoostGraph>::type,
             typename BoostGraph::edge_list_selector
-        > acyclic_orientation_with_order(const BoostGraph& graph, const VertexOrder& ord = VertexOrder{}) {
+        > acyclic_orientation(const BoostGraph& graph, const VertexOrder& ord = VertexOrder{}) {
             static_assert(
                 std::is_same<typename boost::graph_traits<BoostGraph>::directed_category, boost::undirected_tag>::value,
                 "to get an acyclic orientation, we need an undirected starting graph"

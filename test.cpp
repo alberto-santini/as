@@ -338,23 +338,10 @@ namespace {
         ASSERT_FALSE(boost::edge(3u, 0u, dir).second);
     }
 
-    TEST_F(GraphTest, AcyclicOrientationWithOrder) {
-        using namespace as::graph;
-
-        const auto dir = acyclic_orientation_with_order(u);
-
-        ASSERT_EQ(boost::num_vertices(dir), 4u);
-        ASSERT_TRUE(boost::edge(0u, 1u, dir).second);
-        ASSERT_TRUE(boost::edge(0u, 3u, dir).second);
-        ASSERT_TRUE(boost::edge(1u, 2u, dir).second);
-        ASSERT_TRUE(boost::edge(2u, 3u, dir).second);
-        ASSERT_FALSE(boost::edge(3u, 0u, dir).second);
-    }
-
     TEST_F(GraphTest, AcyclicOrientationWithOrderCustom) {
         using namespace as::graph;
 
-        const auto dir = acyclic_orientation_with_order(u, std::greater<>{});
+        const auto dir = acyclic_orientation(u, std::greater<>{});
 
         ASSERT_EQ(boost::num_vertices(dir), 4u);
         ASSERT_TRUE(boost::edge(1u, 0u, dir).second);
@@ -376,7 +363,7 @@ namespace {
         }
         und[boost::graph_bundle] = 1000;
 
-        const auto dir = acyclic_orientation_with_order(und);
+        const auto dir = acyclic_orientation(und);
 
         for(auto i = 0u; i < 4u; ++i) {
             EXPECT_EQ(und[i], dir[i]);
