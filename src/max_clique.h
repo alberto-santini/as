@@ -17,7 +17,7 @@
 #include <cstring>
 
 extern "C" {
-    #include <pmc/pmc.h>
+    #include <libpmc.h>
 };
 
 #include "graph.h"

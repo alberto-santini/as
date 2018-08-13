@@ -7,7 +7,7 @@
 
 #include <boost/graph/graph_concepts.hpp>
 #include <boost/graph/graph_traits.hpp>
-#include <cimg/CImg.h>
+#include <CImg.h>
 
 #include <optional>
 #include <functional>
