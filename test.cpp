@@ -399,7 +399,7 @@ namespace {
         const auto a01 = boost::add_edge(0u, 1u, dir).first;
         const auto a02 = boost::add_edge(0u, 2u, dir).first;
         const auto a03 = boost::add_edge(0u, 3u, dir).first;
-        const auto a12 = boost::add_edge(1u, 2u, dir).first;
+        boost::add_edge(1u, 2u, dir).first;
 
         ASSERT_TRUE(is_simplicial_pair(a01, a02, dir));
         ASSERT_FALSE(is_simplicial_pair(a01, a03, dir));
