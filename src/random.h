@@ -56,11 +56,13 @@ namespace as {
             Container container_copy(container);
             auto length = std::distance(std::begin(container_copy), std::end(container_copy));
 
+            assert(length >= 0);
+
             if(length == 0u) {
                 return container_copy;
             }
 
-            if(how_many > length) {
+            if(how_many > static_cast<typename Container::size_type>(length)) {
                 how_many = length;
             }
 
