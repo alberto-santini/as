@@ -134,7 +134,7 @@ namespace as {
 
             const auto max_clique_size = static_cast<int>(num_vertices);
             auto* clique = new int[max_clique_size];
-            std::memset(clique, -1, sizeof clique);
+            std::memset(clique, -1, sizeof *clique);
 
             auto clique_sz = ::max_clique(number_of_edges, edge_tails.data(), edge_heads.data(), 0, max_clique_size, clique);
 
