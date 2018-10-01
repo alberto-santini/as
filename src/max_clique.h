@@ -15,6 +15,7 @@
 #include <boost/graph/graph_traits.hpp>
 #include <vector>
 #include <cstring>
+#include <type_traits>
 
 extern "C" {
     #include <libpmc.h>
@@ -24,11 +25,51 @@ extern "C" {
 #include "numeric.h"
 
 namespace as {
+    namespace details {
+        // The following two TMP definitions check for a ::weight member in a struct.
+        // This is used to determine whether the graph has a vertex property which
+        // has such a member. In that case, we solve the weighted version of the problem.
+        
+        template<typename T, typename = float>
+        struct has_weight : std::false_type {};
+
+        template<typename T>
+        struct has_weight<T, decltype((void) T::weight, 0.0f)> : std::true_type {};
+
+        // The get_weight function gets the ::weight member of a struct, if such
+        // a member exist and is publicly accessible. Otherwise, it returns 1.0f.
+
+        template<typename VertexProperty>
+        float get_weight(std::false_type, const VertexProperty&) {
+            return 1.0f;
+        }
+
+        template<typename VertexProperty>
+        float get_weight(std::true_type, const VertexProperty& prop) {
+            return prop.weight;
+        }
+
+        template<typename VertexProperty>
+        float get_weight(const VertexProperty& prop) {
+            return get_weight(has_weight<VertexProperty>{}, prop);
+        }
+    }
+
     /** @namespace  max_clique
      *  @brief      This namespace contains utilities to solve the Maximum Clique Problem on boost graphs.
      */
     namespace max_clique {
-        /** @brief  Solves the Maximum Clique Problem via a simple MIP model through CPLEX.
+        /** @brief  Solves the Maximum (Weight) Clique Problem via a simple MIP model through CPLEX.
+         *
+         *  It supports solving two variants of the problem:
+         *
+         *  * The MCP, where we simply try to find a clique of maximal size (i.e., number of vertices).
+         *  * The MWCP, where we associate a weight to each vertex, and we attempt to find a clique
+         *    with maximal sum of the weights of its vertices.
+         *
+         *  The detection of the problem to solve is automatic: if the \ref BoostGraph has a vertex
+         *  property with a publicly accessible weight member, then we solve the weighted version.
+         *  Otherwise, we solve the unweighted version.
          *
          *  @tparam BoostGraph  The underlying graph type.
          *  @param  g           The graph.
@@ -52,7 +93,7 @@ namespace as {
 
             for(const auto& v : graph::vertices(g)) {
                 x[v] = IloNumVar{env, 0, 1, IloNumVar::Bool};
-                expr += x[v];
+                expr += details::get_weight(g[v]) * x[v];
             }
 
             model.add(IloObjective{env, expr, IloObjective::Maximize});

@@ -173,27 +173,35 @@ namespace {
 
     class CliqueTest : public ::testing::Test {
     public:
+        struct VertexProperty { float weight; };
+
         boost::adjacency_list<boost::vecS, boost::vecS, boost::undirectedS> u;
         boost::adjacency_list<boost::vecS, boost::vecS, boost::directedS> d;
+        boost::adjacency_list<boost::vecS, boost::vecS, boost::undirectedS, VertexProperty> w;
 
         CliqueTest() {
             // Build a directed and an undirected triangle with an attached vertex
             for(auto i = 0u; i < 4u; ++i) {
                 boost::add_vertex(u);
                 boost::add_vertex(d);
+                boost::add_vertex({std::pow(2.0f, 1.0f * i)}, w);
             }
 
             boost::add_edge(0u, 1u, u);
             boost::add_edge(0u, 1u, d);
+            boost::add_edge(0u, 1u, w);
 
             boost::add_edge(1u, 2u, u);
             boost::add_edge(1u, 2u, d);
+            boost::add_edge(1u, 2u, w);
 
             boost::add_edge(2u, 0u, u);
             boost::add_edge(2u, 0u, d);
+            boost::add_edge(2u, 0u, w);
 
             boost::add_edge(0u, 3u, u);
             boost::add_edge(0u, 3u, d);
+            boost::add_edge(0u, 3u, w);
         }
     };
 
@@ -202,10 +210,13 @@ namespace {
 
         const auto clique_u = solve_with_mip(u);
         const auto clique_d = solve_with_mip(d);
+        const auto clique_w = solve_with_mip(w);
         const std::vector<unsigned long> expected = { 0u, 1u, 2u };
+        const std::vector<unsigned long> weighted_expected = { 0u, 3u };
 
         ASSERT_EQ(clique_u, expected);
         ASSERT_EQ(clique_d, expected);
+        ASSERT_EQ(clique_w, weighted_expected);
     }
 
     TEST_F(CliqueTest, PmcClique) {
