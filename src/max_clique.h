@@ -114,8 +114,6 @@ namespace as {
                 cplex.setParam(IloCplex::Param::TimeLimit, *timeout);
             }
 
-            cplex.exportModel("error.lp");
-
             try {
                 solved = cplex.solve();
             } catch(IloException& e) {
