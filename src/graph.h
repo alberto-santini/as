@@ -319,7 +319,12 @@ namespace as {
                         const auto& source = ord(v, w) ? v : w;
                         const auto& target = ord(v, w) ? w : v;
 
-                        boost::add_edge(source, target, graph[edge], digraph);
+                        // Because the two for loops will check for both
+                        // edge {v,w} and {w,v} we have to be careful not
+                        // to insert the same arc twice!
+                        if(!boost::edge(source, target, digraph).second) {
+                            boost::add_edge(source, target, graph[edge], digraph);
+                        }
                     }
                 }
             }

@@ -313,7 +313,8 @@ namespace {
 
         const auto dir = acyclic_orientation(u);
 
-        ASSERT_EQ(boost::num_vertices(dir), 4u);
+        ASSERT_EQ(boost::num_vertices(dir), boost::num_vertices(u));
+        ASSERT_EQ(boost::num_edges(dir), boost::num_edges(u));
         ASSERT_TRUE(boost::edge(0u, 1u, dir).second);
         ASSERT_TRUE(boost::edge(0u, 3u, dir).second);
         ASSERT_TRUE(boost::edge(1u, 2u, dir).second);
@@ -335,6 +336,9 @@ namespace {
 
         const auto dir = acyclic_orientation(und);
 
+        ASSERT_EQ(boost::num_vertices(dir), boost::num_vertices(und));
+        ASSERT_EQ(boost::num_edges(dir), boost::num_edges(und));
+
         for(auto i = 0u; i < 4u; ++i) {
             EXPECT_EQ(und[i], dir[i]);
         }
@@ -354,7 +358,8 @@ namespace {
 
         const auto dir = acyclic_orientation(u, std::greater<>{});
 
-        ASSERT_EQ(boost::num_vertices(dir), 4u);
+        ASSERT_EQ(boost::num_vertices(dir), boost::num_vertices(u));
+        ASSERT_EQ(boost::num_edges(dir), boost::num_edges(u));
         ASSERT_TRUE(boost::edge(1u, 0u, dir).second);
         ASSERT_TRUE(boost::edge(3u, 0u, dir).second);
         ASSERT_TRUE(boost::edge(2u, 1u, dir).second);
@@ -375,6 +380,9 @@ namespace {
         und[boost::graph_bundle] = 1000;
 
         const auto dir = acyclic_orientation(und);
+
+        ASSERT_EQ(boost::num_vertices(dir), boost::num_vertices(und));
+        ASSERT_EQ(boost::num_edges(dir), boost::num_edges(dir));
 
         for(auto i = 0u; i < 4u; ++i) {
             EXPECT_EQ(und[i], dir[i]);
