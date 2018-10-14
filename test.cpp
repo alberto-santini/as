@@ -179,6 +179,7 @@ namespace {
         boost::adjacency_list<boost::vecS, boost::vecS, boost::directedS> d;
         boost::adjacency_list<boost::vecS, boost::vecS, boost::undirectedS, VertexProperty> w;
         boost::adjacency_list<boost::vecS, boost::vecS, boost::undirectedS, VertexProperty> without_edges;
+        boost::adjacency_list<boost::vecS, boost::vecS, boost::undirectedS, VertexProperty> zero_weight;
 
         CliqueTest() {
             // Build a directed and an undirected triangle with an attached vertex
@@ -186,6 +187,7 @@ namespace {
                 boost::add_vertex(u);
                 boost::add_vertex(d);
                 boost::add_vertex({std::pow(2.0f, 1.0f * i)}, w);
+                boost::add_vertex({0.0f}, zero_weight);
             }
 
             boost::add_edge(0u, 1u, u);
@@ -217,14 +219,17 @@ namespace {
         const auto clique_d = solve_with_mip(d);
         const auto clique_w = solve_with_mip(w);
         const auto clique_we = solve_with_mip(without_edges);
+        const auto clique_zw = solve_with_mip(zero_weight);
         const std::vector<unsigned long> expected = { 0u, 1u, 2u };
         const std::vector<unsigned long> weighted_expected = { 0u, 3u };
         const std::vector<unsigned long> without_edges_expected = { 1u };
+        const std::vector<unsigned long> zero_weight_expected = { };
 
         ASSERT_EQ(clique_u, expected);
         ASSERT_EQ(clique_d, expected);
         ASSERT_EQ(clique_w, weighted_expected);
         ASSERT_EQ(clique_we, without_edges_expected);
+        ASSERT_EQ(clique_zw, zero_weight_expected);
     }
 
     TEST_F(CliqueTest, PmcClique) {

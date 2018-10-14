@@ -130,7 +130,7 @@ namespace as {
             std::vector<typename boost::graph_traits<BoostGraph>::vertex_descriptor> clique;
 
             for(const auto& v : graph::vertices(g)) {
-                if(cplex.getValue(x[v]) > 0) {
+                if(details::get_weight(g[v]) && cplex.getValue(x[v]) > 0) {
                     clique.push_back(v);
                 }
             }
