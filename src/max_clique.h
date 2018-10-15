@@ -13,6 +13,7 @@
 #include <ilcplex/ilocplex.h>
 #include <boost/graph/adjacency_list.hpp>
 #include <boost/graph/graph_traits.hpp>
+#include <chrono>
 #include <vector>
 #include <cstring>
 #include <type_traits>
@@ -59,6 +60,39 @@ namespace as {
      *  @brief      This namespace contains utilities to solve the Maximum Clique Problem on boost graphs.
      */
     namespace max_clique {
+        /** @struct MaxCliqueSolution
+         *  @brief  Contains data about the solution of a Maximum (Weight) Clique Problem.
+         */
+        template<typename BoostGraph>
+        struct MaxCliqueSolution {
+            /**
+             *  List of vertices making up the largest (or heaviest, in the weighted case)
+             *  found by the algorithm. It might be optimal or not.
+             */
+            std::vector<typename boost::graph_traits<BoostGraph>::vertex_descriptor> best_clique;
+
+            /**
+             *  A lower bound on the size of the optimal clique (or on its total weight, in
+             *  the weighted case). If the maximal clique has been found, it coincides with
+             *  the upper bound \ref ub .
+             */
+            float lb;
+
+            /**
+             *  An upper bound on the size of the optimal clique (or on its total weight,
+             *  in the weighted case). If the maximal clique has been found, it coincides
+             *  with the lower bound \ref lb .
+             */
+            float ub;
+
+            /**
+             *  Times taken by the solver to complete. During this time it might or might
+             *  not have found the optimal clique. Check the values of \ref lb and \ref ub
+             *  to verify if the optimal clique was found.
+             */
+            float elapsed_time;
+        };
+
         /** @brief  Solves the Maximum (Weight) Clique Problem via a simple MIP model through CPLEX.
          *
          *  It supports solving two variants of the problem:
@@ -73,10 +107,10 @@ namespace as {
          *
          *  @tparam BoostGraph  The underlying graph type.
          *  @param  g           The graph.
-         *  @return             The largest clique in the graph.
+         *  @return             A structure repreesnting the solution (see \ref MaxCliqueSolution).
          */
         template<typename BoostGraph>
-        inline std::vector<typename boost::graph_traits<BoostGraph>::vertex_descriptor> solve_with_mip(const BoostGraph& g, std::optional<float> timeout = std::nullopt) {
+        inline MaxCliqueSolution<BoostGraph> solve_with_mip(const BoostGraph& g, std::optional<float> timeout = std::nullopt) {
             static_assert(
                 std::is_same<typename BoostGraph::vertex_list_selector, boost::vecS>::value,
                 "solve_with_mip relies on vertices to be stored in a vertex to map their indices to the variables' indices."
@@ -114,12 +148,16 @@ namespace as {
                 cplex.setParam(IloCplex::Param::TimeLimit, *timeout);
             }
 
+            const auto start_time = std::chrono::high_resolution_clock::now();
+
             try {
                 solved = cplex.solve();
             } catch(IloException& e) {
                 env.end();
                 throw std::runtime_error("Cplex crashed when solving the problem");
             }
+
+            const auto end_time = std::chrono::high_resolution_clock::now();
 
             if(!solved) {
                 cplex.exportModel("error.lp");
@@ -135,10 +173,21 @@ namespace as {
                 }
             }
 
+            const float lb = cplex.getBestObjValue();
+            const float ub = cplex.getObjValue();
+            const float elapsed_time = std::chrono::duration_cast<std::chrono::duration<float>>(end_time - start_time).count();
+
             env.end();
-            return clique;
+
+            return { clique, lb, ub, elapsed_time };
         };
 
+        /** @brief  Solves the Maximum Clique Problem via the Parallel Maximum Clique (PMC) library.
+         *
+         *  @tparam BoostGraph  The underlying graph type.
+         *  @param  g           The graph.
+         *  @return             The vertices composing the largest clique in the graph.
+         */
         template<typename BoostGraph>
         inline std::vector<typename boost::graph_traits<BoostGraph>::vertex_descriptor> solve_with_pmc(const BoostGraph& g) {
             static_assert(

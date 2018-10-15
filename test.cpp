@@ -225,11 +225,38 @@ namespace {
         const std::vector<unsigned long> without_edges_expected = { 1u };
         const std::vector<unsigned long> zero_weight_expected = { };
 
-        ASSERT_EQ(clique_u, expected);
-        ASSERT_EQ(clique_d, expected);
-        ASSERT_EQ(clique_w, weighted_expected);
-        ASSERT_EQ(clique_we, without_edges_expected);
-        ASSERT_EQ(clique_zw, zero_weight_expected);
+        auto get_weights = [] (const auto& graph, const auto& vertices) -> float {
+            return std::accumulate(vertices.begin(), vertices.end(), 0.0f,
+                [&] (auto acc, auto v) -> float {
+                    return acc + graph[v].weight;
+                }
+            );
+        };
+
+        const float weighted_result = get_weights(w, weighted_expected);
+        const float without_edges_result = get_weights(without_edges, without_edges_expected);
+        const float zero_weight_result = get_weights(zero_weight, zero_weight_expected);
+
+        ASSERT_EQ(clique_u.lb, expected.size());
+        ASSERT_EQ(clique_u.ub, expected.size());
+        ASSERT_GT(clique_u.elapsed_time, 0.0f);
+        ASSERT_EQ(clique_u.best_clique, expected);
+
+        ASSERT_EQ(clique_d.lb, expected.size());
+        ASSERT_EQ(clique_d.ub, expected.size());
+        ASSERT_EQ(clique_d.best_clique, expected);
+
+        ASSERT_EQ(clique_w.lb, weighted_result);
+        ASSERT_EQ(clique_w.ub, weighted_result);
+        ASSERT_EQ(clique_w.best_clique, weighted_expected);
+
+        ASSERT_EQ(clique_we.lb, without_edges_result);
+        ASSERT_EQ(clique_we.ub, without_edges_result);
+        ASSERT_EQ(clique_we.best_clique, without_edges_expected);
+
+        ASSERT_EQ(clique_zw.lb, zero_weight_result);
+        ASSERT_EQ(clique_zw.ub, zero_weight_result);
+        ASSERT_EQ(clique_zw.best_clique, zero_weight_expected);
     }
 
     TEST_F(CliqueTest, PmcClique) {
