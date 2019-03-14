@@ -171,6 +171,24 @@ namespace {
         ASSERT_EQ(x, y);
     }
 
+    TEST(ContainerTest, EnumerateTest) {
+        using namespace as::containers;
+
+        const std::vector<int> v = { 5, 7, 4 };
+        const std::vector<std::size_t> i = { 0u, 1u, 2u };
+
+        std::vector<int> elements;
+        std::vector<std::size_t> indices;
+
+        for(const auto& [index, element] : enumerate(v)) {
+            indices.push_back(index);
+            elements.push_back(element);
+        }
+
+        ASSERT_EQ(indices, i);
+        ASSERT_EQ(elements, v);
+    }
+
     class CliqueTest : public ::testing::Test {
     public:
         struct VertexProperty { float weight; };

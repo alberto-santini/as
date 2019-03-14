@@ -8,6 +8,7 @@
 #include "tmp.h"
 #include <algorithm>
 #include <set>
+#include <tuple>
 #include <vector>
 #include <iostream>
 
@@ -163,7 +164,44 @@ namespace as {
 
             vec.erase(last, vec.end());
         }
-    };
+
+        /** @brief  Iterates over an iterable container and yields both the index and
+         *          the element.
+         * 
+         *          This method works analogously to Python's enumerate().
+         *          The code below is not mine, but by Nathan Reed and it was
+         *          origianlly available at http://reedbeta.com/blog/python-like-enumerate-in-cpp17/
+         * 
+         *  @tparam Container   The container type.
+         *  @param  iterable    An instance of the iterable container.
+         *  @return             An anonymoust structur implementing begin() and end(). When passed in
+         *                      a range-based for loop, each element gives a tuple whose second element
+         *                      is an iterable element, and whose first element is the corresponding
+         *                      index.
+         */
+        template<   typename Container,
+                    typename Iter = decltype(std::begin(std::declval<Container>())),
+                    typename = decltype(std::end(std::declval<Container>()))>
+        constexpr auto enumerate(Container && iterable) {
+            struct iterator {
+                std::size_t i;
+                Iter iter;
+
+                bool operator!=(const iterator& other) const { return iter != other.iter; }
+                void operator++() { ++i; ++iter; }
+                auto operator*() const { return std::tie(i, *iter); }
+            };
+
+            struct iterable_wrapper {
+                Container iterable;
+
+                auto begin() { return iterator{ 0, std::begin(iterable) }; }
+                auto end() { return iterator{ 0, std::end(iterable) }; }
+            };
+
+            return iterable_wrapper{ std::forward<Container>(iterable) };
+        }
+    }
 }
 
 #endif //AS_CONTAINERS_H
