@@ -7,6 +7,9 @@
 
 #include <cstdint>
 #include <vector>
+#include <array>
+#include <cassert>
+#include <algorithm>
 
 #include "tsplib.h"
 #include "discorde.h"
@@ -55,19 +58,46 @@ namespace as {
             }
 
             // Discorde is known to fail if there aren't at least 5 nodes.
-            // So for 4 nodes we use a simple MTZ model.
+            // So for 4 nodes we use simple enumeration.
             if(nodes.size() == 4u) {
-                try {
-                    return mtz_solve_tsp(instance, nodes);
-                } catch(const std::runtime_error& error) {
-                    throw std::runtime_error("Could not solve a problem of size 4 with Cplex");
-                }
+                const std::array<std::vector<std::uint32_t>, 24> tours{{
+                    { 0u, 1u, 2u, 3u },
+                    { 0u, 1u, 3u, 2u },
+                    { 0u, 2u, 1u, 3u },
+                    { 0u, 2u, 3u, 1u },
+                    { 0u, 3u, 1u, 2u },
+                    { 0u, 3u, 2u, 1u },
+                    { 1u, 0u, 2u, 3u },
+                    { 1u, 0u, 3u, 2u },
+                    { 1u, 2u, 0u, 3u },
+                    { 1u, 2u, 3u, 0u },
+                    { 1u, 3u, 0u, 2u },
+                    { 1u, 3u, 2u, 0u },
+                    { 2u, 0u, 1u, 3u },
+                    { 2u, 0u, 3u, 1u },
+                    { 2u, 1u, 0u, 3u },
+                    { 2u, 1u, 3u, 0u },
+                    { 2u, 3u, 0u, 1u },
+                    { 2u, 3u, 1u, 0u },
+                    { 3u, 0u, 1u, 2u },
+                    { 3u, 0u, 2u, 1u },
+                    { 3u, 1u, 0u, 2u },
+                    { 3u, 1u, 2u, 0u },
+                    { 3u, 2u, 0u, 1u },
+                    { 3u, 2u, 1u, 0u }
+                }};
+
+                return *std::min_element(tours.begin(), tours.end(),
+                    [&instance] (const auto& tour1, const auto& tour2) -> bool {
+                        return tour_cost(instance, tour1) < tour_cost(instance, tour2);
+                    }
+                );
             };
 
             try {
                 return discorde_solve_tsp(instance, nodes);
             } catch(const std::runtime_error& error) {
-                // If for any other reason discorde/concorde fails, resort back to mtz
+                // If for any other reason discorde/concorde fails, resort back to the MTZ model.
                 try {
                     return mtz_solve_tsp(instance, nodes);
                 } catch(const std::runtime_error& error) {
