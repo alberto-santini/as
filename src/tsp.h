@@ -17,6 +17,28 @@ namespace as {
      *  @brief     This namespace contains utilities to solve the TSP.
      */
     namespace tsp {
+        /** @brief  Computes the cost (i.e., the total distance) of a tour.
+         *
+         *  @param  instance    The TSP instance.
+         *  @param  tour        The tour.
+         *  @return             The distances travelled along the tour.
+         */
+        inline float tour_cost(const tsplib::TSPInstance& instance, const std::vector<std::uint32_t>& tour) {
+            float cost = 0.0f;
+
+            for(auto i = 0u; i < tour.size(); ++i) {
+                const auto v = tour[i];
+                const auto w = tour[(i + 1) % tour.size()];
+
+                assert(v < instance.number_of_vertices());
+                assert(w < instance.number_of_vertices());
+
+                cost += instance.get_distance(v, w);
+            }
+
+            return cost;
+        }
+
         /** @brief Solves a TSP Instance.
          *
          *  It can use either Concorde (via the Discorde API) or an MTZ model via CPLEX.
@@ -55,6 +77,30 @@ namespace as {
         }
 
         /** @brief Solves a TSP Instance.
+        *
+        *  It can use either Concorde (via the Discorde API) or an MTZ model via CPLEX.
+        *  It can throw, in case neither solver provides a solution.
+        *
+        *  @param  instance The TSP instance.
+        *  @param  nodes    A boolean mask of the same size as the instance, indicating
+         *                  the subset of nodes to consider.
+        *  @return          The optimal tour.
+        */
+        inline std::vector<std::uint32_t> solve(const tsplib::TSPInstance& instance, const std::vector<bool>& nodes) {
+            assert(nodes.size() == instance.number_of_vertices());
+
+            std::vector<std::uint32_t> explicit_nodes;
+
+            for(auto node = 0u; node < nodes.size(); ++node) {
+                if(nodes[node]) {
+                    explicit_nodes.push_back(node);
+                }
+            }
+
+            return solve(instance, explicit_nodes);
+        }
+
+        /** @brief Solves a TSP Instance.
          *
          *  It can use either Concorde (via the Discorde API) or an MTZ model via CPLEX.
          *  It can throw, in case neither solver provides a solution.
@@ -66,28 +112,6 @@ namespace as {
             std::vector<std::uint32_t> nodes(instance.number_of_vertices());
             std::iota(nodes.begin(), nodes.end(), 0u);
             return solve(instance, nodes);
-        }
-
-        /** @brief  Computes the cost (i.e., the total distance) of a tour.
-         *
-         *  @param  instance    The TSP instance.
-         *  @param  tour        The tour.
-         *  @return             The distances travelled along the tour.
-         */
-        inline float tour_cost(const tsplib::TSPInstance& instance, const std::vector<std::uint32_t>& tour) {
-            float cost = 0.0f;
-
-            for(auto i = 0u; i < tour.size(); ++i) {
-                const auto v = tour[i];
-                const auto w = tour[(i + 1) % tour.size()];
-
-                assert(v < instance.number_of_vertices());
-                assert(w < instance.number_of_vertices());
-
-                cost += instance.get_distance(v, w);
-            }
-
-            return cost;
         }
     }
 }
