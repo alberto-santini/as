@@ -21,6 +21,7 @@
 #include "src/discorde.h"
 #include "src/mtz.h"
 #include "src/repeat.h"
+#include "src/tsp.h"
 
 namespace {
     using namespace as;
@@ -704,17 +705,21 @@ namespace {
     TEST(TspTest, SolvePr10Subset) {
         using namespace as::tsplib;
         using namespace as::tsp;
+        using namespace as::combi;
 
         const TSPInstance instance("../test/tsplib/pr10.tsp");
         const std::vector<std::uint32_t> vertices = { 0, 1, 5, 6, 8 };
-        const std::set<std::uint32_t> vertices_set(vertices.begin(), vertices.end());
-        const auto discorde_solution = discorde_solve_tsp(instance, vertices);
-        const std::set<std::uint32_t> discorde_v(discorde_solution.begin(), discorde_solution.end());
-        const auto mtz_solution = mtz_solve_tsp(instance, vertices);
-        const std::set<std::uint32_t> mtz_v(mtz_solution.begin(), mtz_solution.end());
+        const std::vector<bool> vertices_mask = { true, true, false, false, false, true, true, false, true, false };
 
-        ASSERT_EQ(vertices_set, discorde_v);
-        ASSERT_EQ(vertices_set, mtz_v);
+        const auto discorde_solution = discorde_solve_tsp(instance, vertices);
+        const auto mtz_solution = mtz_solve_tsp(instance, vertices);
+        const auto simple_solution = solve(instance, vertices);
+        const auto mask_solution = solve(instance, vertices_mask);
+
+        ASSERT_TRUE(std::is_permutation(discorde_solution.begin(), discorde_solution.end(), vertices.begin()));
+        ASSERT_TRUE(is_rotation(mtz_solution, discorde_solution));
+        ASSERT_TRUE(is_rotation(simple_solution, discorde_solution));
+        ASSERT_TRUE(is_rotation(mask_solution, discorde_solution));
     }
 
     TEST(TspTest, DiscordeCrashesOn4Vertices) {
