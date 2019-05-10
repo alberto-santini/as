@@ -48,6 +48,32 @@ namespace as {
             std::vector<bool> indicator(size);
             detail::recursive_visit_subsets(indicator, visitor, start_from_smaller, indicator.size() - 1);
         }
+
+        /** @brief Check whether a vector si a rotation (cyclic permutation) of another one.
+         *
+         *  The check is done using the standard trick of concatenating the first vector with
+         *  itself, and then checking if this new long vector contains the second vector.
+         *
+         *  @tparam Vector  A vector-like class.
+         *  @param first    The first vector.
+         *  @param second   The second vector.
+         *  @return         True iff one vector is a rotation of the other.
+         */
+        template<typename Vector>
+        inline bool is_rotation(Vector first, const Vector& second) {
+            if(first.size() != second.size()) {
+                return false;
+            }
+
+            if(first.empty()) {
+                return true;
+            }
+
+            first.reserve(2u * first.size());
+            std::copy(first.begin(), first.begin() + second.size(), std::back_inserter(first));
+
+            return std::includes(first.begin(), first.end(), second.begin(), second.end());
+        }
     }
 }
 

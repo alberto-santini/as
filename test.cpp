@@ -625,6 +625,26 @@ namespace {
         }
     };
 
+    TEST_F(CombinatorialTest, IsRotation) {
+        using namespace as::combi;
+
+        std::vector<int> v1 = { 0, 1, 2, 3 };
+        std::vector<int> v2 = { 0, 1, 2 };
+        std::vector<int> v3 = { 0, 1, 2, 3, 4 };
+        std::vector<int> v4 = {};
+        std::vector<int> v5 = { 1, 3, 2, 0 };
+        std::vector<int> v6 = { 3, 0, 1, 2 };
+        std::vector<int> v7 = {};
+
+        ASSERT_FALSE(is_rotation(v1, v2));
+        ASSERT_FALSE(is_rotation(v1, v3));
+        ASSERT_FALSE(is_rotation(v1, v4));
+        ASSERT_FALSE(is_rotation(v1, v5));
+        ASSERT_TRUE(is_rotation(v1, v6));
+        ASSERT_TRUE(is_rotation(v1, v1));
+        ASSERT_TRUE(is_rotation(v4, v7));
+    }
+
     TEST_F(CombinatorialTest, SubsetEnum) {
         using namespace as::combi;
 
