@@ -195,8 +195,8 @@ namespace as {
             struct iterable_wrapper {
                 Container iterable;
 
-                auto begin() { return iterator{ 0, std::begin(iterable) }; }
-                auto end() { return iterator{ 0, std::end(iterable) }; }
+                auto begin() { return iterator{ 0u, std::begin(iterable) }; }
+                auto end() { return iterator{ 0u, std::end(iterable) }; }
             };
 
             return iterable_wrapper{ std::forward<Container>(iterable) };
