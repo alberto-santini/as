@@ -130,6 +130,32 @@ namespace as {
             return solve(instance, explicit_nodes);
         }
 
+        /** @brief Solves a TSP Instance where node 0 is assumed to be the depot and is always present.
+         *
+         *  It can use either Concorde (via the Discorde API) or an MTZ model via CPLEX.
+         *  It can throw, in case neither solver provides a solution.
+         *
+         *  @param  instance The TSP instance.
+         *  @param  nodes    A boolean mask of the same size as the instance minus one, indicating
+         *                   the subset of customers to consider. The depot (indexed by 0) is always
+         *                   present and is not part of the mask vector. Therefore element node[i]
+         *                   tells wether or not node i-1 should be included.
+         *  @return          The optimal tour.
+         */
+        inline std::vector<std::uint32_t> solve_with_depot(const tsplib::TSPInstance& instance, const std::vector<bool>& nodes) {
+            assert(nodes.size() == instance.number_of_vertices() - 1u);
+
+            std::vector<std::uint32_t> explicit_nodes = { 0u };
+
+            for(auto node = 0u; node < nodes.size(); ++node) {
+                if(nodes[node]) {
+                    explicit_nodes.push_back(node + 1u);
+                }
+            }
+
+            return solve(instance, explicit_nodes);
+        }
+
         /** @brief Solves a TSP Instance.
          *
          *  It can use either Concorde (via the Discorde API) or an MTZ model via CPLEX.
