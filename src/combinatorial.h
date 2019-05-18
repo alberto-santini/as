@@ -7,6 +7,7 @@
 
 #include <cstddef>
 #include <vector>
+#include <algorithm>
 #include <limits>
 
 namespace as {
