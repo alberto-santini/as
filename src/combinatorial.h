@@ -17,8 +17,12 @@ namespace as {
     namespace combi {
         namespace detail {
             template<typename Visitor>
-            inline void recursive_visit_subsets(std::vector<bool>& indicator, Visitor *const visitor, bool start_from_smaller, std::size_t pivot) {
-                if(pivot == std::numeric_limits<std::size_t>::max()) { // Relies on size_t underflow
+            inline void recursive_visit_subsets(std::vector<bool>& indicator, Visitor *const visitor, bool start_from_smaller, std::vector<bool>::size_type pivot) {
+                // The algorithm does not work is the vector "indicator" has exactly the largest possible
+                // size for a vector<bool> (!!)
+                assert(indicator.size() < std::numeric_limits<std::vector<bool>::size_type>::max());
+
+                if(pivot == std::numeric_limits<std::vector<bool>::size_type>::max()) { // Relies on size_t underflow
                     (*visitor)(indicator);
                 } else {
                     indicator[pivot] = !start_from_smaller;
@@ -37,7 +41,8 @@ namespace as {
          *  If \p start_from_smaller is false, then the sequence would be reversed.
          *
          *  @tparam Visitor             The class of visitor called on each subset (which is passed as a vector<bool>).
-         *  @param  size                Size of the original set.
+         *  @param  size                Size of the original set. Must be strictly smaller than
+         *                              `std::numeric_limits<std::vector<bool>::size_type>::max()`.
          *  @param  visitor             An instance of the visitor.
          *  @param  start_from_smaller  Tells the order in which the subsets should be visited. Smaller does not refer
          *                              to the size of the subset (i.e. the number of ones in the indicator vector).
