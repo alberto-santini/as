@@ -367,7 +367,7 @@ namespace as {
                         const auto qa = std::acos(0.5f * q);
                         const auto dist = tsp_earth_radius * qa + 1.0f;
 
-                        return (float)(int) dist;
+                        return std::trunc(dist);
                     };
                 } else if(f_name == "ATT") {
                     return [] (float x1, float y1, float x2, float y2) -> float {
