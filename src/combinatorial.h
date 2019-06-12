@@ -9,6 +9,7 @@
 #include <vector>
 #include <algorithm>
 #include <limits>
+#include <cassert>
 
 namespace as {
     /** @namespace combi
