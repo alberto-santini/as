@@ -32,6 +32,26 @@ namespace as {
                     recursive_visit_subsets(indicator, visitor, start_from_smaller, pivot - 1);
                 }
             }
+
+            // Returns true if it should terminate early.
+            template<typename EarlyTerminateVisitor>
+            inline bool recursive_visit_subsets_with_early_termination(std::vector<bool>& indicator, EarlyTerminateVisitor *const visitor, bool start_from_smaller, std::vector<bool>::size_type pivot) {
+                // The algorithm does not work is the vector "indicator" has exactly the largest possible
+                // size for a vector<bool> (!!)
+                assert(indicator.size() < std::numeric_limits<std::vector<bool>::size_type>::max());
+
+                if(pivot == std::numeric_limits<std::vector<bool>::size_type>::max()) { // Relies on size_t underflow
+                    return ((*visitor)(indicator));
+                } else {
+                    indicator[pivot] = !start_from_smaller;
+                    if(recursive_visit_subsets_with_early_termination(indicator, visitor, start_from_smaller, pivot - 1)) {
+                        return true;
+                    }
+
+                    indicator[pivot] = start_from_smaller;
+                    return recursive_visit_subsets_with_early_termination(indicator, visitor, start_from_smaller, pivot - 1);
+                }
+            }
         }
 
         /** @brief Visits with a user-specified visitors all the subset of an indicator (0-1)
@@ -54,6 +74,32 @@ namespace as {
         inline void visit_subsets(std::size_t size, Visitor *const visitor, bool start_from_smaller = true) {
             std::vector<bool> indicator(size);
             detail::recursive_visit_subsets(indicator, visitor, start_from_smaller, indicator.size() - 1);
+        }
+
+        /** @brief Visits with a user-specified visitors all the subset of an indicator (0-1)
+         *         set of a certain size. The visitor can indicate that it desires to terminate
+         *         the algorithm at any given point, without completing enumeration.
+         *
+         *  For example, if \p size is 3, the visitor will be called on 8 vectors of booleans:
+         *  {0,0,0}, {0,0,1}, {0,1,0}, {0,1,1}, {1,0,0}, {1,0,1}, {1,1,0}, {1,1,1}
+         *  If \p start_from_smaller is false, then the sequence would be reversed.
+         *  If, upon visiting {1,0,1} the visitor indicates that it wants to terminate early
+         *  (returning true), then {1,1,0} and {1,1,1} will not be visited.
+         *
+         *  @tparam Visitor             The class of visitor called on each subset (which is passed as a vector<bool>).
+         *                              It returns true if it wants the algorithm to terminate early, and false otherwise.
+         *  @param  size                Size of the original set. Must be strictly smaller than
+         *                              `std::numeric_limits<std::vector<bool>::size_type>::max()`.
+         *  @param  visitor             An instance of the visitor.
+         *  @param  start_from_smaller  Tells the order in which the subsets should be visited. Smaller does not refer
+         *                              to the size of the subset (i.e. the number of ones in the indicator vector).
+         *                              Its meaning is the following: if converting the indicator vector to an unsigned
+         *                              integer, we would start from 0 and end at pow(2, \p size) - 1.
+         */
+        template<typename Visitor>
+        inline void visit_subsets_with_early_termination(std::size_t size, Visitor *const visitor, bool start_from_smaller = true) {
+            std::vector<bool> indicator(size);
+            detail::recursive_visit_subsets_with_early_termination(indicator, visitor, start_from_smaller, indicator.size() - 1);
         }
 
         /** @brief Check whether a vector si a rotation (cyclic permutation) of another one.

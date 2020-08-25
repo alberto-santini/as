@@ -618,10 +618,19 @@ namespace {
     public:
         std::vector<std::uint32_t> numbers;
         std::function<void(std::vector<bool>&)> visitor;
+        std::function<bool(std::vector<bool>&)> early_termination_visitor;
 
         CombinatorialTest() {
             visitor = [this] (const std::vector<bool>& v) -> void {
                 numbers.push_back(std::accumulate(v.rbegin(), v.rend(), 0u, [] (int x, int y) { return (x << 1) + y; }));
+            };
+
+            early_termination_visitor = [this] (const std::vector<bool>& v) -> bool {
+                if(std::count(v.begin(), v.end(), true) <= 2u) {
+                    numbers.push_back(std::accumulate(v.rbegin(), v.rend(), 0u, [] (int x, int y) { return (x << 1) + y; }));
+                    return false;
+                }
+                return true;
             };
         }
     };
@@ -649,6 +658,7 @@ namespace {
     TEST_F(CombinatorialTest, SubsetEnum) {
         using namespace as::combi;
 
+        numbers.clear();
         visit_subsets(3u, &visitor);
 
         std::set<std::uint32_t> n(numbers.begin(), numbers.end());
@@ -659,12 +669,25 @@ namespace {
         }
     }
 
+    TEST_F(CombinatorialTest, SubsetEnumEarlyTermination) {
+        using namespace as::combi;
+
+        std::vector<std::uint32_t> n(7u);
+        std::iota(n.begin(), n.end(), 0u);
+
+        numbers.clear();
+        visit_subsets_with_early_termination(4u, &early_termination_visitor);
+
+        ASSERT_EQ(numbers, n);
+    }
+
     TEST_F(CombinatorialTest, SubsetEnumSmallToLarge) {
         using namespace as::combi;
 
         std::vector<std::uint32_t> n(8u);
         std::iota(n.begin(), n.end(), 0u);
 
+        numbers.clear();
         visit_subsets(3u, &visitor);
 
         ASSERT_EQ(numbers, n);
@@ -677,6 +700,7 @@ namespace {
         std::iota(n.begin(), n.end(), 0u);
         std::reverse(n.begin(), n.end());
 
+        numbers.clear();
         visit_subsets(3u, &visitor, false);
 
         ASSERT_EQ(numbers, n);
